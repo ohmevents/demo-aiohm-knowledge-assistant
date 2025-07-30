@@ -50,6 +50,14 @@ $brand_archetypes = [
     <h1><?php esc_html_e('Muse Mode Customization', 'aiohm-knowledge-assistant'); ?></h1>
     <p class="page-description"><?php esc_html_e('Here, you attune your AI to be a true creative partner. Define its energetic signature and workflow to transform your brand dialogue.', 'aiohm-knowledge-assistant'); ?></p>
 
+    <?php if (defined('AIOHM_KB_VERSION') && AIOHM_KB_VERSION === 'DEMO') : ?>
+    <!-- Demo Version Banner -->
+    <div class="aiohm-demo-banner" style="background: #EBEBEB; border-left: 4px solid #7d9b76; color: #272727; padding: 12px 20px; margin: 15px 0; border-radius: 6px; font-family: 'Montserrat', sans-serif;">
+        <p style="margin: 0; font-weight: 600; font-size: 0.95em;">
+            <strong style="color: #1f5014;">DEMO VERSION</strong> - You're experiencing AIOHM's interface with simulated responses.
+        </p>
+    </div>
+
     <?php if ($is_demo_version) : ?>
     <!-- Demo Experience Button -->
     <div class="aiohm-demo-experience-banner" style="background: #cbddd1; border: 2px solid #457d58; color: #272727; padding: 20px; border-radius: 12px; margin: 20px 0; text-align: center; font-family: 'Montserrat', sans-serif;">

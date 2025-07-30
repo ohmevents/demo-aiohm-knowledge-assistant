@@ -33,6 +33,15 @@ $has_private_access = class_exists('AIOHM_KB_PMP_Integration') && AIOHM_KB_PMP_I
         <p class="aiohm-tagline" style="margin-left: auto; margin-right: auto;"><?php esc_html_e("Welcome! Let's turn your content into an expert AI assistant.", 'aiohm-knowledge-assistant'); ?></p>
     </div>
 
+    <?php if (defined('AIOHM_KB_VERSION') && AIOHM_KB_VERSION === 'DEMO') : ?>
+    <!-- Demo Version Banner -->
+    <div class="aiohm-demo-banner" style="background: #EBEBEB; border-left: 4px solid #7d9b76; color: #272727; padding: 12px 20px; margin: 15px 0; border-radius: 6px; font-family: 'Montserrat', sans-serif;">
+        <p style="margin: 0; font-weight: 600; font-size: 0.95em;">
+            <strong style="color: #1f5014;">DEMO VERSION</strong> - You're experiencing AIOHM's interface with simulated responses.
+        </p>
+    </div>
+    <?php endif; ?>
+
     <nav class="nav-tab-wrapper">
         <a href="?page=aiohm-dashboard&tab=welcome" class="nav-tab <?php echo esc_attr($current_tab == 'welcome' ? 'nav-tab-active' : ''); ?>"><?php esc_html_e('Welcome', 'aiohm-knowledge-assistant'); ?></a>
         <a href="?page=aiohm-dashboard&tab=tribe" class="nav-tab <?php echo esc_attr($current_tab == 'tribe' ? 'nav-tab-active' : ''); ?>"><?php esc_html_e('AIOHM Tribe', 'aiohm-knowledge-assistant'); ?></a>

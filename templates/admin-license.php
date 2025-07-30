@@ -26,6 +26,15 @@ if ($is_user_linked && class_exists('AIOHM_KB_PMP_Integration')) {
     <h1><?php esc_html_e('AIOHM Membership & Features', 'aiohm-knowledge-assistant'); ?></h1>
     <p class="description"><?php esc_html_e('Connect your account to see the features available with your membership tier.', 'aiohm-knowledge-assistant'); ?></p>
 
+    <?php if (defined('AIOHM_KB_VERSION') && AIOHM_KB_VERSION === 'DEMO') : ?>
+    <!-- Demo Version Banner -->
+    <div class="aiohm-demo-banner" style="background: #EBEBEB; border-left: 4px solid #7d9b76; color: #272727; padding: 12px 20px; margin: 15px 0; border-radius: 6px; font-family: 'Montserrat', sans-serif;">
+        <p style="margin: 0; font-weight: 600; font-size: 0.95em;">
+            <strong style="color: #1f5014;">DEMO VERSION</strong> - You're experiencing AIOHM's interface with simulated responses.
+        </p>
+    </div>
+    <?php endif; ?>
+
     <div class="aiohm-feature-grid">
 
         <div class="aiohm-feature-box <?php echo esc_attr($is_user_linked ? 'plan-active' : 'plan-inactive'); ?>">

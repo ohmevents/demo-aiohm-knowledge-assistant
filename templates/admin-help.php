@@ -23,6 +23,15 @@ $active_provider = $settings['default_ai_provider'] ?? 'not set';
 
 <div class="wrap aiohm-help-page">
 
+    <?php if (defined('AIOHM_KB_VERSION') && AIOHM_KB_VERSION === 'DEMO') : ?>
+    <!-- Demo Version Banner -->
+    <div class="aiohm-demo-banner" style="background: #EBEBEB; border-left: 4px solid #7d9b76; color: #272727; padding: 12px 20px; margin: 15px 0; border-radius: 6px; font-family: 'Montserrat', sans-serif;">
+        <p style="margin: 0; font-weight: 600; font-size: 0.95em;">
+            <strong style="color: #1f5014;">DEMO VERSION</strong> - You're experiencing AIOHM's interface with simulated responses.
+        </p>
+    </div>
+    <?php endif; ?>
+
     <div class="aiohm-help-container">
         
         <!-- Left Column: Debug & Support Tools -->
