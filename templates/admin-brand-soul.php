@@ -104,6 +104,15 @@ foreach ($brand_soul_questions as $section) {
                         echo "<div class='aiohm-question-slide' data-index='" . esc_attr($question_index) . "'>";
                         echo "<h2 class='question-section-title'>All Done!</h2>";
                         echo "<p class='question-text'>You've completed your Brand Soul questionnaire. You can now save your work, add it to your private knowledge base for your AI to use, or download a copy.</p>";
+                        
+                        // Tribe upgrade notification
+                        echo "<div class='aiohm-tribe-upgrade-notice' style='background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%); color: white; padding: 20px; border-radius: 10px; margin: 20px 0; text-align: center;'>";
+                        echo "<h3 style='margin: 0 0 10px 0; color: white;'>🌟 Want the Complete Brand Soul Experience?</h3>";
+                        echo "<p style='margin: 0 0 15px 0; opacity: 0.95;'>You've completed the 5 foundation questions. Register for free AIOHM Tribe to unlock all 20 questions covering Energy, Expression, and Direction!</p>";
+                        echo "<a href='https://aiohm.app/register' target='_blank' style='display: inline-block; background: white; color: #ff6b35; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; margin: 5px;'>→ Join AIOHM Tribe (Free)</a>";
+                        echo "<a href='https://aiohm.app/club' target='_blank' style='display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; margin: 5px;'>Explore AIOHM Club</a>";
+                        echo "</div>";
+                        
                         echo "<div class='aiohm-final-actions'></div>";
                         echo "</div>";
                         ?>
