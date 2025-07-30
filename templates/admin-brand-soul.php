@@ -21,32 +21,11 @@ if (!is_array($brand_soul_answers)) {
 
 $brand_soul_questions = [
     '✨ Foundation' => [
-        'foundation_1' => "What’s the deeper purpose behind your brand — beyond profit?",
+        'foundation_1' => "What's the deeper purpose behind your brand — beyond profit?",
         'foundation_2' => "What life experiences shaped this work you now do?",
         'foundation_3' => "Who were you before this calling emerged?",
         'foundation_4' => "If your brand had a soul story, how would you tell it?",
-        'foundation_5' => "What’s one transformation you’ve witnessed that reminds you why you do this?",
-    ],
-    '🌀 Energy' => [
-        'energy_1' => "What 3 words describe the emotional tone of your brand voice?",
-        'energy_2' => "How do you want your audience to feel after encountering your message?",
-        'energy_3' => "What do you not want to sound like?",
-        'energy_4' => "Do you prefer poetic, punchy, playful, or professional language?",
-        'energy_5' => "Share a quote, phrase, or piece of content that feels like you.",
-    ],
-    '🎨 Expression' => [
-        'expression_1' => "What are your brand’s primary colors (and any specific hex codes)?",
-        'expression_2' => "What font(s) do you use — or wish to use — for headers and body text?",
-        'expression_3' => "Is there a visual theme (earthy, cosmic, minimalist, ornate) that matches your brand essence?",
-        'expression_4' => "Are there any logos, patterns, or symbols that hold meaning for your brand?",
-        'expression_5' => "What offerings are you currently sharing with the world — and how are they priced or exchanged?",
-    ],
-    '🚀 Direction' => [
-        'direction_1' => "What’s your current main offer or project you want support with?",
-        'direction_2' => "Who is your dream client? Describe them with emotion and detail.",
-        'direction_3' => "What are 3 key goals you have for the next 6 months?",
-        'direction_4' => "Where do you feel stuck, overwhelmed, or unsure — and where would you love AI support?",
-        'direction_5' => "If this AI assistant could speak your soul fluently, what would you want it to never forget?",
+        'foundation_5' => "What's one transformation you've witnessed that reminds you why you do this?",
     ],
 ];
 

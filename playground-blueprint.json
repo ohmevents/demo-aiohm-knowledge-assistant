@@ -26,6 +26,14 @@
     },
     {
       "step": "wp-cli",
+      "command": "wp plugin deactivate demo-aiohm-knowledge-assistant-main"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp plugin activate demo-aiohm-knowledge-assistant-main"
+    },
+    {
+      "step": "wp-cli",
       "command": "wp option update blogname 'AIOHM Demo - AI Assistant That Speaks Your Brand Voice'"
     },
     {
@@ -54,7 +62,7 @@
     },
     {
       "step": "wp-cli",
-      "command": "wp option update aiohm_kb_settings '{\"aiohm_app_email\":\"contact@ohm.events\",\"mirror_mode\":{\"qa_system_message\":\"You are the AI assistant for AIOHM Demo. This is a demonstration of our brand-aligned AI capabilities. In the full version, I would provide personalized responses based on your specific content and brand voice.\",\"qa_temperature\":\"0.7\",\"business_name\":\"AIOHM Demo\"},\"muse_mode\":{\"system_prompt\":\"You are Muse, the creative AI assistant for AIOHM Demo. This showcases how I help with content creation, brainstorming, and brand strategy using your unique voice and knowledge base.\",\"temperature\":\"0.8\",\"assistant_name\":\"Muse\",\"start_fullscreen\":true},\"mcp_enabled\":true,\"chat_enabled\":true,\"default_ai_provider\":\"demo\",\"external_api_consent\":true}'"
+      "command": "wp eval 'update_option(\"aiohm_kb_settings\", array(\"aiohm_app_email\" => \"contact@ohm.events\", \"chat_enabled\" => true, \"mcp_enabled\" => true, \"default_ai_provider\" => \"demo\", \"external_api_consent\" => true));'"
     }
   ]
 }
