@@ -277,7 +277,7 @@ $has_private_access = class_exists('AIOHM_KB_PMP_Integration') && AIOHM_KB_PMP_I
                             <div class="shareai-setting-row">
                                 <label for="private_llm_server_url" class="shareai-inline-label"><?php esc_html_e('Server URL:', 'aiohm-knowledge-assistant'); ?></label>
                                 <div class="aiohm-api-key-wrapper">
-                                    <input type="url" id="private_llm_server_url" name="aiohm_kb_settings[private_llm_server_url]" value="<?php echo esc_attr($settings['private_llm_server_url'] ?? ''); ?>" class="regular-text" placeholder="https://ollama.servbay.host/" <?php disabled(!$has_private_access); ?>>
+                                    <input type="url" id="private_llm_server_url" name="aiohm_kb_settings[private_llm_server_url]" value="<?php echo esc_attr($settings['private_llm_server_url'] ?? ''); ?>" class="regular-text" placeholder="http://localhost:11434" <?php disabled(!$has_private_access); ?>>
                                     <button type="button" class="button aiohm-shareai-btn aiohm-test-api-key" data-target="private_llm_server_url" data-type="ollama" <?php disabled(!$has_private_access); ?>><?php esc_html_e('Test Server', 'aiohm-knowledge-assistant'); ?></button>
                                     <button type="button" class="button aiohm-shareai-btn aiohm-save-api-key" data-target="private_llm_server_url" data-type="ollama" <?php disabled(!$has_private_access); ?>><?php esc_html_e('Save', 'aiohm-knowledge-assistant'); ?></button>
                                 </div>
@@ -285,7 +285,7 @@ $has_private_access = class_exists('AIOHM_KB_PMP_Integration') && AIOHM_KB_PMP_I
                             
                             <div class="shareai-setting-row">
                                 <label for="private_llm_model" class="shareai-inline-label"><?php esc_html_e('Model Name:', 'aiohm-knowledge-assistant'); ?></label>
-                                <input type="text" id="private_llm_model" name="aiohm_kb_settings[private_llm_model]" value="<?php echo esc_attr($settings['private_llm_model'] ?? 'llama2'); ?>" class="regular-text" <?php disabled(!$has_private_access); ?>>
+                                <input type="text" id="private_llm_model" name="aiohm_kb_settings[private_llm_model]" value="<?php echo esc_attr($settings['private_llm_model'] ?? 'llama3.2'); ?>" class="regular-text" <?php disabled(!$has_private_access); ?>>
                             </div>
                             
                             <div class="shareai-usage-notice">

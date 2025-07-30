@@ -849,7 +849,7 @@ class AIOHM_KB_Core_Init {
                     $model = $settings['shareai_model'] ?? 'llama4:17b-scout-16e-instruct-fp16';
                     break;
                 case 'ollama':
-                    $model = $settings['private_llm_model'] ?? 'llama2';
+                    $model = $settings['private_llm_model'] ?? 'llama3.2';
                     break;
                 case 'gemini':
                     $model = 'gemini-pro';
@@ -979,7 +979,7 @@ class AIOHM_KB_Core_Init {
                     $model = $settings['shareai_model'] ?? 'llama4:17b-scout-16e-instruct-fp16';
                     break;
                 case 'ollama':
-                    $model = $settings['private_llm_model'] ?? 'llama2';
+                    $model = $settings['private_llm_model'] ?? 'llama3.2';
                     break;
                 case 'gemini':
                     $model = 'gemini-pro';
@@ -1206,7 +1206,7 @@ class AIOHM_KB_Core_Init {
                     $model = $current_settings['shareai_model'] ?? 'llama4:17b-scout-16e-instruct-fp16';
                     break;
                 case 'ollama':
-                    $model = $current_settings['private_llm_model'] ?? 'llama2';
+                    $model = $current_settings['private_llm_model'] ?? 'llama3.2';
                     break;
                 case 'gemini':
                     $model = 'gemini-pro';
@@ -1541,7 +1541,7 @@ class AIOHM_KB_Core_Init {
                     break;
                 case 'ollama':
                     $server_url = sanitize_text_field(wp_unslash($_POST['server_url'] ?? ''));
-                    $model = sanitize_text_field(wp_unslash($_POST['model'] ?? 'llama2'));
+                    $model = sanitize_text_field(wp_unslash($_POST['model'] ?? 'llama3.2'));
                     
                     if (empty($server_url)) {
                         wp_send_json_error(['message' => __('Ollama server URL is required.', 'aiohm-knowledge-assistant')]);

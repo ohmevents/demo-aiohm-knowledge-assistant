@@ -29,7 +29,7 @@ class AIOHM_KB_AI_GPT_Client {
         $this->claude_api_key = $this->settings['claude_api_key'] ?? '';
         $this->shareai_api_key = $this->settings['shareai_api_key'] ?? '';
         $this->ollama_server_url = $this->settings['private_llm_server_url'] ?? '';
-        $this->ollama_model = $this->settings['private_llm_model'] ?? 'llama2';
+        $this->ollama_model = $this->settings['private_llm_model'] ?? 'llama3.2';
     }
     
     /**
