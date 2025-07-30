@@ -275,6 +275,9 @@ class AIOHM_KB_Core_Init {
         add_action('wp_login', array(__CLASS__, 'secure_user_session'), 10, 2);
         add_action('user_register', array(__CLASS__, 'secure_new_user_session'));
         
+        // Add demo upgrade banner to admin header
+        add_action('admin_notices', array(__CLASS__, 'add_demo_upgrade_banner'));
+        
         // --- All original action hooks are preserved ---
         add_action('wp_ajax_aiohm_progressive_scan', array(__CLASS__, 'handle_progressive_scan_ajax'));
         add_action('wp_ajax_aiohm_check_api_key', array(__CLASS__, 'handle_check_api_key_ajax'));
@@ -4524,6 +4527,42 @@ class AIOHM_KB_Core_Init {
             AIOHM_KB_Assistant::log('Setting Save Error: ' . $e->getMessage(), 'error');
             wp_send_json_error(['message' => __('An error occurred while saving the setting.', 'aiohm-knowledge-assistant')]);
         }
+    }
+
+    /**
+     * Add demo upgrade banner to admin header
+     */
+    public static function add_demo_upgrade_banner() {
+        // Only show on AIOHM admin pages and only for demo version
+        if (!defined('AIOHM_KB_VERSION') || AIOHM_KB_VERSION !== 'DEMO') {
+            return;
+        }
+        
+        // Only show on AIOHM plugin pages
+        $screen = get_current_screen();
+        if (!$screen || strpos($screen->id, 'aiohm') === false) {
+            return;
+        }
+        
+        ?>
+        <div class="notice" style="background: #cbddd1; border: 2px solid #457d58; color: #272727; padding: 20px; border-radius: 12px; margin: 20px 0; text-align: center; font-family: 'Montserrat', sans-serif; border-left: 4px solid #457d58;">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 20px;">
+                <div style="flex: 1; text-align: left;">
+                    <h3 style="margin: 0 0 10px 0; color: #1f5014; font-family: 'Montserrat Alternates', sans-serif; font-size: 1.1em;">
+                        🚀 <strong>DEMO VERSION</strong> - You're experiencing AIOHM's interface with simulated responses
+                    </h3>
+                    <p style="margin: 0; color: #272727; font-family: 'PT Sans', sans-serif; font-size: 0.95em;">
+                        Want the complete experience with real AI functionality? Unlock the full power of AIOHM.
+                    </p>
+                </div>
+                <div style="flex-shrink: 0;">
+                    <a href="https://aiohm.app/shop" target="_blank" class="button" style="background: #457d58; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-family: 'Montserrat', sans-serif; font-size: 1em; border: none; box-shadow: 0 3px 8px rgba(69, 125, 88, 0.3);" onmouseover="this.style.background='#1f5014'" onmouseout="this.style.background='#457d58'">
+                        Get Full AIOHM →
+                    </a>
+                </div>
+            </div>
+        </div>
+        <?php
     }
 
     /**

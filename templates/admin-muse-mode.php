@@ -50,22 +50,6 @@ $brand_archetypes = [
     <h1><?php esc_html_e('Muse Mode Customization', 'aiohm-knowledge-assistant'); ?></h1>
     <p class="page-description"><?php esc_html_e('Here, you attune your AI to be a true creative partner. Define its energetic signature and workflow to transform your brand dialogue.', 'aiohm-knowledge-assistant'); ?></p>
 
-    <?php if (defined('AIOHM_KB_VERSION') && AIOHM_KB_VERSION === 'DEMO') : ?>
-    <!-- Demo Version Banner -->
-    <div class="aiohm-demo-banner" style="background: #EBEBEB; border-left: 4px solid #7d9b76; color: #272727; padding: 12px 20px; margin: 15px 0; border-radius: 6px; font-family: 'Montserrat', sans-serif;">
-        <p style="margin: 0; font-weight: 600; font-size: 0.95em;">
-            <strong style="color: #1f5014;">DEMO VERSION</strong> - You're experiencing AIOHM's interface with simulated responses.
-        </p>
-    </div>
-
-    <?php if ($is_demo_version) : ?>
-    <!-- Demo Experience Button -->
-    <div class="aiohm-demo-experience-banner" style="background: #cbddd1; border: 2px solid #457d58; color: #272727; padding: 20px; border-radius: 12px; margin: 20px 0; text-align: center; font-family: 'Montserrat', sans-serif;">
-        <h3 style="margin: 0 0 10px 0; color: #1f5014; font-family: 'Montserrat Alternates', sans-serif; font-size: 1.2em;">🎨 Ready to Experience Muse?</h3>
-        <p style="margin: 0 0 15px 0; color: #272727; font-family: 'PT Sans', sans-serif; font-size: 1em;">Try the interactive Muse experience on the demo homepage with simulated AI responses.</p>
-        <a href="<?php echo esc_url(get_permalink(get_page_by_title('AIOHM Demo Experience'))); ?>" class="button" style="background: #457d58; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-family: 'Montserrat', sans-serif; font-size: 1em; border: none; box-shadow: 0 3px 8px rgba(69, 125, 88, 0.3);" onmouseover="this.style.background='#1f5014'" onmouseout="this.style.background='#457d58'">Click Here to Experience Muse →</a>
-    </div>
-    <?php endif; ?>
 
     <div id="aiohm-admin-notice" class="notice is-dismissible" style="display:none; margin-top: 10px;" tabindex="-1" role="alert" aria-live="polite"></div>
 
