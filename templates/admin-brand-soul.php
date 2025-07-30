@@ -105,12 +105,14 @@ foreach ($brand_soul_questions as $section) {
                         echo "<h2 class='question-section-title'>All Done!</h2>";
                         echo "<p class='question-text'>You've completed your Brand Soul questionnaire. You can now save your work, add it to your private knowledge base for your AI to use, or download a copy.</p>";
                         
-                        // Tribe upgrade notification
-                        echo "<div class='aiohm-tribe-upgrade-notice' style='background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%); color: white; padding: 20px; border-radius: 10px; margin: 20px 0; text-align: center;'>";
-                        echo "<h3 style='margin: 0 0 10px 0; color: white;'>🌟 Want the Complete Brand Soul Experience?</h3>";
-                        echo "<p style='margin: 0 0 15px 0; opacity: 0.95;'>You've completed the 5 foundation questions. Register for free AIOHM Tribe to unlock all 20 questions covering Energy, Expression, and Direction!</p>";
-                        echo "<a href='https://aiohm.app/register' target='_blank' style='display: inline-block; background: white; color: #ff6b35; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; margin: 5px;'>→ Join AIOHM Tribe (Free)</a>";
-                        echo "<a href='https://aiohm.app/club' target='_blank' style='display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; margin: 5px;'>Explore AIOHM Club</a>";
+                        // Tribe upgrade notification with OHM brand colors
+                        echo "<div class='aiohm-tribe-upgrade-notice' style='background: #cbddd1; border: 2px solid #457d58; color: #272727; padding: 25px; border-radius: 12px; margin: 20px 0; text-align: center; font-family: \"Montserrat\", sans-serif;'>";
+                        echo "<h3 style='margin: 0 0 15px 0; color: #1f5014; font-family: \"Montserrat Alternates\", sans-serif; font-size: 1.4em; font-weight: 600;'>🌟 Want the Complete Brand Soul Experience?</h3>";
+                        echo "<p style='margin: 0 0 20px 0; color: #272727; font-family: \"PT Sans\", sans-serif; font-size: 1.1em; line-height: 1.5;'>You've completed the 5 foundation questions. Register for free AIOHM Tribe to unlock all 20 questions covering Energy, Expression, and Direction!</p>";
+                        echo "<a href='https://aiohm.app/tribe' target='_blank' style='display: inline-block; background: #457d58; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-family: \"Montserrat\", sans-serif; font-size: 1.1em; margin: 10px; box-shadow: 0 3px 10px rgba(69, 125, 88, 0.3); transition: all 0.3s ease;' onmouseover='this.style.background=\"#1f5014\"' onmouseout='this.style.background=\"#457d58\"'>→ Join AIOHM Tribe (Free)</a>";
+                        echo "<div style='margin-top: 15px; padding-top: 15px; border-top: 1px solid #7d9b76;'>";
+                        echo "<small style='color: #7d9b76; font-family: \"PT Sans\", sans-serif; font-size: 0.9em;'>Already unlocked all features in this demo? Explore the real experience at AIOHM.app</small>";
+                        echo "</div>";
                         echo "</div>";
                         
                         echo "<div class='aiohm-final-actions'></div>";
