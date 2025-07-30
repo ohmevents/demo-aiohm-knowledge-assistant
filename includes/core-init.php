@@ -347,6 +347,9 @@ class AIOHM_KB_Core_Init {
         // MCP Settings AJAX handlers
         add_action('wp_ajax_aiohm_save_mcp_settings', array(__CLASS__, 'handle_save_mcp_settings_ajax'));
         
+        // Privacy Settings AJAX handler
+        add_action('wp_ajax_aiohm_save_setting', array(__CLASS__, 'handle_save_setting_ajax'));
+        
         
         // Allow JSON file uploads for KB functionality
         add_filter('upload_mimes', array(__CLASS__, 'allow_json_uploads'));
@@ -4459,6 +4462,67 @@ class AIOHM_KB_Core_Init {
         } catch (Exception $e) {
             AIOHM_KB_Assistant::log('MCP Settings Save Error: ' . $e->getMessage(), 'error');
             wp_send_json_error(['message' => self::get_safe_error_message($e, 'mcp_settings_save')]);
+        }
+    }
+
+    /**
+     * Handle saving individual settings like privacy consent
+     */
+    public static function handle_save_setting_ajax() {
+        // Security checks
+        if (!current_user_can('manage_options')) {
+            wp_send_json_error(['message' => __('Permission denied.', 'aiohm-knowledge-assistant')]);
+        }
+
+        if (!isset($_POST['nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['nonce'])), 'aiohm_admin_nonce')) {
+            wp_send_json_error(['message' => __('Security check failed.', 'aiohm-knowledge-assistant')]);
+        }
+
+        // Get and validate inputs
+        $setting_key = isset($_POST['setting_key']) ? sanitize_key($_POST['setting_key']) : '';
+        $setting_value = isset($_POST['setting_value']) ? sanitize_text_field(wp_unslash($_POST['setting_value'])) : '';
+
+        if (empty($setting_key)) {
+            wp_send_json_error(['message' => __('Missing setting key.', 'aiohm-knowledge-assistant')]);
+        }
+
+        try {
+            // Get current settings
+            $current_settings = get_option('aiohm_kb_settings', []);
+            
+            // Handle specific settings
+            switch ($setting_key) {
+                case 'external_api_consent':
+                    // Convert to boolean
+                    $current_settings[$setting_key] = ($setting_value === '1');
+                    break;
+                default:
+                    wp_send_json_error(['message' => __('Unknown setting key.', 'aiohm-knowledge-assistant')]);
+                    return;
+            }
+            
+            // Save the updated settings
+            $result = update_option('aiohm_kb_settings', $current_settings);
+            
+            if ($result !== false) {
+                wp_send_json_success([
+                    'message' => __('Setting saved successfully!', 'aiohm-knowledge-assistant')
+                ]);
+            } else {
+                // Check if value was already the same (update_option returns false if no change)
+                $verify_settings = get_option('aiohm_kb_settings', []);
+                if (isset($verify_settings[$setting_key]) && $verify_settings[$setting_key] === $current_settings[$setting_key]) {
+                    wp_send_json_success([
+                        'message' => __('Setting saved successfully!', 'aiohm-knowledge-assistant')
+                    ]);
+                } else {
+                    wp_send_json_error(['message' => __('Failed to save setting. Please try again.', 'aiohm-knowledge-assistant')]);
+                }
+            }
+            
+        } catch (Exception $e) {
+            AIOHM_KB_Assistant::log('Setting Save Error: ' . $e->getMessage(), 'error');
+            wp_send_json_error(['message' => __('An error occurred while saving the setting.', 'aiohm-knowledge-assistant')]);
         }
     }
 
