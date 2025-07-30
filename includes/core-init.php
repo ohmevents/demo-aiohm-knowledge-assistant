@@ -4549,10 +4549,10 @@ class AIOHM_KB_Core_Init {
             <div style="display: flex; align-items: center; justify-content: center; gap: 20px;">
                 <div style="flex: 1; text-align: left;">
                     <h3 style="margin: 0 0 10px 0; color: #1f5014; font-family: 'Montserrat Alternates', sans-serif; font-size: 1.1em;">
-                        🚀 <strong>DEMO VERSION</strong> - You're experiencing AIOHM's interface with simulated responses
+                        🚀 <strong>DEMO VERSION</strong> - This is a fully functional demo with some features restricted
                     </h3>
                     <p style="margin: 0; color: #272727; font-family: 'PT Sans', sans-serif; font-size: 0.95em;">
-                        Want the complete experience with real AI functionality? Unlock the full power of AIOHM.
+                        Ready to unlock the complete AIOHM experience? Get real AI functionality and full access.
                     </p>
                 </div>
                 <div style="flex-shrink: 0;">

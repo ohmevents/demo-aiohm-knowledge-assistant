@@ -18,14 +18,6 @@ include_once AIOHM_KB_PLUGIN_DIR . 'templates/partials/header.php';
     <a href="<?php echo esc_url(add_query_arg(['page' => 'aiohm-scan-content'], admin_url('admin.php'))); ?>" class="page-title-action aiohm-btn-secondary scan-website-link"><?php esc_html_e('Scan Website', 'aiohm-knowledge-assistant'); ?></a>
     <p class="page-description"><?php esc_html_e('View, organize, and manage all your knowledge base entries in one place.', 'aiohm-knowledge-assistant'); ?></p>
     
-    <?php if (defined('AIOHM_KB_VERSION') && AIOHM_KB_VERSION === 'DEMO') : ?>
-    <!-- Demo Version Banner -->
-    <div class="aiohm-demo-banner" style="background: #EBEBEB; border-left: 4px solid #7d9b76; color: #272727; padding: 12px 20px; margin: 15px 0; border-radius: 6px; font-family: 'Montserrat', sans-serif;">
-        <p style="margin: 0; font-weight: 600; font-size: 0.95em;">
-            <strong style="color: #1f5014;">DEMO VERSION</strong> - You're experiencing AIOHM's interface with simulated responses.
-        </p>
-    </div>
-    <?php endif; ?>
 
     <div id="aiohm-admin-notice" class="notice is-dismissible admin-notice-hidden" tabindex="-1" role="alert" aria-live="polite"></div>
 
