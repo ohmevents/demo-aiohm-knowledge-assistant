@@ -1,0 +1,44 @@
+/* OHM Brand Identity */
+#aiohm-scan-page {
+    --ohm-primary: #457d58; --ohm-dark: #272727; --ohm-light-accent: #cbddd1; --ohm-muted-accent: #7d9b76; --ohm-light-bg: #EBEBEB; --ohm-dark-accent: #1f5014; --ohm-font-primary: 'Montserrat', 'Montserrat Alternates', sans-serif; --ohm-font-secondary: 'PT Sans', sans-serif;
+}
+#aiohm-scan-page h1, #aiohm-scan-page h2, #aiohm-scan-page h3, #aiohm-scan-page h4 { font-family: var(--ohm-font-primary); color: var(--ohm-dark-accent); }
+#aiohm-scan-page p, #aiohm-scan-page .stat-item, #aiohm-scan-page .wp-list-table { font-family: var(--ohm-font-secondary); color: var(--ohm-dark); }
+.wrap > .page-description { font-size: 1.1em; padding-bottom: 1em; border-bottom: 1px solid var(--ohm-light-bg); margin-bottom: 1em; color: var(--ohm-dark); font-family: var(--ohm-font-secondary); }
+#aiohm-scan-page .button-primary { background-color: var(--ohm-primary); border-color: var(--ohm-dark-accent); color: #fff; font-family: var(--ohm-font-primary); font-weight:bold; }
+#aiohm-scan-page .button-primary:hover, #aiohm-scan-page .notice-warning .button-primary:hover { background-color: var(--ohm-dark-accent); border-color: var(--ohm-dark-accent); }
+#aiohm-scan-page .button-primary:disabled { background-color: var(--ohm-muted-accent); border-color: var(--ohm-muted-accent); }
+#aiohm-scan-page .aiohm-scan-section { background: #fff; padding: 25px; border: 1px solid var(--ohm-light-bg); border-radius: 4px; height: 100%; }
+#aiohm-scan-page .aiohm-stats-boxes { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+#aiohm-scan-page .aiohm-stats-box { background: #fff; border: 1px solid var(--ohm-light-bg); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+#aiohm-scan-page .stats-box-header { background: var(--ohm-primary); color: white; padding: 15px 20px; }
+#aiohm-scan-page .stats-box-header h4 { margin: 0; font-size: 16px; font-weight: 600; color: white; }
+#aiohm-scan-page .stats-box-content { padding: 20px; }
+#aiohm-scan-page .stat-item { margin-bottom: 12px; padding: 12px; background: #f8faf9; border-left: 3px solid var(--ohm-light-accent); border-radius: 4px; }
+#aiohm-scan-page .stat-item.total-stat { border-left-color: var(--ohm-primary); background: #f0f8f4; }
+#aiohm-scan-page .stat-item:last-child { margin-bottom: 0; }
+#aiohm-scan-page .stat-number { font-size: 24px; font-weight: bold; color: var(--ohm-primary); display: block; }
+#aiohm-scan-page .stat-label { font-size: 13px; color: var(--ohm-muted-accent); }
+#aiohm-scan-page .aiohm-scan-columns-wrapper { margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+#aiohm-scan-page .progress-bar-inner { background-color: var(--ohm-primary); }
+#aiohm-scan-page .progress-bar-wrapper { background-color: var(--ohm-light-bg); }
+#aiohm-scan-page .status-knowledge-base { color: var(--ohm-primary); font-weight: bold; }
+#aiohm-scan-page .status-ready-to-add { color: #007cba; font-weight: bold; }
+#aiohm-scan-page .status-failed-to-add { color: #dc3545; font-weight: bold; background: #f8d7da; padding: 3px 8px; border-radius: 4px; border: 1px solid #f5c6cb; }
+#aiohm-scan-page .add-single-item-link { color: #007cba; }
+#aiohm-scan-page .add-single-item-link:hover { color: var(--ohm-dark-accent); }
+#aiohm-scan-page .aiohm-scan-progress { border: 1px solid var(--ohm-light-accent); border-radius: 6px; padding: 15px; background: #f8faf9; }
+#aiohm-scan-page .progress-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+#aiohm-scan-page .progress-label { font-family: var(--ohm-font-secondary); color: var(--ohm-dark); font-size: 14px; }
+#aiohm-scan-page .progress-percentage { font-family: var(--ohm-font-primary); color: var(--ohm-primary); font-weight: bold; font-size: 16px; }
+#aiohm-scan-page .progress-bar-wrapper { height: 12px; background-color: var(--ohm-light-bg); border-radius: 6px; overflow: hidden; box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); }
+#aiohm-scan-page .progress-bar-inner { height: 100%; background: linear-gradient(90deg, var(--ohm-primary) 0%, var(--ohm-dark-accent) 100%); border-radius: 6px; transition: width 0.3s ease; }
+.aiohm-content-type-badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; text-transform: uppercase; white-space: nowrap; }
+.type-post { background-color: #e7f5ff; color: #005a87; }
+.type-page { background-color: #f3e7ff; color: #6f42c1; }
+.type-application { background-color: #ffe7e7; color: #d63384; }
+.type-text { background-color: #fff8e7; color: #b8860b; }
+.type-pdf { background-color: #ffe7e7; color: #d63384; }
+.type-word { background-color: #e7f0ff; color: #1e40af; }
+.type-file { background-color: #f3f4f6; color: #6b7280; }
+@media (max-width: 960px) { #aiohm-scan-page .aiohm-scan-columns-wrapper, #aiohm-scan-page .aiohm-stats-boxes { grid-template-columns: 1fr; } }

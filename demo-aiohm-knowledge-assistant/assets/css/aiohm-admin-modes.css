@@ -1,0 +1,642 @@
+/**
+ * AIOHM Knowledge Assistant - Admin Mode Styles
+ *
+ * This file contains the shared styles for the Mirror Mode and Muse Mode
+ * customization pages in the AIOHM admin dashboard.
+ */
+
+/* --- OHM Brand Identity & Global Variables --- */
+:root {
+    --ohm-primary: #457d58;
+    --ohm-dark: #272727;
+    --ohm-light-accent: #cbddd1;
+    --ohm-muted-accent: #7d9b76;
+    --ohm-light-bg: #EBEBEB;
+    --ohm-dark-accent: #1f5014;
+    --ohm-font-primary: 'Montserrat', 'Montserrat Alternates', sans-serif;
+    --ohm-font-secondary: 'PT Sans', sans-serif;
+}
+
+/* --- General Page & Typography Styles --- */
+.aiohm-settings-page h1,
+.aiohm-settings-page h2,
+.aiohm-settings-page h3 {
+    font-family: var(--ohm-font-primary);
+    color: var(--ohm-dark-accent);
+}
+
+.aiohm-page-header {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--ohm-light-bg);
+}
+
+.aiohm-page-header h1 {
+    margin-bottom: 10px;
+    font-size: 2.2em;
+}
+
+.aiohm-settings-page .page-description {
+    font-size: 1.1em;
+    font-family: var(--ohm-font-secondary);
+    color: var(--ohm-dark);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* --- Main Layout Grid --- */
+.aiohm-mirror-mode-layout,
+.aiohm-muse-mode-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.aiohm-settings-form-wrapper,
+.aiohm-test-column {
+    background: #fff;
+    padding: 20px 30px;
+    border: 1px solid var(--ohm-light-bg);
+    border-radius: 8px;
+}
+
+/* --- Form & Settings Block Styles --- */
+.aiohm-settings-section {
+    background: #fdfdfd;
+    border: 1px solid var(--ohm-light-bg);
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.aiohm-section-title {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: var(--ohm-dark-accent);
+    margin: 0 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--ohm-light-bg);
+}
+
+.aiohm-setting-block {
+    margin-bottom: 20px;
+}
+
+.aiohm-setting-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.aiohm-setting-header label {
+    margin-bottom: 0;
+}
+
+.aiohm-setting-block label {
+    display: block;
+    font-family: var(--ohm-font-primary);
+    font-weight: bold;
+    font-size: 1.1em;
+    color: var(--ohm-dark-accent);
+    margin-bottom: 8px;
+}
+
+.aiohm-setting-block input[type="text"],
+.aiohm-setting-block input[type="url"],
+.aiohm-setting-block textarea,
+.aiohm-setting-block select {
+    width: 100%;
+    padding: 10px;
+    font-family: var(--ohm-font-secondary);
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.aiohm-setting-block textarea {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: normal;
+}
+
+/* Soul Signature textarea specific styling */
+.aiohm-setting-block textarea#qa_system_message {
+    font-family: 'Courier New', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    background: #fafafa;
+    border: 2px solid #e1e1e1;
+    border-radius: 6px;
+    padding: 15px;
+    min-height: 400px;
+    resize: vertical;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.aiohm-setting-block textarea#qa_system_message:focus {
+    border-color: var(--ohm-primary);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 0 2px rgba(69, 125, 88, 0.15);
+    outline: none;
+}
+
+.aiohm-setting-block p.description {
+    font-family: var(--ohm-font-secondary);
+    color: #666;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.form-actions {
+    margin-top: 30px;
+}
+
+/* --- Specific Input Styles --- */
+.aiohm-color-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.aiohm-color-item {
+    text-align: center;
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.aiohm-color-item:hover {
+    border-color: var(--ohm-primary);
+    box-shadow: 0 2px 8px rgba(69, 125, 88, 0.1);
+}
+
+.aiohm-color-item label {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: var(--ohm-dark-accent);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.aiohm-color-item input[type="color"] {
+    width: 100%;
+    height: 50px;
+    border: 2px solid #e5e5e5;
+    padding: 2px;
+    cursor: pointer;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+.aiohm-color-item input[type="color"]:hover {
+    border-color: var(--ohm-primary);
+}
+
+.color-description {
+    display: block;
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.range-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: 0.85em;
+    color: #666;
+}
+
+.aiohm-avatar-uploader {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.aiohm-avatar-uploader input[type="text"] {
+    flex-grow: 1;
+}
+
+.temp-value {
+    color: var(--ohm-primary);
+    font-weight: bold;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    background: var(--ohm-light-bg);
+    border-radius: 5px;
+    outline: none;
+    margin-top: 10px;
+}
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--ohm-primary);
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: var(--ohm-primary);
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+
+/* --- Test Column & Live Preview Styles --- */
+.aiohm-test-header {
+    margin-bottom: 20px;
+}
+
+.aiohm-test-header h3 {
+    margin-bottom: 8px;
+    font-size: 1.4em;
+}
+
+.aiohm-shortcode-info {
+    background: var(--ohm-light-bg);
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+.aiohm-shortcode-info code {
+    background: #fff;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    border: 1px solid #ddd;
+    margin: 0 8px;
+}
+
+.aiohm-copy-shortcode {
+    cursor: pointer;
+    margin-left: 8px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    transition: background-color 0.2s ease;
+}
+
+.aiohm-copy-shortcode:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.aiohm-test-column .aiohm-chat-container {
+    border: 2px solid var(--ohm-light-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--aiohm-background-color, #f0f4f8);
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.aiohm-test-column .aiohm-chat-header {
+    background: var(--aiohm-primary-color, var(--ohm-dark-accent));
+    color: var(--aiohm-text-color, #ffffff);
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.aiohm-test-column .aiohm-chat-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.aiohm-test-column .aiohm-status-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #28a745;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.aiohm-test-column .aiohm-chat-messages {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #fff;
+}
+
+.aiohm-test-column .aiohm-message {
+    display: flex;
+    gap: 10px;
+    max-width: 85%;
+    margin-bottom: 10px;
+}
+
+.aiohm-test-column .aiohm-message-bot {
+    align-self: flex-start;
+}
+
+.aiohm-test-column .aiohm-message-user {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+
+.aiohm-test-column .aiohm-message-avatar img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.aiohm-test-column .aiohm-message-bubble {
+    padding: 10px 15px;
+    border-radius: 12px;
+    line-height: 1.6;
+}
+
+.aiohm-test-column .aiohm-message-bot .aiohm-message-bubble {
+    background-color: var(--ohm-light-bg);
+    color: var(--ohm-dark);
+    border-bottom-left-radius: 4px;
+}
+
+.aiohm-test-column .aiohm-message-user .aiohm-message-bubble {
+    background-color: var(--aiohm-primary-color, var(--ohm-primary));
+    color: #fff;
+    border-bottom-right-radius: 4px;
+}
+
+.aiohm-test-column .aiohm-chat-input-container {
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-top: 1px solid var(--ohm-light-bg);
+}
+
+.aiohm-test-column .aiohm-chat-input-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--ohm-light-bg);
+    border-radius: 8px;
+    padding: 5px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background: #fff;
+}
+
+.aiohm-test-column .aiohm-chat-input-wrapper:focus-within {
+    border-color: var(--ohm-primary);
+    box-shadow: 0 0 0 2px var(--ohm-light-accent);
+}
+
+.aiohm-test-column .aiohm-chat-input {
+    flex-grow: 1;
+    border: none;
+    padding: 8px;
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    resize: none;
+    font-family: var(--ohm-font-secondary);
+}
+
+.aiohm-test-column .aiohm-chat-send-btn {
+    background: var(--ohm-primary);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+}
+
+.aiohm-test-column .aiohm-chat-send-btn:disabled {
+    background: var(--ohm-muted-accent);
+}
+
+/* --- Footer Preview Styles --- */
+.aiohm-chat-footer-preview {
+    text-align: center;
+}
+.aiohm-chat-footer-branding, .aiohm-chat-footer-button {
+    transition: background-color 0.2s;
+}
+.aiohm-chat-footer-branding {
+    padding: 8px 15px;
+    background-color: #EBEBEB;
+    font-size: 12px;
+    color: #6c757d;
+}
+.aiohm-chat-footer-branding strong {
+    color: var(--ohm-dark);
+}
+.aiohm-chat-footer-button {
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 15px;
+    color: var(--aiohm-text-color, #ffffff);
+    background-color: var(--aiohm-primary-color, #457d58);
+}
+.aiohm-chat-footer-button:hover {
+    color: var(--aiohm-text-color, #ffffff);
+    filter: brightness(90%);
+}
+
+
+/* --- KB Search & Q&A Generator Styles --- */
+.aiohm-search-container-wrapper,
+.q-and-a-generator {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--ohm-light-bg);
+}
+
+.aiohm-search-controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.aiohm-search-form {
+    flex-grow: 1;
+}
+
+.aiohm-search-input-wrapper {
+    display: flex;
+    border: 2px solid var(--ohm-light-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    height: 44px;
+}
+
+.aiohm-search-input {
+    flex-grow: 1;
+    border: none;
+    padding: 10px 15px;
+    outline: none;
+}
+
+.aiohm-search-btn {
+    background: var(--ohm-primary);
+    border: none;
+    color: white;
+    padding: 0 15px;
+    cursor: pointer;
+}
+
+.aiohm-search-filters select {
+    height: 44px;
+    padding: 0 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.aiohm-search-results {
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.aiohm-search-result-item {
+    background: #fdfdfd;
+    border: 1px solid var(--ohm-light-bg);
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.aiohm-search-result-item h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.1em;
+}
+
+.aiohm-search-result-item p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.aiohm-search-result-item .result-meta {
+    font-size: 0.8em;
+    color: #777;
+    margin-top: 5px;
+}
+
+.q-and-a-generator .button-secondary {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.q-and-a-container {
+    margin-top: 15px;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px solid var(--ohm-light-bg);
+    text-align: left;
+}
+
+.q-and-a-container .q-title {
+    font-weight: bold;
+    color: var(--ohm-dark-accent);
+}
+
+/* Enhanced Q&A Sample Styling */
+.qa-sample-container {
+    background: linear-gradient(135deg, #f8fbf9 0%, #f0f8f4 100%);
+    border: 2px solid var(--ohm-light-accent);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 15px;
+    box-shadow: 0 2px 8px rgba(69, 125, 88, 0.1);
+}
+
+.qa-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--ohm-light-accent);
+}
+
+.qa-header h4 {
+    margin: 0;
+    color: var(--ohm-dark-accent);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+.qa-icon {
+    font-size: 20px;
+}
+
+.qa-question, .qa-answer {
+    margin-bottom: 15px;
+}
+
+.qa-answer {
+    margin-bottom: 0;
+}
+
+.qa-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--ohm-dark-accent);
+}
+
+.qa-q-icon, .qa-a-icon {
+    font-size: 16px;
+}
+
+.qa-content {
+    background: white;
+    padding: 12px 15px;
+    border-radius: 6px;
+    border-left: 4px solid var(--ohm-light-accent);
+    line-height: 1.5;
+    font-size: 14px;
+    color: #333;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.qa-answer .qa-content {
+    border-left-color: var(--ohm-dark-accent);
+    background: #fafcfb;
+}
+
+.qa-error {
+    background: #fee;
+    color: #c33;
+    padding: 12px 15px;
+    border-radius: 6px;
+    border-left: 4px solid #c33;
+    margin-top: 15px;
+    font-size: 14px;
+}

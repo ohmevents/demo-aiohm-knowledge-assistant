@@ -1,0 +1,254 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
+/**
+ * Simple PDF Generator for AIOHM
+ * 
+ * A basic PDF generator that creates properly formatted content
+ * without complex dependencies
+ */
+class AIOHM_Simple_PDF_Generator {
+    
+    private $content;
+    private $title;
+    
+    public function __construct($title = 'AIOHM Document') {
+        $this->title = $title;
+        $this->content = '';
+    }
+    
+    /**
+     * Add a chapter title
+     */
+    public function ChapterTitle($title) {
+        $this->content .= "<h1 style='color: #1f5014; font-size: 18px; margin: 20px 0 10px 0; border-bottom: 2px solid #1f5014; padding-bottom: 5px;'>" . esc_html($title) . "</h1>\n";
+    }
+    
+    /**
+     * Add a message block
+     */
+    public function MessageBlock($sender, $content, $timestamp) {
+        $sender_name = '';
+        $bg_color = '';
+        $text_color = '';
+        
+        switch ($sender) {
+            case 'question':
+                $sender_name = 'Question';
+                $bg_color = '#1f5014';
+                $text_color = '#ffffff';
+                break;
+            case 'answer':
+                $sender_name = 'Answer';
+                $bg_color = '#f0f0f0';
+                $text_color = '#333333';
+                break;
+            case 'user':
+                $sender_name = 'You';
+                $bg_color = '#f0f0f0';
+                $text_color = '#333333';
+                break;
+            default:
+                $sender_name = 'Assistant';
+                $bg_color = '#1f5014';
+                $text_color = '#ffffff';
+                break;
+        }
+        
+        $formatted_time = gmdate('M j, Y g:i A', strtotime($timestamp));
+        
+        // Clean content
+        $content = wp_strip_all_tags($content);
+        $content = html_entity_decode($content, ENT_QUOTES, 'UTF-8');
+        $content = esc_html($content);
+        $content = nl2br($content);
+        
+        $this->content .= "
+        <div style='margin-bottom: 15px; page-break-inside: avoid;'>
+            <div style='background-color: {$bg_color}; color: {$text_color}; padding: 8px 10px; font-weight: bold; font-size: 10pt; border-radius: 5px 5px 0 0;'>
+                <span>{$sender_name}</span>
+                <span style='font-size: 9pt; font-weight: normal;'> - {$formatted_time}</span>
+            </div>
+            <div style='padding: 10px; border: 1px solid #ddd; border-top: none; border-radius: 0 0 5px 5px; background-color: white;'>
+                {$content}
+            </div>
+        </div>\n";
+    }
+    
+    /**
+     * Add a new page (just add some spacing)
+     */
+    public function AddPage($orientation = '') {
+        $this->content .= "<div style='page-break-before: always;'></div>\n";
+    }
+    
+    /**
+     * Output the content as HTML with PDF-like styling
+     */
+    public function Output($filename = '', $dest = 'D') {
+        $html = $this->generateHTML();
+        
+        switch ($dest) {
+            case 'D': // Download
+                $this->downloadAsHTML($filename, $html);
+                break;
+            case 'I': // Inline
+                $this->displayHTML($html);
+                break;
+            case 'S': // String
+                return $html;
+            default:
+                $this->displayHTML($html);
+                break;
+        }
+    }
+    
+    /**
+     * Generate complete HTML document
+     */
+    private function generateHTML() {
+        // Start output buffering to build HTML safely
+        ob_start();
+        ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><?php echo esc_html($this->title); ?></title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            font-size: 11pt; 
+            line-height: 1.4;
+            margin: 20px;
+            background: white;
+        }
+        .header {
+            text-align: center;
+            color: #1f5014;
+            font-weight: bold;
+            font-size: 14pt;
+            border-bottom: 1px solid #1f5014;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+        .footer {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            text-align: center;
+            font-size: 8pt;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        @media print {
+            .no-print { display: none; }
+            body { margin: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <?php echo esc_html($this->title); ?>
+    </div>
+    
+    <div class="content">
+        <?php echo wp_kses_post($this->content); ?>
+    </div>
+    
+    <div class="footer">
+        <?php 
+        printf(
+            /* translators: %1$s: version number, %2$s: date */
+            esc_html__('Generated by AIOHM KB Assistant v%1$s on %2$s UTC', 'aiohm-knowledge-assistant'),
+            esc_html(AIOHM_KB_VERSION),
+            esc_html(gmdate('Y-m-d H:i:s'))
+        ); 
+        ?>
+    </div>
+    
+    <div class="no-print" style="position: fixed; top: 10px; right: 10px; background: #1f5014; color: white; padding: 10px; border-radius: 5px; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3);">
+        <strong><?php esc_html_e('📄 Create PDF:', 'aiohm-knowledge-assistant'); ?></strong><br>
+        <?php esc_html_e('Press Ctrl+P (or Cmd+P on Mac)', 'aiohm-knowledge-assistant'); ?><br>
+        <?php esc_html_e('Select "Save as PDF" as destination', 'aiohm-knowledge-assistant'); ?><br>
+        <small style="opacity: 0.8;"><?php esc_html_e('This will create a professional PDF file', 'aiohm-knowledge-assistant'); ?></small>
+    </div>
+</body>
+</html>
+        <?php
+        return ob_get_clean();
+    }
+    
+    /**
+     * Download as HTML file with PDF-like styling
+     */
+    private function downloadAsHTML($filename, $html) {
+        if (empty($filename)) {
+            $filename = 'aiohm-document-' . gmdate('Y-m-d') . '.html';
+        } else {
+            // Keep original filename but change extension to .html
+            $filename = str_replace('.pdf', '.html', $filename);
+        }
+        
+        header('Content-Type: text/html; charset=utf-8');
+        header('Content-Disposition: attachment; filename="' . esc_attr($filename) . '"');
+        header('Cache-Control: private, max-age=0, must-revalidate');
+        header('Pragma: public');
+        
+        // Output the properly escaped HTML content
+        $this->outputHTML($html);
+        exit;
+    }
+    
+    /**
+     * Display HTML in browser
+     */
+    private function displayHTML($html) {
+        header('Content-Type: text/html; charset=utf-8');
+        // Output the properly escaped HTML content
+        $this->outputHTML($html);
+        exit;
+    }
+    
+    /**
+     * Safely output HTML content
+     */
+    private function outputHTML($html) {
+        // Define allowed HTML tags and attributes for PDF content
+        $allowed_html = array(
+            'html' => array(),
+            'head' => array(),
+            'meta' => array('charset' => array()),
+            'title' => array(),
+            'style' => array(),
+            'body' => array(),
+            'div' => array(
+                'class' => array(),
+                'style' => array(),
+            ),
+            'h1' => array(
+                'style' => array(),
+            ),
+            'h2' => array(
+                'style' => array(),
+            ),
+            'h3' => array(
+                'style' => array(),
+            ),
+            'span' => array(
+                'style' => array(),
+            ),
+            'strong' => array(),
+            'br' => array(),
+            'p' => array(),
+            'small' => array(
+                'style' => array(),
+            ),
+            'kbd' => array(),
+        );
+        
+        echo wp_kses($html, $allowed_html);
+    }
+}

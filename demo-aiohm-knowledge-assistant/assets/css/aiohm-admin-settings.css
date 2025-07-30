@@ -1,0 +1,461 @@
+    :root {
+        --ohm-primary: #457d58;
+        --ohm-dark: #272727;
+        --ohm-light-accent: #cbddd1;
+        --ohm-light-bg: #EBEBEB;
+        --ohm-dark-accent: #1f5014;
+        --ohm-font-primary: 'Montserrat', sans-serif;
+        --ohm-font-secondary: 'PT Sans', sans-serif;
+    }
+
+    /* Global OHM Branding */
+    .aiohm-settings-page h1,
+    .aiohm-settings-page h2 {
+        font-family: var(--ohm-font-primary);
+        color: var(--ohm-dark-accent);
+    }
+
+    .aiohm-settings-page .page-description,
+    .aiohm-settings-page p.description,
+    .aiohm-settings-page .aiohm-section-description,
+    .aiohm-settings-page th,
+    .aiohm-settings-page label {
+        font-family: var(--ohm-font-secondary);
+        color: var(--ohm-dark);
+    }
+
+    .aiohm-settings-page .page-description {
+        font-size: 1.1em;
+        padding-bottom: 1em;
+        border-bottom: 1px solid var(--ohm-light-bg);
+        margin-bottom: 20px;
+    }
+
+    /* Card Design */
+    .aiohm-card {
+        background: #fff;
+        padding: 20px;
+        border: 1px solid var(--ohm-light-bg);
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .aiohm-card h2 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--ohm-light-accent);
+    }
+
+    .aiohm-section-description {
+        margin-bottom: 20px;
+        font-style: italic;
+        color: #666;
+    }
+
+    /* Service Title Styling */
+    .aiohm-service-title {
+        font-family: var(--ohm-font-primary);
+        color: var(--ohm-dark-accent);
+        font-size: 1.2em;
+        font-weight: 600;
+        margin: 20px 0 15px 0;
+        padding-bottom: 8px;
+        border-bottom: 1px solid var(--ohm-light-accent);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* Service Icon Styling */
+    .aiohm-service-icon {
+        width: 24px;
+        height: 24px;
+        border-radius: 4px;
+        object-fit: contain;
+        flex-shrink: 0;
+    }
+
+    /* Service Content Styling */
+    .aiohm-service-content {
+        margin-bottom: 25px;
+        padding-left: 0;
+    }
+
+    .aiohm-service-content .aiohm-api-key-wrapper,
+    .aiohm-service-content .description {
+        margin-bottom: 10px;
+    }
+
+
+    /* Button Styling */
+    .aiohm-settings-page .button-primary {
+        background: var(--ohm-primary) !important;
+        border-color: var(--ohm-dark-accent) !important;
+        font-family: var(--ohm-font-primary);
+        font-weight: bold;
+        box-shadow: none;
+        text-shadow: none;
+    }
+
+    .aiohm-settings-page .button-primary:hover {
+        background: var(--ohm-dark-accent) !important;
+    }
+
+    /* API Key Wrapper */
+    .aiohm-api-key-wrapper {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+    }
+
+    /* ShareAI Settings Box */
+    .aiohm-shareai-settings-box {
+        background: #f8f9fa;
+        border: 1px solid var(--ohm-light-accent);
+        border-radius: 6px;
+        padding: 15px;
+        margin: 5px 0;
+    }
+
+    .shareai-setting-row {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+
+    .shareai-setting-row:last-child {
+        margin-bottom: 0;
+    }
+
+    .shareai-inline-label {
+        font-weight: 600;
+        color: var(--ohm-dark);
+        min-width: 80px;
+        font-family: var(--ohm-font-primary);
+    }
+
+    .shareai-setting-row .aiohm-api-key-wrapper,
+    .shareai-setting-row select {
+        flex: 1;
+    }
+
+    .shareai-setting-row select {
+        max-width: none;
+    }
+
+    .shareai-usage-notice {
+        background: #e8f5e8;
+        border: 1px solid var(--ohm-light-accent);
+        border-radius: 4px;
+        padding: 12px;
+        margin-top: 10px;
+    }
+
+    .shareai-usage-notice strong {
+        color: var(--ohm-primary);
+    }
+
+    /* Server Selection */
+    .aiohm-server-selection {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+
+    .server-preset-select {
+        min-width: 200px;
+    }
+
+    .aiohm-server-selection input[readonly] {
+        background-color: #f7f7f7;
+        color: #555;
+    }
+
+    /* Premium Settings Wrapper */
+    .aiohm-premium-settings-wrapper {
+        position: relative;
+    }
+
+    .aiohm-premium-settings-wrapper.is-locked .aiohm-card {
+        opacity: 0.6;
+        pointer-events: none;
+    }
+
+    .aiohm-settings-locked-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(235, 235, 235, 0.85);
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        text-align: center;
+        border-radius: 8px;
+        margin: 0;
+    }
+
+    .aiohm-settings-locked-overlay .lock-content {
+        background: #ffffff;
+        padding: 40px;
+        border-radius: 8px;
+        border: 1px solid var(--ohm-light-accent);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        max-width: 450px;
+    }
+
+    .aiohm-settings-locked-overlay .lock-icon {
+        font-size: 3em;
+        color: var(--ohm-primary);
+        margin-bottom: 15px;
+    }
+
+    .unlock-features-list {
+        margin: 20px 0;
+        text-align: left;
+    }
+
+    .unlock-features-list h4 {
+        margin: 0 0 10px 0;
+        color: var(--ohm-dark-accent);
+        font-size: 1.1em;
+    }
+
+    .unlock-features-list ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .unlock-features-list li {
+        margin: 0;
+        padding: 8px 12px;
+        background: #f9f9f9;
+        border-left: 3px solid var(--ohm-primary);
+        border-radius: 4px;
+        font-size: 0.9em;
+        line-height: 1.3;
+    }
+
+    /* AI Usage Overview Styles */
+    .aiohm-usage-overview {
+        background: linear-gradient(135deg, #f8fbf9 0%, #f3f9f5 100%);
+        border: 2px solid var(--ohm-light-accent);
+        border-radius: 8px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .aiohm-usage-overview::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--ohm-dark-accent) 0%, var(--ohm-primary) 100%);
+    }
+
+    .aiohm-usage-stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+
+    .usage-stat-card {
+        background: white;
+        border: 1px solid var(--ohm-light-accent);
+        border-radius: 8px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .usage-stat-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(69, 125, 88, 0.15);
+        border-color: var(--ohm-primary);
+    }
+
+    .stat-icon {
+        font-size: 2.5em;
+        line-height: 1;
+        opacity: 0.8;
+    }
+
+    .stat-content h3 {
+        margin: 0 0 5px 0;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--ohm-dark);
+        font-family: var(--ohm-font-primary);
+    }
+
+    .stat-value {
+        font-size: 24px;
+        font-weight: bold;
+        color: var(--ohm-dark-accent);
+        margin-bottom: 5px;
+        font-family: var(--ohm-font-primary);
+    }
+
+    .stat-subtext {
+        font-size: 12px;
+        color: #666;
+        font-family: var(--ohm-font-secondary);
+    }
+
+    .aiohm-usage-breakdown h3 {
+        margin-bottom: 15px;
+        color: var(--ohm-dark-accent);
+        font-family: var(--ohm-font-primary);
+    }
+
+    .usage-breakdown-table {
+        background: white;
+        border: 1px solid var(--ohm-light-accent);
+        border-radius: 6px;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+
+    .breakdown-header,
+    .breakdown-row {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 15px;
+        padding: 15px 20px;
+        align-items: center;
+    }
+
+    .breakdown-header {
+        background: var(--ohm-light-bg);
+        font-weight: 600;
+        font-size: 13px;
+        color: var(--ohm-dark);
+        font-family: var(--ohm-font-primary);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .breakdown-row {
+        border-bottom: 1px solid var(--ohm-light-bg);
+        transition: background-color 0.2s ease;
+    }
+
+    .breakdown-row:last-child {
+        border-bottom: none;
+    }
+
+    .breakdown-row:hover {
+        background: #f8fbf9;
+    }
+
+    .provider-name {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 500;
+        color: var(--ohm-dark);
+        font-family: var(--ohm-font-secondary);
+    }
+
+    .provider-icon {
+        font-size: 16px;
+    }
+
+    /* ShareAI Custom Icons */
+    .provider-icon-img {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+
+    .provider-breakdown-icon {
+        width: 16px;
+        height: 16px;
+        border-radius: 4px;
+        object-fit: cover;
+    }
+
+    .tokens-count,
+    .requests-count,
+    .cost-estimate {
+        font-family: 'Monaco', 'Menlo', monospace;
+        font-size: 13px;
+        color: var(--ohm-dark);
+        text-align: right;
+    }
+
+    .cost-estimate {
+        font-weight: 600;
+        color: var(--ohm-primary);
+    }
+
+    #refresh-usage-stats {
+        background: var(--ohm-primary);
+        border-color: var(--ohm-primary);
+        color: white;
+        font-family: var(--ohm-font-primary);
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    #refresh-usage-stats:hover {
+        background: var(--ohm-dark-accent);
+        border-color: var(--ohm-dark-accent);
+        transform: translateY(-1px);
+    }
+
+    #refresh-usage-stats .dashicons {
+        margin-right: 5px;
+        vertical-align: middle;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .aiohm-usage-stats-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .breakdown-header,
+        .breakdown-row {
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+        
+        .breakdown-header span,
+        .breakdown-row span {
+            text-align: left;
+        }
+        
+        .usage-stat-card {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .shareai-setting-row {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 10px;
+        }
+
+        .shareai-inline-label {
+            min-width: auto;
+        }
+    }

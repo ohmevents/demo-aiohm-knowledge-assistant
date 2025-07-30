@@ -1,0 +1,143 @@
+/* OHM Brand Identity */
+.aiohm-dashboard {
+    --ohm-primary: #457d58;
+    --ohm-dark: #272727;
+    --ohm-light-accent: #cbddd1;
+    --ohm-muted-accent: #7d9b76;
+    --ohm-light-bg: #EBEBEB;
+    --ohm-dark-accent: #1f5014;
+    --ohm-font-primary: 'Montserrat', 'Montserrat Alternates', sans-serif;
+    --ohm-font-secondary: 'PT Sans', sans-serif;
+}
+
+/* Global Dashboard Styles */
+.aiohm-dashboard .aiohm-header h1,
+.aiohm-dashboard h2,
+.aiohm-dashboard .aiohm-step h3,
+.aiohm-sales-page .headline, 
+.aiohm-sales-page .benefit h3, 
+.aiohm-sales-page .cta h2 {
+    font-family: var(--ohm-font-primary);
+    color: var(--ohm-dark-accent);
+    line-height: 1.4;
+}
+.aiohm-dashboard .aiohm-tagline,
+.aiohm-dashboard .aiohm-step p,
+.aiohm-sales-page {
+    font-family: var(--ohm-font-secondary);
+    color: var(--ohm-dark);
+}
+.aiohm-dashboard .button-secondary {
+    background-color: var(--ohm-light-bg);
+    border-color: var(--ohm-muted-accent);
+    color: var(--ohm-dark-accent);
+    font-family: var(--ohm-font-primary);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+ .aiohm-dashboard .button-secondary:hover {
+    background-color: var(--ohm-light-accent);
+    border-color: var(--ohm-primary);
+    color: var(--ohm-dark-accent);
+ }
+ .aiohm-dashboard .button-primary {
+    background-color: var(--ohm-primary);
+    border-color: var(--ohm-dark-accent);
+    color: #fff;
+    font-family: var(--ohm-font-primary);
+    font-weight: bold;
+ }
+ .aiohm-dashboard .button-primary:hover {
+    background-color: var(--ohm-dark-accent);
+    border-color: var(--ohm-dark-accent);
+ }
+.aiohm-dashboard .nav-tab-wrapper { border-bottom-color: var(--ohm-light-accent); }
+.aiohm-dashboard .nav-tab { font-family: var(--ohm-font-primary); }
+.aiohm-dashboard .nav-tab-active { background-color: #f9f9f9; border-bottom-color: #f9f9f9; color: var(--ohm-primary); font-weight: bold; }
+
+/* Tab Content Layout */
+.aiohm-dashboard .aiohm-tab-content { margin-top: 20px; }
+
+/* Sales Page & Locking Mechanism */
+.aiohm-sales-page { 
+    position: relative;
+    padding: 40px 0; 
+    background: #fdfdfd; 
+    margin-left: -20px; /* Make full-width */
+}
+.aiohm-sales-page .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+.aiohm-sales-page .headline { font-size: 36px; text-align: center; font-weight: bold; margin-bottom: 20px; }
+.aiohm-sales-page .intro { font-size: 18px; max-width: 700px; margin: 0 auto 40px auto; text-align: center; color: #555; }
+.aiohm-sales-page .benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 60px; }
+.aiohm-sales-page .benefit { background: #fff; padding: 25px; border: 1px solid var(--ohm-light-bg); border-left: 4px solid var(--ohm-light-accent); border-radius: 8px; display: flex; flex-direction: column; }
+.aiohm-sales-page .benefit h3 { font-size: 20px; margin-top: 0; margin-bottom: 10px; }
+.aiohm-sales-page .benefit p { flex-grow: 1; }
+.aiohm-sales-page .benefit .button { margin-top: auto; align-self: flex-start; }
+.aiohm-sales-page .cta { text-align: center; padding-top: 40px; border-top: 1px solid var(--ohm-light-bg); }
+.aiohm-sales-page .cta h2 { font-size: 28px; margin-bottom: 10px; }
+.aiohm-sales-page .cta .button-primary { font-size: 18px; padding: 12px 30px; height: auto; }
+
+.benefits-grid.is-locked { 
+    filter: blur(4px);
+    opacity: 0.5;
+    pointer-events: none;
+}
+.aiohm-settings-locked-overlay.is-active { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    background: rgba(249, 249, 249, 0.85); 
+    z-index: 10; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    border-radius: 8px; 
+    margin: 0; 
+}
+.aiohm-settings-locked-overlay .lock-content { 
+    background: #fff; 
+    padding: 30px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+    max-width: 450px; 
+    width: 100%; 
+}
+.aiohm-settings-locked-overlay .lock-icon { font-size: 4em; color: var(--ohm-primary); margin-bottom: 15px; }
+
+.unlock-features-list {
+    margin: 20px 0;
+    text-align: left;
+}
+
+.unlock-features-list h4 {
+    margin: 0 0 10px 0;
+    color: var(--ohm-dark-accent);
+    font-size: 1.1em;
+}
+
+.unlock-features-list ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.unlock-features-list li {
+    margin: 0;
+    padding: 8px 12px;
+    background: #f9f9f9;
+    border-left: 3px solid var(--ohm-primary);
+    border-radius: 4px;
+    font-size: 0.9em;
+    line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+  .aiohm-sales-page .benefits-grid { grid-template-columns: 1fr; }
+}

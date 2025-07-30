@@ -1,0 +1,2740 @@
+# Translation template for AIOHM Knowledge Assistant WordPress Plugin.
+# Copyright (C) 2025 OHM Events Agency
+# This file is distributed under the same license as the AIOHM Knowledge Assistant package.
+# OHM Events Agency <support@ohm.events>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: AIOHM Knowledge Assistant 1.2.6\n"
+"Report-Msgid-Bugs-To: support@ohm.events\n"
+"POT-Creation-Date: 2025-07-26 05:06+0700\n"
+"PO-Revision-Date: 2025-07-26 05:06+0700\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: includes/shortcode-search.php:23
+msgid "Search knowledge base..."
+msgstr ""
+
+#: includes/shortcode-search.php:57 includes/aiohm-kb-manager.php:255
+msgid "All Types"
+msgstr ""
+
+#: includes/shortcode-search.php:58 includes/aiohm-kb-manager.php:256
+msgid "Posts"
+msgstr ""
+
+#: includes/shortcode-search.php:59 includes/aiohm-kb-manager.php:257
+msgid "Pages"
+msgstr ""
+
+#: includes/shortcode-search.php:60
+msgid "Documents"
+msgstr ""
+
+#: includes/shortcode-search.php:67 includes/shortcode-search.php:91
+msgid "Searching..."
+msgstr ""
+
+#: includes/shortcode-search.php:87
+msgid "No results found for your search."
+msgstr ""
+
+#: includes/shortcode-search.php:88
+msgid "Search failed. Please try again."
+msgstr ""
+
+#. translators: %d is the number of search results found
+#: includes/shortcode-search.php:90
+#, php-format
+msgid "Found %d result(s)"
+msgstr ""
+
+#: includes/shortcode-search.php:110 includes/core-init.php:843
+#: includes/core-init.php:1118
+msgid "Security check failed"
+msgstr ""
+
+#: includes/shortcode-search.php:120 includes/core-init.php:852
+msgid "Search query is required"
+msgstr ""
+
+#: includes/shortcode-search.php:130
+#, php-format
+msgid "Search failed: %s"
+msgstr ""
+
+#: includes/settings-page.php:248 includes/settings-page.php:257
+#: includes/settings-page.php:266
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: includes/chat-box.php:67
+msgid "Sources"
+msgstr ""
+
+#: includes/chat-box.php:77
+msgid "View Source"
+msgstr ""
+
+#: includes/chat-box.php:142
+msgid "What services do you offer?"
+msgstr ""
+
+#: includes/chat-box.php:143
+msgid "How can I contact support?"
+msgstr ""
+
+#: includes/chat-box.php:144
+msgid "What are your business hours?"
+msgstr ""
+
+#: includes/chat-box.php:145
+msgid "Do you have a FAQ section?"
+msgstr ""
+
+#: includes/chat-box.php:158
+msgid "Suggested questions:"
+msgstr ""
+
+#: includes/chat-box.php:190 includes/shortcode-chat.php:78
+msgid "Ready"
+msgstr ""
+
+#: includes/chat-box.php:204
+msgid "Hello! How can I help you today?"
+msgstr ""
+
+#: includes/chat-box.php:253
+msgid "Type your message..."
+msgstr ""
+
+#: includes/chat-box.php:274
+msgid "Add emoji"
+msgstr ""
+
+#: includes/chat-box.php:280
+msgid "Attach file"
+msgstr ""
+
+#: includes/chat-box.php:308
+msgid "Voice input"
+msgstr ""
+
+#: includes/shortcode-chat.php:24
+msgid "Chat is currently disabled."
+msgstr ""
+
+#: includes/shortcode-chat.php:26
+msgid "This chat feature requires an AIOHM Club membership."
+msgstr ""
+
+#: includes/shortcode-chat.php:27
+msgid "Join Club"
+msgstr ""
+
+#: includes/shortcode-chat.php:33
+msgid "Ask me anything"
+msgstr ""
+
+#: includes/shortcode-chat.php:34
+msgid "Type your question here..."
+msgstr ""
+
+#: includes/shortcode-chat.php:89 templates/admin-mirror-mode.php:162
+#: templates/admin-muse-mode.php:146
+msgid "AI Avatar"
+msgstr ""
+
+#: includes/shortcode-chat.php:112
+msgid "Powered by"
+msgstr ""
+
+#: includes/shortcode-chat.php:116
+msgid "Book a Meeting"
+msgstr ""
+
+#: includes/shortcode-chat.php:130
+msgid "Sorry, something went wrong. Please try again."
+msgstr ""
+
+#: includes/core-init.php:27
+msgid "Sorry, something went wrong. Please try again later."
+msgstr ""
+
+#: includes/core-init.php:120
+msgid "Help Request"
+msgstr ""
+
+#: includes/core-init.php:122
+msgid "Creation Project"
+msgstr ""
+
+#: includes/core-init.php:124
+msgid "Planning Session"
+msgstr ""
+
+#: includes/core-init.php:126
+msgid "Content Writing"
+msgstr ""
+
+#: includes/core-init.php:128
+msgid "Design Discussion"
+msgstr ""
+
+#: includes/core-init.php:130
+msgid "Marketing Discussion"
+msgstr ""
+
+#: includes/core-init.php:132
+msgid "Brand Development"
+msgstr ""
+
+#: includes/core-init.php:134
+msgid "Web Development"
+msgstr ""
+
+#: includes/core-init.php:136
+msgid "General Questions"
+msgstr ""
+
+#: includes/core-init.php:239 includes/core-init.php:282
+#: includes/core-init.php:348 includes/core-init.php:400
+#: includes/core-init.php:443 includes/core-init.php:487
+#: includes/core-init.php:525 includes/core-init.php:573
+msgid "Permission Denied"
+msgstr ""
+
+#: includes/core-init.php:288 includes/core-init.php:494
+msgid "Invalid Conversation ID."
+msgstr ""
+
+#: includes/core-init.php:316
+msgid "Conversation not found or not accessible."
+msgstr ""
+
+#: includes/core-init.php:356 includes/core-init.php:407
+#: includes/core-init.php:450 includes/core-init.php:533
+#: includes/core-init.php:579
+msgid "Invalid Project ID."
+msgstr ""
+
+#: includes/core-init.php:373 includes/core-init.php:550
+msgid "Project not found or not owned by user."
+msgstr ""
+
+#: includes/core-init.php:387
+msgid "Notes saved."
+msgstr ""
+
+#: includes/core-init.php:389
+msgid "Failed to save notes."
+msgstr ""
+
+#: includes/core-init.php:432
+msgid "Project notes not found or not accessible."
+msgstr ""
+
+#: includes/core-init.php:476
+msgid "Failed to delete project or project not found."
+msgstr ""
+
+#: includes/core-init.php:514
+msgid "Failed to delete conversation or conversation not found."
+msgstr ""
+
+#: includes/core-init.php:559
+msgid "Failed to create conversation."
+msgstr ""
+
+#: includes/core-init.php:605
+msgid "Project name cannot be empty."
+msgstr ""
+
+#: includes/core-init.php:615
+msgid "Could not save the project to the database."
+msgstr ""
+
+#: includes/core-init.php:626 includes/core-init.php:953
+#: includes/core-init.php:1078 includes/core-init.php:1271
+#: includes/core-init.php:1389 includes/core-init.php:1420
+#: includes/core-init.php:1445 includes/core-init.php:1461
+#: includes/core-init.php:1473 includes/core-init.php:1496
+#: includes/core-init.php:1854 includes/core-init.php:1904
+#: includes/core-init.php:2234 includes/core-init.php:2276
+#: includes/core-init.php:2343 includes/core-init.php:2489
+#: includes/core-init.php:2562 includes/core-init.php:2637
+#: includes/core-init.php:2904
+msgid "Security check failed."
+msgstr ""
+
+#: includes/core-init.php:837
+msgid "An error occurred while processing your request. Please try again."
+msgstr ""
+
+#: includes/core-init.php:907
+msgid "Search query is required."
+msgstr ""
+
+#: includes/core-init.php:1265
+#, php-format
+msgid "Fatal error: %s"
+msgstr ""
+
+#: includes/core-init.php:1278
+msgid "API Key / Email cannot be empty."
+msgstr ""
+
+#: includes/core-init.php:1289
+#, php-format
+msgid "AIOHM.app connection failed: %s"
+msgstr ""
+
+#: includes/core-init.php:1298
+#, php-format
+msgid "OpenAI connection failed: %s"
+msgstr ""
+
+#: includes/core-init.php:1298 includes/core-init.php:1307
+#: includes/core-init.php:1316 includes/core-init.php:1325
+#: includes/core-init.php:1345
+msgid "Unknown error."
+msgstr ""
+
+#: includes/core-init.php:1307
+#, php-format
+msgid "Gemini connection failed: %s"
+msgstr ""
+
+#: includes/core-init.php:1316
+#, php-format
+msgid "Claude connection failed: %s"
+msgstr ""
+
+#: includes/core-init.php:1325
+#, php-format
+msgid "ShareAI connection failed: %s"
+msgstr ""
+
+#: includes/core-init.php:1333
+msgid "Ollama server URL is required."
+msgstr ""
+
+#: includes/core-init.php:1345
+#, php-format
+msgid "Ollama server connection failed: %s"
+msgstr ""
+
+#: includes/core-init.php:1349
+msgid "Invalid key type specified."
+msgstr ""
+
+#: includes/core-init.php:1352
+#, php-format
+msgid "An unexpected error occurred: %s"
+msgstr ""
+
+#: includes/core-init.php:1378
+#, php-format
+msgid "No data found to export for %s entries."
+msgstr ""
+
+#: includes/core-init.php:1383
+#, php-format
+msgid "Export failed: %s"
+msgstr ""
+
+#: includes/core-init.php:1414
+msgid "Failed to update entry scope in the database."
+msgstr ""
+
+#: includes/core-init.php:1423
+msgid "No data provided for restore."
+msgstr ""
+
+#: includes/core-init.php:1430
+msgid "Invalid JSON data provided."
+msgstr ""
+
+#: includes/core-init.php:1439
+#, php-format
+msgid "Restore failed: %s"
+msgstr ""
+
+#: includes/core-init.php:1448
+msgid "Content ID is missing for deletion."
+msgstr ""
+
+#: includes/core-init.php:1455
+msgid "Failed to delete entry."
+msgstr ""
+
+#: includes/core-init.php:1480
+msgid "No answers to add."
+msgstr ""
+
+#: includes/core-init.php:1489 includes/core-init.php:2628
+#, php-format
+msgid "Error adding to KB: %s"
+msgstr ""
+
+#: includes/core-init.php:1509 includes/core-init.php:1919
+msgid "Invalid project ID."
+msgstr ""
+
+#: includes/core-init.php:1513
+msgid "Note content cannot be empty."
+msgstr ""
+
+#: includes/core-init.php:1536
+#, php-format
+msgid "Error adding note to KB: %s"
+msgstr ""
+
+#: includes/core-init.php:1653 includes/core-init.php:1794
+msgid "No settings data received."
+msgstr ""
+
+#: includes/core-init.php:1894
+#, php-format
+msgid "Failed to generate Q&A pair: %s"
+msgstr ""
+
+#: includes/core-init.php:1913
+msgid "No files uploaded."
+msgstr ""
+
+#: includes/core-init.php:1933
+msgid "Project not found or access denied."
+msgstr ""
+
+#: includes/core-init.php:2240 includes/core-init.php:2284
+msgid "Content ID is required."
+msgstr ""
+
+#: includes/core-init.php:2257
+msgid "Brand Soul content not found."
+msgstr ""
+
+#: includes/core-init.php:2267
+msgid "Error retrieving Brand Soul content."
+msgstr ""
+
+#: includes/core-init.php:2301
+msgid "Content not found."
+msgstr ""
+
+#: includes/core-init.php:2334
+msgid "Error retrieving content."
+msgstr ""
+
+#: includes/core-init.php:2435
+msgid "Error retrieving usage statistics."
+msgstr ""
+
+#: includes/core-init.php:2493
+msgid "You do not have permission to access this feature."
+msgstr ""
+
+#: includes/core-init.php:2499 includes/core-init.php:2572
+msgid "Invalid conversation ID."
+msgstr ""
+
+#: includes/core-init.php:2513 includes/core-init.php:2586
+msgid "Conversation not found or access denied."
+msgstr ""
+
+#: includes/core-init.php:2623
+msgid "Failed to add conversation to knowledge base."
+msgstr ""
+
+#: includes/core-init.php:2651
+msgid "Invalid URL provided."
+msgstr ""
+
+#: includes/core-init.php:2655
+msgid "Project ID is required."
+msgstr ""
+
+#: includes/core-init.php:2667
+#, php-format
+msgid "Failed to fetch webpage: %s"
+msgstr ""
+
+#: includes/core-init.php:2672
+msgid "No content found at the provided URL."
+msgstr ""
+
+#: includes/core-init.php:2704
+msgid "No readable content found at the provided URL."
+msgstr ""
+
+#: includes/core-init.php:2774
+#, php-format
+msgid "Error researching website: %s"
+msgstr ""
+
+#: includes/core-init.php:2934
+msgid "No files were uploaded."
+msgstr ""
+
+#: includes/core-init.php:3260 includes/mcp-handler.php:739
+#: includes/mcp-handler.php:835 includes/mcp-handler.php:873
+#: includes/mcp-handler.php:986 includes/mcp-handler.php:1026
+msgid "Insufficient permissions"
+msgstr ""
+
+#: includes/core-init.php:3265 includes/mcp-handler.php:744
+#: includes/mcp-handler.php:840 includes/mcp-handler.php:878
+#: includes/mcp-handler.php:991 includes/mcp-handler.php:1031
+msgid "MCP access requires Private level membership"
+msgstr ""
+
+#: includes/core-init.php:3337 templates/admin-mcp.php:1136
+msgid "MCP settings saved successfully!"
+msgstr ""
+
+#: includes/core-init.php:3342
+msgid "Failed to save settings. Please try again."
+msgstr ""
+
+#: includes/mcp-handler.php:94 includes/mcp-handler.php:274
+msgid "Invalid MCP token"
+msgstr ""
+
+#: includes/mcp-handler.php:103
+msgid "Query the knowledge base with semantic search"
+msgstr ""
+
+#: includes/mcp-handler.php:107
+msgid "Search query text"
+msgstr ""
+
+#: includes/mcp-handler.php:112
+msgid "Maximum number of results"
+msgstr ""
+
+#: includes/mcp-handler.php:119
+msgid "Filter by specific project ID"
+msgstr ""
+
+#: includes/mcp-handler.php:124
+msgid "Filter by content type"
+msgstr ""
+
+#: includes/mcp-handler.php:132
+msgid "Get specific knowledge base entry by ID"
+msgstr ""
+
+#: includes/mcp-handler.php:136
+msgid "Knowledge base entry ID"
+msgstr ""
+
+#: includes/mcp-handler.php:143
+msgid "List knowledge base entries with pagination"
+msgstr ""
+
+#: includes/mcp-handler.php:147
+msgid "Page number"
+msgstr ""
+
+#: includes/mcp-handler.php:153
+msgid "Entries per page"
+msgstr ""
+
+#: includes/mcp-handler.php:160
+msgid "Filter by project ID"
+msgstr ""
+
+#: includes/mcp-handler.php:170
+msgid "Add new entry to knowledge base"
+msgstr ""
+
+#: includes/mcp-handler.php:174
+msgid "Entry title"
+msgstr ""
+
+#: includes/mcp-handler.php:181
+msgid "Entry content"
+msgstr ""
+
+#: includes/mcp-handler.php:187
+msgid "Content type"
+msgstr ""
+
+#: includes/mcp-handler.php:193
+msgid "Project ID to associate with"
+msgstr ""
+
+#: includes/mcp-handler.php:198
+msgid "Additional metadata for the entry"
+msgstr ""
+
+#: includes/mcp-handler.php:205
+msgid "Update existing knowledge base entry"
+msgstr ""
+
+#: includes/mcp-handler.php:209
+msgid "Entry ID to update"
+msgstr ""
+
+#: includes/mcp-handler.php:214
+msgid "Updated title"
+msgstr ""
+
+#: includes/mcp-handler.php:220
+msgid "Updated content"
+msgstr ""
+
+#: includes/mcp-handler.php:225
+msgid "Updated metadata"
+msgstr ""
+
+#: includes/mcp-handler.php:232
+msgid "Delete knowledge base entry"
+msgstr ""
+
+#: includes/mcp-handler.php:236
+msgid "Entry ID to delete"
+msgstr ""
+
+#: includes/mcp-handler.php:249
+msgid "WordPress knowledge base with AI-powered search and content management"
+msgstr ""
+
+#: includes/mcp-handler.php:255
+msgid "Use Bearer token in Authorization header"
+msgstr ""
+
+#: includes/mcp-handler.php:279
+msgid "Rate limit exceeded"
+msgstr ""
+
+#: includes/mcp-handler.php:309
+msgid "Invalid MCP action"
+msgstr ""
+
+#: includes/mcp-handler.php:313
+msgid "Internal server error"
+msgstr ""
+
+#: includes/mcp-handler.php:322 includes/mcp-handler.php:366
+#: includes/mcp-handler.php:405
+msgid "Read permission required"
+msgstr ""
+
+#: includes/mcp-handler.php:331
+msgid "Query parameter is required"
+msgstr ""
+
+#: includes/mcp-handler.php:371 includes/mcp-handler.php:519
+#: includes/mcp-handler.php:589
+msgid "Valid entry ID required"
+msgstr ""
+
+#: includes/mcp-handler.php:384 includes/mcp-handler.php:532
+msgid "Knowledge base entry not found"
+msgstr ""
+
+#: includes/mcp-handler.php:469 includes/mcp-handler.php:514
+#: includes/mcp-handler.php:584
+msgid "Write permission required"
+msgstr ""
+
+#: includes/mcp-handler.php:479
+msgid "Title and content are required"
+msgstr ""
+
+#: includes/mcp-handler.php:501
+msgid "Knowledge base entry created successfully"
+msgstr ""
+
+#: includes/mcp-handler.php:505
+msgid "Failed to create knowledge base entry"
+msgstr ""
+
+#: includes/mcp-handler.php:554
+msgid "No valid update fields provided"
+msgstr ""
+
+#: includes/mcp-handler.php:571
+msgid "Knowledge base entry updated successfully"
+msgstr ""
+
+#: includes/mcp-handler.php:575
+msgid "Failed to update knowledge base entry"
+msgstr ""
+
+#: includes/mcp-handler.php:606
+msgid "Knowledge base entry deleted successfully"
+msgstr ""
+
+#: includes/mcp-handler.php:610
+msgid "Failed to delete knowledge base entry or entry not found"
+msgstr ""
+
+#: includes/mcp-handler.php:624
+msgid "Invalid token"
+msgstr ""
+
+#: includes/mcp-handler.php:644
+msgid "MCP API is disabled"
+msgstr ""
+
+#: includes/mcp-handler.php:665
+msgid "Token creator no longer has MCP access"
+msgstr ""
+
+#: includes/mcp-handler.php:752
+msgid "Token name is required"
+msgstr ""
+
+#: includes/mcp-handler.php:761
+msgid "MCP token generated successfully"
+msgstr ""
+
+#: includes/mcp-handler.php:764
+msgid "Failed to generate token"
+msgstr ""
+
+#: includes/mcp-handler.php:831 includes/mcp-handler.php:869
+msgid "Security check failed. Please refresh the page and try again."
+msgstr ""
+
+#: includes/mcp-handler.php:846 includes/mcp-handler.php:884
+#: includes/mcp-handler.php:1037
+msgid "Token ID is required"
+msgstr ""
+
+#: includes/mcp-handler.php:852
+msgid "Token revoked successfully"
+msgstr ""
+
+#: includes/mcp-handler.php:854
+msgid "Failed to revoke token"
+msgstr ""
+
+#: includes/mcp-handler.php:890
+msgid "Token removed successfully"
+msgstr ""
+
+#: includes/mcp-handler.php:892
+msgid "Failed to remove token"
+msgstr ""
+
+#: includes/mcp-handler.php:1045
+msgid "Token details retrieved successfully"
+msgstr ""
+
+#: includes/mcp-handler.php:1048
+msgid "Token not found"
+msgstr ""
+
+#: includes/mcp-handler.php:1072
+msgid "Unknown"
+msgstr ""
+
+#: includes/aiohm-kb-manager.php:23
+msgid "Title"
+msgstr ""
+
+#: includes/aiohm-kb-manager.php:24
+msgid "Content Type"
+msgstr ""
+
+#: includes/aiohm-kb-manager.php:25
+msgid "Visibility"
+msgstr ""
+
+#: includes/aiohm-kb-manager.php:26
+msgid "Last Updated"
+msgstr ""
+
+#: includes/aiohm-kb-manager.php:27 templates/admin-mcp.php:1277
+msgid "Actions"
+msgstr ""
+
+#: includes/aiohm-kb-manager.php:92 includes/aiohm-kb-manager.php:101
+#: includes/aiohm-kb-manager.php:109 includes/aiohm-kb-manager.php:115
+#: includes/aiohm-kb-manager.php:120 includes/aiohm-kb-manager.php:138
+#: templates/admin-mcp.php:1297
+msgid "View"
+msgstr ""
+
+#: includes/aiohm-kb-manager.php:149
+msgid "Are you sure you want to delete this entry?"
+msgstr ""
+
+#: includes/aiohm-kb-manager.php:156
+msgid "Delete"
+msgstr ""
+
+#: includes/aiohm-kb-manager.php:157
+msgid "Make Selected Public"
+msgstr ""
+
+#: includes/aiohm-kb-manager.php:158
+msgid "Make Selected Private"
+msgstr ""
+
+#: includes/aiohm-kb-manager.php:258
+msgid "PDFs"
+msgstr ""
+
+#: includes/aiohm-kb-manager.php:259
+msgid "TXT"
+msgstr ""
+
+#: includes/aiohm-kb-manager.php:260
+msgid "CSV"
+msgstr ""
+
+#: includes/aiohm-kb-manager.php:261
+msgid "JSON"
+msgstr ""
+
+#: includes/aiohm-kb-manager.php:262
+msgid "Manual Entries"
+msgstr ""
+
+#: includes/aiohm-kb-manager.php:263
+msgid "Brand Soul"
+msgstr ""
+
+#: includes/aiohm-kb-manager.php:264
+msgid "Brand Core"
+msgstr ""
+
+#: includes/aiohm-kb-manager.php:265
+msgid "GitHub"
+msgstr ""
+
+#: includes/aiohm-kb-manager.php:266
+msgid "Contact"
+msgstr ""
+
+#: includes/aiohm-kb-manager.php:267
+msgid "Notes"
+msgstr ""
+
+#: includes/aiohm-kb-manager.php:268
+msgid "Conversations"
+msgstr ""
+
+#: includes/aiohm-kb-manager.php:273
+msgid "All Visibility"
+msgstr ""
+
+#: includes/aiohm-kb-manager.php:274 templates/admin-manage-kb.php:32
+msgid "Public"
+msgstr ""
+
+#: includes/aiohm-kb-manager.php:275 templates/admin-manage-kb.php:44
+msgid "Private"
+msgstr ""
+
+#: includes/aiohm-kb-manager.php:280
+msgid "All Dates"
+msgstr ""
+
+#: includes/aiohm-kb-manager.php:281
+msgid "Last 7 Days"
+msgstr ""
+
+#: includes/aiohm-kb-manager.php:282
+msgid "Last 30 Days"
+msgstr ""
+
+#: includes/aiohm-kb-manager.php:283
+msgid "This Month"
+msgstr ""
+
+#: includes/aiohm-kb-manager.php:284
+msgid "This Year"
+msgstr ""
+
+#: includes/aiohm-kb-manager.php:287
+msgid "Filter"
+msgstr ""
+
+#: aiohm-kb-assistant.php:530
+msgid "Settings"
+msgstr ""
+
+#: aiohm-kb-assistant.php:545
+msgid "Once Weekly"
+msgstr ""
+
+#: aiohm-kb-assistant.php:546
+msgid "Once Monthly"
+msgstr ""
+
+#: templates/admin-mirror-mode.php:42
+msgid "Mirror Mode Customization"
+msgstr ""
+
+#: templates/admin-mirror-mode.php:43
+msgid ""
+"Fine-tune your AI's personality and appearance on the left, and test your "
+"changes in real-time on the right."
+msgstr ""
+
+#: templates/admin-mirror-mode.php:63
+msgid "Soul Signature for Q&A Assistant"
+msgstr ""
+
+#: templates/admin-mirror-mode.php:64 templates/admin-muse-mode.php:79
+msgid "Reset to Default"
+msgstr ""
+
+#: templates/admin-mirror-mode.php:138
+msgid "Save Mirror Mode Settings"
+msgstr ""
+
+#: templates/admin-mirror-mode.php:144
+msgid "Test Your Q&A Assistant"
+msgstr ""
+
+#. translators: %s is the shortcode to display the chat assistant
+#: templates/admin-mirror-mode.php:147
+#, php-format
+msgid ""
+"Test your assistant here. To display this on your website, use the "
+"shortcode: %s"
+msgstr ""
+
+#: templates/admin-mirror-mode.php:204 templates/admin-mirror-mode.php:206
+msgid "Generate Sample Q&A"
+msgstr ""
+
+#: templates/scan-website.php:46
+msgid "Build Your Knowledge Base"
+msgstr ""
+
+#: templates/scan-website.php:47
+msgid ""
+"Scan your website's posts, pages, and media library to add content to your "
+"AI's knowledge base."
+msgstr ""
+
+#: templates/scan-website.php:53
+msgid "Action Required: Add Your API Key"
+msgstr ""
+
+#. translators: %s is the name of the AI provider (e.g., OpenAI, Gemini, Claude)
+#: templates/scan-website.php:56
+#, php-format
+msgid ""
+"Content scanning is disabled because your %s API key has not been "
+"configured. Please add your key to enable this feature."
+msgstr ""
+
+#: templates/scan-website.php:60
+msgid "Go to Settings"
+msgstr ""
+
+#: templates/scan-website.php:66
+msgid "Content Stats"
+msgstr ""
+
+#: templates/scan-website.php:67
+msgid ""
+"An overview of all scannable content from your website and Media Library."
+msgstr ""
+
+#: templates/scan-website.php:72
+msgid "Website Content Breakdown"
+msgstr ""
+
+#: templates/scan-website.php:76
+msgid "Total Website Content:"
+msgstr ""
+
+#: templates/scan-website.php:81
+msgid "Posts:"
+msgstr ""
+
+#. translators: %1$d is total posts, %2$d is indexed posts, %3$d is pending posts
+#. translators: %1$d is total pages, %2$d is indexed pages, %3$d is pending pages
+#: templates/scan-website.php:84 templates/scan-website.php:94
+#, php-format
+msgid "%1$d total, %2$d indexed, %3$d pending"
+msgstr ""
+
+#: templates/scan-website.php:91
+msgid "Pages:"
+msgstr ""
+
+#: templates/scan-website.php:105
+msgid "Media Library Breakdown"
+msgstr ""
+
+#: templates/scan-website.php:109
+msgid "Total Media Files:"
+msgstr ""
+
+#. translators: %1$d is total files, %2$d is indexed files, %3$d is pending files, %4$s is file size
+#: templates/scan-website.php:119
+#, php-format
+msgid "%1$d total, %2$d indexed, %3$d pending (%4$s)"
+msgstr ""
+
+#: templates/scan-website.php:123
+msgid ""
+"Supported files include .txt, .json, .csv, .pdf, .doc, .docx, and .md from "
+"your Media Library."
+msgstr ""
+
+#: templates/scan-website.php:133
+msgid "Website Content Scanner"
+msgstr ""
+
+#: templates/scan-website.php:134
+msgid "Use the button to find or re-scan your posts and pages."
+msgstr ""
+
+#: templates/scan-website.php:135
+msgid "Re-Scan Posts & Pages"
+msgstr ""
+
+#: templates/scan-website.php:137
+msgid "Scan Results"
+msgstr ""
+
+#: templates/scan-website.php:139 templates/scan-website.php:154
+msgid "Add Selected to KB"
+msgstr ""
+
+#: templates/scan-website.php:146
+msgid "Upload Folder Scanner"
+msgstr ""
+
+#. translators: %s is the WordPress Media Library text that will be bolded
+#: templates/scan-website.php:149
+#, php-format
+msgid "Scan your %s for readable files like .txt, .json, .csv, and .pdf."
+msgstr ""
+
+#: templates/scan-website.php:149
+msgid "WordPress Media Library"
+msgstr ""
+
+#: templates/scan-website.php:150
+msgid "Re-Scan Media Library"
+msgstr ""
+
+#: templates/scan-website.php:152
+msgid "Uploads Scan Results"
+msgstr ""
+
+#: templates/admin-muse-mode.php:47
+msgid "Muse Mode Customization"
+msgstr ""
+
+#: templates/admin-muse-mode.php:48
+msgid ""
+"Here, you attune your AI to be a true creative partner. Define its energetic "
+"signature and workflow to transform your brand dialogue."
+msgstr ""
+
+#: templates/admin-muse-mode.php:61
+msgid "1. Brand Assistant Name"
+msgstr ""
+
+#: templates/admin-muse-mode.php:66
+msgid "2. Brand Archetype"
+msgstr ""
+
+#: templates/admin-muse-mode.php:68
+msgid "-- Select an Archetype --"
+msgstr ""
+
+#: templates/admin-muse-mode.php:73
+msgid "Select an archetype to give your Muse a foundational personality."
+msgstr ""
+
+#: templates/admin-muse-mode.php:78
+msgid "3. Soul Signature Brand Assistant"
+msgstr ""
+
+#: templates/admin-muse-mode.php:82
+msgid ""
+"This is the core instruction set for your AI. Selecting an archetype will "
+"provide a starting template."
+msgstr ""
+
+#: templates/admin-muse-mode.php:87
+msgid "4. AI Model"
+msgstr ""
+
+#: templates/admin-muse-mode.php:107
+msgid "Choose which AI model powers your brand assistant."
+msgstr ""
+
+#: templates/admin-muse-mode.php:111
+msgid "5. Temperature:"
+msgstr ""
+
+#: templates/admin-muse-mode.php:113
+msgid "Lower is more predictable; higher is more creative."
+msgstr ""
+
+#: templates/admin-muse-mode.php:119
+msgid "Start in Fullscreen Mode"
+msgstr ""
+
+#: templates/admin-muse-mode.php:121
+msgid "Check this to make the private assistant always open in fullscreen."
+msgstr ""
+
+#: templates/admin-muse-mode.php:126
+msgid "Save Muse Settings"
+msgstr ""
+
+#: templates/admin-muse-mode.php:132
+msgid "Test Your Muse Assistant"
+msgstr ""
+
+#. translators: %s is the shortcode to display the private assistant
+#: templates/admin-muse-mode.php:135
+#, php-format
+msgid ""
+"Test your assistant here. For the full experience, use the shortcode: %s on "
+"a new page"
+msgstr ""
+
+#: templates/admin-muse-mode.php:162
+msgid "Test Knowledge Base Context"
+msgstr ""
+
+#: templates/admin-manage-kb.php:13
+msgid "Manage Knowledge Base"
+msgstr ""
+
+#: templates/admin-manage-kb.php:14
+msgid "Add New Content"
+msgstr ""
+
+#: templates/admin-manage-kb.php:15
+msgid "Scan Website"
+msgstr ""
+
+#: templates/admin-manage-kb.php:16
+msgid ""
+"View, organize, and manage all your knowledge base entries in one place."
+msgstr ""
+
+#: templates/admin-manage-kb.php:25
+msgid "Public Knowledge (Mirror Mode)"
+msgstr ""
+
+#: templates/admin-manage-kb.php:27 templates/admin-help.php:66
+msgid "Configure Mirror Mode"
+msgstr ""
+
+#. translators: %s is the word "Public" that will be bolded
+#: templates/admin-manage-kb.php:32
+#, php-format
+msgid ""
+"%s entries are part of the global knowledge base. They are used by your AI "
+"assistant to answer questions from any website visitor."
+msgstr ""
+
+#: templates/admin-manage-kb.php:33
+msgid ""
+"This is perfect for general support, FAQs, and public information about your "
+"brand."
+msgstr ""
+
+#: templates/admin-manage-kb.php:37
+msgid "Private Knowledge (Muse Mode)"
+msgstr ""
+
+#: templates/admin-manage-kb.php:39
+msgid "Configure Muse Mode"
+msgstr ""
+
+#. translators: %s is the word "Private" that will be bolded
+#: templates/admin-manage-kb.php:44
+#, php-format
+msgid ""
+"%s entries are only accessible to you when using the Brand Assistant chat "
+"(Muse Mode)."
+msgstr ""
+
+#: templates/admin-manage-kb.php:45
+msgid ""
+"Use this for personal notes, strategic insights, or confidential brand "
+"guidelines that only you should access."
+msgstr ""
+
+#: templates/admin-manage-kb.php:71
+msgid "Knowledge Base Actions"
+msgstr ""
+
+#: templates/admin-manage-kb.php:75
+msgid "Export Knowledge Base"
+msgstr ""
+
+#: templates/admin-manage-kb.php:76
+msgid ""
+"Export your knowledge base entries as JSON files. Choose to export public "
+"entries or private entries separately."
+msgstr ""
+
+#: templates/admin-manage-kb.php:78
+msgid "Export Public"
+msgstr ""
+
+#: templates/admin-manage-kb.php:79
+msgid "Export Private"
+msgstr ""
+
+#: templates/admin-manage-kb.php:84
+msgid "Restore Knowledge Base"
+msgstr ""
+
+#: templates/admin-manage-kb.php:85
+msgid ""
+"Overwrite all existing public knowledge base entries from a previously saved "
+"JSON file."
+msgstr ""
+
+#: templates/admin-manage-kb.php:89
+msgid "Choose File..."
+msgstr ""
+
+#: templates/admin-manage-kb.php:92
+msgid "Restore KB"
+msgstr ""
+
+#: templates/admin-manage-kb.php:97
+msgid "Reset Knowledge Base"
+msgstr ""
+
+#: templates/admin-manage-kb.php:98
+msgid ""
+"Warning: This will permanently delete ALL knowledge base entries (public & "
+"private). This cannot be undone."
+msgstr ""
+
+#: templates/admin-manage-kb.php:99
+msgid "Reset Entire KB"
+msgstr ""
+
+#: templates/admin-dashboard.php:28
+msgid "AIOHM Assistant Dashboard"
+msgstr ""
+
+#: templates/admin-dashboard.php:29
+msgid "Welcome! Let's turn your content into an expert AI assistant."
+msgstr ""
+
+#: templates/admin-dashboard.php:33
+msgid "Welcome"
+msgstr ""
+
+#: templates/admin-dashboard.php:34 templates/admin-license.php:39
+msgid "AIOHM Tribe"
+msgstr ""
+
+#: templates/admin-dashboard.php:35 templates/admin-license.php:113
+msgid "AIOHM Club"
+msgstr ""
+
+#: templates/admin-dashboard.php:36
+msgid "AIOHM Private"
+msgstr ""
+
+#: templates/admin-dashboard.php:44
+msgid "4 Steps to Turn Your Site Into a Living Knowledge Base"
+msgstr ""
+
+#: templates/admin-dashboard.php:47
+msgid "1. Root Your Presence"
+msgstr ""
+
+#: templates/admin-dashboard.php:48
+msgid ""
+"Connect your preferred AI provider. This is where your structure meets "
+"spirit. Add your API key from OpenAI, Claude, or Gemini to activate the "
+"intelligence behind your knowledge base."
+msgstr ""
+
+#: templates/admin-dashboard.php:49
+msgid "Open Settings"
+msgstr ""
+
+#: templates/admin-dashboard.php:52
+msgid "2. Feed the Flame"
+msgstr ""
+
+#: templates/admin-dashboard.php:53
+msgid ""
+"Choose which content carries your essence. Curate pages, posts, and files "
+"that truly represent your mission. Not just information—transmission."
+msgstr ""
+
+#: templates/admin-dashboard.php:54
+msgid "Scan Content"
+msgstr ""
+
+#: templates/admin-dashboard.php:57
+msgid "3. Clear the Channel"
+msgstr ""
+
+#: templates/admin-dashboard.php:58
+msgid ""
+"Refine your knowledge base for resonance. Review, edit, and release what no "
+"longer aligns. Shape your AI's voice like a sacred text."
+msgstr ""
+
+#: templates/admin-dashboard.php:59
+msgid "Manage Knowledge"
+msgstr ""
+
+#: templates/admin-dashboard.php:62
+msgid "4. Set Your Wisdom Free"
+msgstr ""
+
+#: templates/admin-dashboard.php:63
+msgid ""
+"Download your curated knowledge base and use it anywhere. Your brand's soul "
+"- structured and portable for any platform that honors your voice."
+msgstr ""
+
+#: templates/admin-dashboard.php:64
+msgid "Export Your KB"
+msgstr ""
+
+#: templates/admin-dashboard.php:74
+msgid "Welcome to the Tribe"
+msgstr ""
+
+#. translators: %s is the user's email address
+#: templates/admin-dashboard.php:77
+#, php-format
+msgid "Your account is connected via %s."
+msgstr ""
+
+#: templates/admin-dashboard.php:80
+msgid "Your Next Step: The AI Brand Core"
+msgstr ""
+
+#: templates/admin-dashboard.php:81
+msgid ""
+"You now have access to the AI Brand Core questionnaire. This is where you "
+"define the heart of your brand, so your AI can learn to speak with your "
+"authentic voice. It's the most crucial step in creating an assistant that "
+"truly represents you."
+msgstr ""
+
+#: templates/admin-dashboard.php:82
+msgid "Go to my AI Brand Core"
+msgstr ""
+
+#: templates/admin-dashboard.php:85
+msgid "Manage Your Profile"
+msgstr ""
+
+#: templates/admin-dashboard.php:86
+msgid ""
+"You can manage your AIOHM Tribe account, view your Brand Soul map, and "
+"explore other member resources directly on the AIOHM app website."
+msgstr ""
+
+#: templates/admin-dashboard.php:87
+msgid "View My AIOHM Account"
+msgstr ""
+
+#: templates/admin-dashboard.php:98
+msgid "Unlock Tribe Features"
+msgstr ""
+
+#: templates/admin-dashboard.php:99
+msgid ""
+"To access the AI Brand Core questionnaire, please connect your free AIOHM "
+"Tribe account."
+msgstr ""
+
+#: templates/admin-dashboard.php:100 templates/admin-brand-soul.php:72
+#: templates/admin-license.php:85
+msgid "Connect Your Account"
+msgstr ""
+
+#: templates/admin-dashboard.php:103
+msgid "Join the AIOHM Tribe"
+msgstr ""
+
+#: templates/admin-dashboard.php:104
+msgid ""
+"A sacred starting point for soulful entrepreneurs and creators. The Tribe is "
+"your free invitation to explore the deeper layers of brand resonance and "
+"personal AI alignment."
+msgstr ""
+
+#: templates/admin-dashboard.php:107
+msgid "Access the AI Brand Core"
+msgstr ""
+
+#: templates/admin-dashboard.php:108
+msgid ""
+"Join for free to unlock the AI Brand Core questionnaire. This is the "
+"foundation for teaching the AI your unique voice, mission, and brand essence."
+msgstr ""
+
+#: templates/admin-dashboard.php:111
+msgid "Knowledge Base Management"
+msgstr ""
+
+#: templates/admin-dashboard.php:112
+msgid ""
+"Upload, organize, and edit what your AI assistant learns. Teach it your "
+"content, your story, your sacred material."
+msgstr ""
+
+#: templates/admin-dashboard.php:128
+msgid "Unlock Club Features"
+msgstr ""
+
+#: templates/admin-dashboard.php:129
+msgid ""
+"Join the AIOHM Club to access Mirror Mode (Q&A Chatbot) and Muse Mode (Brand "
+"Assistant)."
+msgstr ""
+
+#: templates/admin-dashboard.php:130 templates/admin-license.php:137
+msgid "Join AIOHM Club"
+msgstr ""
+
+#: templates/admin-dashboard.php:150
+msgid "Unlock Private Features"
+msgstr ""
+
+#: templates/admin-dashboard.php:151
+msgid ""
+"Private features are available with an AIOHM Private membership (ID 12)."
+msgstr ""
+
+#: templates/admin-dashboard.php:152
+msgid "Explore Private"
+msgstr ""
+
+#: templates/admin-dashboard.php:169
+msgid "Configure MCP API"
+msgstr ""
+
+#: templates/admin-help.php:13
+msgid "Your AIOHM Journey"
+msgstr ""
+
+#: templates/admin-help.php:14
+msgid ""
+"From initial setup to a fully realized AI assistant, this is your path to "
+"bringing your brand's soul to life."
+msgstr ""
+
+#: templates/admin-help.php:21
+msgid "AIOHM Unregistered"
+msgstr ""
+
+#: templates/admin-help.php:22 templates/admin-mcp.php:206
+msgid "Getting Started"
+msgstr ""
+
+#: templates/admin-help.php:23
+msgid ""
+"Basic plugin functionality available immediately after installation. Perfect "
+"for exploring AIOHM's potential."
+msgstr ""
+
+#: templates/admin-help.php:32
+msgid "Configure Settings"
+msgstr ""
+
+#: templates/admin-help.php:38
+msgid "Free AIOHM Tribe"
+msgstr ""
+
+#: templates/admin-help.php:39
+msgid "Brand Foundation"
+msgstr ""
+
+#: templates/admin-help.php:40
+msgid ""
+"Connect with AIOHM Tribe to unlock your brand's core identity features. "
+"Define who you are, how you want to sound, and what makes your brand unique. "
+"This is where your authentic voice begins to take shape through guided "
+"questionnaires and brand soul integration."
+msgstr ""
+
+#: templates/admin-help.php:49
+msgid "Define Your Brand"
+msgstr ""
+
+#: templates/admin-help.php:55
+msgid "AIOHM Club Members"
+msgstr ""
+
+#: templates/admin-help.php:56
+msgid "Mirror Mode & Muse Mode"
+msgstr ""
+
+#: templates/admin-help.php:57
+msgid ""
+"Deploy your AI assistant publicly and access Muse Mode for authentic content "
+"creation using your private Brand Core."
+msgstr ""
+
+#: templates/admin-help.php:72
+msgid "AIOHM Private Members"
+msgstr ""
+
+#: templates/admin-help.php:73
+msgid "Private Server & Advanced Infrastructure"
+msgstr ""
+
+#: templates/admin-help.php:74
+msgid ""
+"Ultimate privacy and control with exclusive access to private AI "
+"infrastructure, self-hosted solutions, and premium support."
+msgstr ""
+
+#: templates/admin-help.php:83
+msgid "Access Private Infrastructure"
+msgstr ""
+
+#: templates/admin-help.php:94
+msgid "Support with Heart"
+msgstr ""
+
+#: templates/admin-help.php:95
+msgid ""
+"Feeling stuck or unsure? Our team honors your vision and is here to help—"
+"gently and clearly."
+msgstr ""
+
+#: templates/admin-help.php:96
+msgid "→ Reach Out to Support"
+msgstr ""
+
+#: templates/admin-help.php:103
+msgid "Documentation"
+msgstr ""
+
+#: templates/admin-help.php:104
+msgid ""
+"Detailed documentation to help you understand the functionality of each "
+"feature."
+msgstr ""
+
+#: templates/admin-help.php:105
+msgid "Read Docs"
+msgstr ""
+
+#: templates/admin-help.php:112
+msgid "Request a Feature"
+msgstr ""
+
+#: templates/admin-help.php:113
+msgid ""
+"Have any special feature in mind? Let us know through the feature request."
+msgstr ""
+
+#: templates/admin-help.php:114
+msgid "Submit Request"
+msgstr ""
+
+#: templates/admin-settings.php:15 templates/admin-settings-backup.php:15
+msgid "AIOHM Settings"
+msgstr ""
+
+#: templates/admin-settings.php:16
+msgid ""
+"Configure AI services, API connections, and content scanning schedules with "
+"our beautiful OHM-branded interface."
+msgstr ""
+
+#: templates/admin-settings.php:36
+msgid "Default AI Provider"
+msgstr ""
+
+#: templates/admin-settings.php:37
+msgid "Choose your primary AI service from the configured options below."
+msgstr ""
+
+#: templates/admin-settings.php:41 templates/admin-settings-backup.php:28
+msgid "Primary AI Service"
+msgstr ""
+
+#: templates/admin-settings.php:45
+msgid "Free AI Services"
+msgstr ""
+
+#: templates/admin-settings.php:55
+msgid "Premium AI Services"
+msgstr ""
+
+#: templates/admin-settings.php:69
+msgid ""
+"Select your primary AI service from the providers you have configured below."
+msgstr ""
+
+#: templates/admin-settings.php:79
+msgid "Free AI Services & Connections"
+msgstr ""
+
+#: templates/admin-settings.php:80 templates/admin-settings-backup.php:52
+msgid ""
+"Get started with AI for free using these services. Perfect for testing and "
+"development."
+msgstr ""
+
+#: templates/admin-settings.php:85
+msgid "ShareAI - Free Tokens"
+msgstr ""
+
+#: templates/admin-settings.php:89 templates/admin-settings-backup.php:133
+msgid "API Key:"
+msgstr ""
+
+#: templates/admin-settings.php:93 templates/admin-settings-backup.php:137
+msgid "Test API & Usage"
+msgstr ""
+
+#: templates/admin-settings.php:98 templates/admin-settings-backup.php:142
+msgid "Model:"
+msgstr ""
+
+#: templates/admin-settings.php:128
+msgid "Affordable AI tokens with ShareAI"
+msgstr ""
+
+#: templates/admin-settings.php:129
+msgid ""
+"ShareAI connects you to a global compute network, making AI more affordable "
+"or free if you share your device's idle power. You can pay less for tokens "
+"than traditional providers or earn credits by contributing unused CPU/GPU "
+"resources, while accessing open-source models like Llama and more."
+msgstr ""
+
+#: templates/admin-settings.php:131
+msgid "To get started:"
+msgstr ""
+
+#. translators: %s is the URL to the ShareAI Console
+#: templates/admin-settings.php:136
+#, php-format
+msgid ""
+"Generate your API key in the <a href=\"%s\" target=\"_blank\">ShareAI "
+"Console</a>, add it to AIOHM settings, and ensure your chosen model is "
+"active with credits or sharing enabled."
+msgstr ""
+
+#: templates/admin-settings.php:159
+msgid "Unlock Ollama Server"
+msgstr ""
+
+#: templates/admin-settings.php:160
+msgid ""
+"Ollama server configuration requires AIOHM Private membership. Upgrade to "
+"use self-hosted AI models for maximum privacy and control."
+msgstr ""
+
+#: templates/admin-settings.php:161
+msgid "Upgrade to Private"
+msgstr ""
+
+#: templates/admin-settings.php:167
+msgid "Ollama Server (Private)"
+msgstr ""
+
+#: templates/admin-settings.php:168
+msgid ""
+"Configure your self-hosted Ollama server for maximum privacy and control "
+"over your AI models."
+msgstr ""
+
+#: templates/admin-settings.php:172
+msgid "Ollama Server URL"
+msgstr ""
+
+#: templates/admin-settings.php:176 templates/admin-settings-backup.php:217
+msgid "Custom Server"
+msgstr ""
+
+#: templates/admin-settings.php:177 templates/admin-settings-backup.php:218
+msgid "Local Ollama (localhost:11434)"
+msgstr ""
+
+#: templates/admin-settings.php:178 templates/admin-settings-backup.php:219
+msgid "ServBay Ollama (ollama.servbay.host)"
+msgstr ""
+
+#: templates/admin-settings.php:183 templates/admin-settings-backup.php:224
+msgid "Ollama Server Options:"
+msgstr ""
+
+#: templates/admin-settings.php:184 templates/admin-settings-backup.php:225
+msgid "ServBay Ollama:"
+msgstr ""
+
+#: templates/admin-settings.php:184 templates/admin-settings-backup.php:225
+msgid "ServBay hosted Ollama service - default option (ollama.servbay.host)"
+msgstr ""
+
+#: templates/admin-settings.php:185 templates/admin-settings-backup.php:226
+msgid "Local Ollama:"
+msgstr ""
+
+#: templates/admin-settings.php:185 templates/admin-settings-backup.php:226
+msgid "Self-hosted local Ollama installation (localhost:11434)"
+msgstr ""
+
+#: templates/admin-settings.php:186 templates/admin-settings-backup.php:227
+msgid "Custom Server:"
+msgstr ""
+
+#: templates/admin-settings.php:186 templates/admin-settings-backup.php:227
+msgid "Remote server or custom URL"
+msgstr ""
+
+#: templates/admin-settings.php:188 templates/admin-settings-backup.php:236
+msgid "Test Server"
+msgstr ""
+
+#: templates/admin-settings.php:192
+msgid "Ollama Model"
+msgstr ""
+
+#: templates/admin-settings.php:195 templates/admin-settings-backup.php:238
+msgid ""
+"Enter the model name to use on your Ollama server (e.g., llama2, mistral, "
+"codellama)"
+msgstr ""
+
+#: templates/admin-settings.php:204
+msgid "Premium AI Services & Connections"
+msgstr ""
+
+#: templates/admin-settings.php:205
+msgid ""
+"Professional AI services with advanced features. Requires paid API keys but "
+"offers superior performance and capabilities."
+msgstr ""
+
+#: templates/admin-settings.php:210
+msgid "OpenAI API Key"
+msgstr ""
+
+#: templates/admin-settings.php:215 templates/admin-settings.php:241
+#: templates/admin-settings.php:267 templates/admin-settings-backup.php:62
+#: templates/admin-settings-backup.php:86
+#: templates/admin-settings-backup.php:110
+msgid "Test API"
+msgstr ""
+
+#. translators: %s is the URL to the OpenAI API keys page
+#: templates/admin-settings.php:221 templates/admin-settings-backup.php:68
+#, php-format
+msgid ""
+"You can get your OpenAI API key from the <a href=\"%s\" target=\"_blank"
+"\">OpenAI API keys page</a>."
+msgstr ""
+
+#: templates/admin-settings.php:236 templates/admin-settings-backup.php:81
+msgid "Gemini API Key"
+msgstr ""
+
+#. translators: %s is the URL to the Google AI Studio API keys page
+#: templates/admin-settings.php:247 templates/admin-settings-backup.php:92
+#, php-format
+msgid ""
+"You can get your Gemini API key from the <a href=\"%s\" target=\"_blank"
+"\">Google AI Studio</a>."
+msgstr ""
+
+#: templates/admin-settings.php:262 templates/admin-settings-backup.php:105
+msgid "Claude API Key"
+msgstr ""
+
+#. translators: %s is the URL to the Anthropic Account Settings page
+#: templates/admin-settings.php:273 templates/admin-settings-backup.php:116
+#, php-format
+msgid ""
+"You can get your Claude API key from your <a href=\"%s\" target=\"_blank"
+"\">Anthropic Account Settings</a>."
+msgstr ""
+
+#: templates/admin-settings.php:290 templates/admin-settings-backup.php:360
+msgid "Free Features"
+msgstr ""
+
+#: templates/admin-settings.php:291
+msgid ""
+"These features are available to all users without membership requirements."
+msgstr ""
+
+#: templates/admin-settings.php:295 templates/admin-settings-backup.php:362
+msgid "Enable Search Shortcode"
+msgstr ""
+
+#. translators: %s is the shortcode for knowledge base search
+#: templates/admin-settings.php:301 templates/admin-settings-backup.php:365
+#, php-format
+msgid "Enable the %s shortcode for knowledge base search."
+msgstr ""
+
+#: templates/admin-settings.php:311 templates/admin-settings-backup.php:267
+msgid "AI Usage Overview"
+msgstr ""
+
+#: templates/admin-settings.php:312
+msgid ""
+"Monitor your AI usage, track costs, and analyze performance across all "
+"providers."
+msgstr ""
+
+#: templates/admin-settings.php:318 templates/admin-settings-backup.php:272
+msgid "Total Tokens (30 Days)"
+msgstr ""
+
+#: templates/admin-settings.php:320 templates/admin-settings-backup.php:274
+msgid "All providers combined"
+msgstr ""
+
+#: templates/admin-settings.php:327 templates/admin-settings-backup.php:281
+msgid "Today's Usage"
+msgstr ""
+
+#: templates/admin-settings.php:329 templates/admin-settings-backup.php:283
+msgid "Current day total"
+msgstr ""
+
+#: templates/admin-settings.php:336 templates/admin-settings-backup.php:290
+msgid "Estimated Cost"
+msgstr ""
+
+#: templates/admin-settings.php:338 templates/admin-settings-backup.php:292
+msgid "Last 30 days (USD)"
+msgstr ""
+
+#: templates/admin-settings.php:353 templates/admin-settings-backup.php:299
+msgid "Active Provider"
+msgstr ""
+
+#: templates/admin-settings.php:364 templates/admin-settings-backup.php:301
+msgid "Primary AI service"
+msgstr ""
+
+#: templates/admin-settings.php:370 templates/admin-settings-backup.php:307
+msgid "Usage Breakdown by Provider"
+msgstr ""
+
+#: templates/admin-settings.php:373 templates/admin-settings-backup.php:310
+msgid "Provider"
+msgstr ""
+
+#: templates/admin-settings.php:374 templates/admin-settings-backup.php:311
+msgid "Tokens (30d)"
+msgstr ""
+
+#: templates/admin-settings.php:375 templates/admin-settings-backup.php:312
+msgid "Requests"
+msgstr ""
+
+#: templates/admin-settings.php:376 templates/admin-settings-backup.php:313
+msgid "Est. Cost"
+msgstr ""
+
+#: templates/admin-settings.php:417 templates/admin-settings-backup.php:354
+msgid "Refresh Stats"
+msgstr ""
+
+#: templates/admin-settings.php:428 templates/admin-settings-backup.php:374
+msgid "Unlock Advanced Settings"
+msgstr ""
+
+#: templates/admin-settings.php:429 templates/admin-settings-backup.php:375
+msgid ""
+"These settings require an AIOHM Club or Private membership to configure. "
+"Please ensure your AIOHM App Email is configured correctly on the License "
+"page, and you have an active Club/Private membership."
+msgstr ""
+
+#: templates/admin-settings.php:430 templates/admin-settings-backup.php:376
+msgid "Explore Memberships"
+msgstr ""
+
+#: templates/admin-settings.php:437 templates/admin-settings-backup.php:382
+msgid "Q&A Chatbot Settings (Public)"
+msgstr ""
+
+#: templates/admin-settings.php:438
+msgid ""
+"Configure your public-facing chatbot that visitors can interact with on your "
+"website."
+msgstr ""
+
+#: templates/admin-settings.php:442 templates/admin-settings-backup.php:384
+msgid "Enable Q&A Chatbot"
+msgstr ""
+
+#. translators: %s is the shortcode for the Q&A chatbot
+#. translators: %s is the shortcode for the private brand assistant
+#. translators: %s is the shortcode for the Q&A chatbot
+#. translators: %s is the shortcode for the private brand assistant
+#: templates/admin-settings.php:448 templates/admin-settings.php:468
+#: templates/admin-settings-backup.php:387
+#: templates/admin-settings-backup.php:397
+#, php-format
+msgid "Enable the %s shortcode."
+msgstr ""
+
+#: templates/admin-settings.php:457
+msgid "Private Brand Assistant (Members Only)"
+msgstr ""
+
+#: templates/admin-settings.php:458
+msgid ""
+"Configure your private AI assistant available only to authenticated members."
+msgstr ""
+
+#: templates/admin-settings.php:462 templates/admin-settings-backup.php:394
+msgid "Enable Private Assistant"
+msgstr ""
+
+#: templates/admin-settings.php:477 templates/admin-settings-backup.php:402
+msgid "Scheduled Content Scan"
+msgstr ""
+
+#: templates/admin-settings.php:478
+msgid ""
+"Automatically scan and update your knowledge base on a regular schedule."
+msgstr ""
+
+#: templates/admin-settings.php:482 templates/admin-settings-backup.php:404
+msgid "Scan Frequency"
+msgstr ""
+
+#: templates/admin-settings.php:498 templates/admin-settings-backup.php:412
+msgid "Plugin Data Management"
+msgstr ""
+
+#: templates/admin-settings.php:499
+msgid "Control how your plugin data is handled during uninstallation."
+msgstr ""
+
+#: templates/admin-settings.php:503 templates/admin-settings-backup.php:415
+msgid "Uninstall Behavior"
+msgstr ""
+
+#: templates/admin-settings.php:508 templates/admin-settings-backup.php:420
+msgid "Delete all plugin data when uninstalling"
+msgstr ""
+
+#: templates/admin-settings.php:511 templates/admin-settings-backup.php:423
+msgid ""
+"When checked, all plugin data will be permanently deleted when you uninstall "
+"the plugin. This includes:"
+msgstr ""
+
+#: templates/admin-settings.php:512 templates/admin-settings-backup.php:424
+msgid "All API keys and settings"
+msgstr ""
+
+#: templates/admin-settings.php:513 templates/admin-settings-backup.php:425
+msgid "Knowledge base entries and vector embeddings"
+msgstr ""
+
+#: templates/admin-settings.php:514 templates/admin-settings-backup.php:426
+msgid "Chat conversations and messages"
+msgstr ""
+
+#: templates/admin-settings.php:515 templates/admin-settings-backup.php:427
+msgid "Project data and custom database tables"
+msgstr ""
+
+#: templates/admin-settings.php:516 templates/admin-settings-backup.php:428
+msgid "Warning: This action cannot be undone!"
+msgstr ""
+
+#: templates/admin-mcp.php:27
+msgid "MCP (Model Context Protocol) API"
+msgstr ""
+
+#: templates/admin-mcp.php:28
+msgid ""
+"Share your knowledge base with external AI assistants and applications "
+"through standardized MCP endpoints."
+msgstr ""
+
+#: templates/admin-mcp.php:39
+msgid "MCP API - Private Members Only"
+msgstr ""
+
+#: templates/admin-mcp.php:40
+msgid ""
+"The MCP (Model Context Protocol) API is an exclusive feature for AIOHM "
+"Private level members. Upgrade to Private level to unlock the ability to "
+"share your knowledge base with external AI assistants."
+msgstr ""
+
+#: templates/admin-mcp.php:43
+msgid "Private Level Benefits:"
+msgstr ""
+
+#: templates/admin-mcp.php:45
+msgid "Full MCP API access"
+msgstr ""
+
+#: templates/admin-mcp.php:46
+msgid "Connect Claude Desktop to your knowledge base"
+msgstr ""
+
+#: templates/admin-mcp.php:47
+msgid "Share knowledge between multiple sites"
+msgstr ""
+
+#: templates/admin-mcp.php:48
+msgid "Mobile app integration capabilities"
+msgstr ""
+
+#: templates/admin-mcp.php:49
+msgid "Automatic access to Club and Tribal level features"
+msgstr ""
+
+#: templates/admin-mcp.php:50
+msgid "Advanced AI agent ecosystem integration"
+msgstr ""
+
+#: templates/admin-mcp.php:54
+msgid "Upgrade to Private Level"
+msgstr ""
+
+#: templates/admin-mcp.php:66
+msgid "Quick Start Guide"
+msgstr ""
+
+#: templates/admin-mcp.php:67
+msgid "Follow these steps to get started with MCP integration."
+msgstr ""
+
+#: templates/admin-mcp.php:73 templates/admin-mcp.php:86
+#: templates/admin-mcp.php:1143 templates/admin-mcp.php:1148
+#: templates/admin-mcp.php:1154
+msgid "Enable MCP API"
+msgstr ""
+
+#: templates/admin-mcp.php:74
+msgid "Turn on the MCP API to allow external connections."
+msgstr ""
+
+#: templates/admin-mcp.php:86 templates/admin-mcp.php:1143
+#: templates/admin-mcp.php:1148 templates/admin-mcp.php:1154
+msgid "MCP API Enabled"
+msgstr ""
+
+#: templates/admin-mcp.php:95
+msgid "Generate API Token"
+msgstr ""
+
+#: templates/admin-mcp.php:96
+msgid ""
+"Create secure tokens for external applications to access your knowledge base."
+msgstr ""
+
+#: templates/admin-mcp.php:105
+msgid "Token Name"
+msgstr ""
+
+#: templates/admin-mcp.php:107
+msgid "e.g., Mobile App, Claude Desktop"
+msgstr ""
+
+#: templates/admin-mcp.php:108
+msgid "A descriptive name to identify this token"
+msgstr ""
+
+#: templates/admin-mcp.php:112 templates/admin-mcp.php:1273
+msgid "Permissions"
+msgstr ""
+
+#: templates/admin-mcp.php:117
+msgid "Read Knowledge Base"
+msgstr ""
+
+#: templates/admin-mcp.php:118
+msgid "Query and retrieve knowledge base entries"
+msgstr ""
+
+#: templates/admin-mcp.php:122
+msgid "Read & Write Knowledge Base"
+msgstr ""
+
+#: templates/admin-mcp.php:123
+msgid "Add, update, and delete knowledge base entries"
+msgstr ""
+
+#: templates/admin-mcp.php:129
+msgid "Expiration"
+msgstr ""
+
+#: templates/admin-mcp.php:132
+msgid "Never expires"
+msgstr ""
+
+#: templates/admin-mcp.php:133
+msgid "7 days"
+msgstr ""
+
+#: templates/admin-mcp.php:134
+msgid "30 days"
+msgstr ""
+
+#: templates/admin-mcp.php:135
+msgid "90 days"
+msgstr ""
+
+#: templates/admin-mcp.php:136
+msgid "1 year"
+msgstr ""
+
+#: templates/admin-mcp.php:138
+msgid "Set token expiration for enhanced security"
+msgstr ""
+
+#: templates/admin-mcp.php:144
+msgid "Generate Token"
+msgstr ""
+
+#: templates/admin-mcp.php:151
+msgid "Token Generated Successfully"
+msgstr ""
+
+#: templates/admin-mcp.php:152
+msgid ""
+"Please copy and save this token immediately. It will not be shown again for "
+"security reasons."
+msgstr ""
+
+#: templates/admin-mcp.php:155
+msgid "API Token:"
+msgstr ""
+
+#: templates/admin-mcp.php:159 templates/admin-mcp.php:186
+msgid "Copy"
+msgstr ""
+
+#: templates/admin-mcp.php:165
+msgid "How to Use This Token"
+msgstr ""
+
+#: templates/admin-mcp.php:166
+msgid "Include this token in the Authorization header of your MCP requests:"
+msgstr ""
+
+#: templates/admin-mcp.php:169
+msgid "Example MCP Manifest URL"
+msgstr ""
+
+#: templates/admin-mcp.php:173 templates/admin-mcp.php:312
+msgid "Close"
+msgstr ""
+
+#: templates/admin-mcp.php:182
+msgid "Use MCP Endpoint"
+msgstr ""
+
+#: templates/admin-mcp.php:183
+msgid "Configure your AI assistant with the endpoint URL:"
+msgstr ""
+
+#: templates/admin-mcp.php:197
+msgid "MCP Integration Guide"
+msgstr ""
+
+#: templates/admin-mcp.php:200
+msgid "Overview"
+msgstr ""
+
+#: templates/admin-mcp.php:201
+msgid "Endpoints"
+msgstr ""
+
+#: templates/admin-mcp.php:202
+msgid "Examples"
+msgstr ""
+
+#: templates/admin-mcp.php:208
+msgid "Enable MCP API in the settings above"
+msgstr ""
+
+#: templates/admin-mcp.php:209
+msgid "Generate an API token with appropriate permissions"
+msgstr ""
+
+#: templates/admin-mcp.php:210
+msgid "Configure your MCP client to use the manifest URL"
+msgstr ""
+
+#: templates/admin-mcp.php:211
+msgid "Start making API calls to query or modify your knowledge base"
+msgstr ""
+
+#: templates/admin-mcp.php:214
+msgid "Available Capabilities"
+msgstr ""
+
+#: templates/admin-mcp.php:216
+msgid "Search knowledge base with semantic understanding"
+msgstr ""
+
+#: templates/admin-mcp.php:217
+msgid "Retrieve specific knowledge base entry by ID"
+msgstr ""
+
+#: templates/admin-mcp.php:218
+msgid "List entries with pagination and filtering"
+msgstr ""
+
+#: templates/admin-mcp.php:219
+msgid "Add new content to knowledge base (requires write permission)"
+msgstr ""
+
+#: templates/admin-mcp.php:220
+msgid "Update existing entries (requires write permission)"
+msgstr ""
+
+#: templates/admin-mcp.php:221
+msgid "Delete entries (requires write permission)"
+msgstr ""
+
+#: templates/admin-mcp.php:226
+msgid "MCP Endpoints"
+msgstr ""
+
+#: templates/admin-mcp.php:233
+msgid ""
+"Returns the MCP manifest describing available capabilities and parameters."
+msgstr ""
+
+#: templates/admin-mcp.php:241
+msgid "Execute MCP actions like queryKB, addKBEntry, etc."
+msgstr ""
+
+#: templates/admin-mcp.php:249
+msgid "Validate API token and check permissions."
+msgstr ""
+
+#: templates/admin-mcp.php:254
+msgid "Example API Calls"
+msgstr ""
+
+#: templates/admin-mcp.php:257
+msgid "Query Knowledge Base"
+msgstr ""
+
+#: templates/admin-mcp.php:271
+msgid "Add Knowledge Base Entry"
+msgstr ""
+
+#: templates/admin-mcp.php:286
+msgid "Get MCP Manifest"
+msgstr ""
+
+#: templates/admin-mcp.php:297
+msgid "Existing Tokens"
+msgstr ""
+
+#: templates/admin-mcp.php:298
+msgid "Manage your existing API tokens and monitor their usage."
+msgstr ""
+
+#: templates/admin-mcp.php:301 templates/admin-mcp.php:1245
+msgid "Loading tokens..."
+msgstr ""
+
+#: templates/admin-mcp.php:311
+msgid "Token Details"
+msgstr ""
+
+#: templates/admin-mcp.php:317
+msgid "Name:"
+msgstr ""
+
+#: templates/admin-mcp.php:321
+msgid "Token Preview:"
+msgstr ""
+
+#: templates/admin-mcp.php:325
+msgid "Permissions:"
+msgstr ""
+
+#: templates/admin-mcp.php:329
+msgid "Status:"
+msgstr ""
+
+#: templates/admin-mcp.php:333
+msgid "Created By:"
+msgstr ""
+
+#: templates/admin-mcp.php:337
+msgid "Created:"
+msgstr ""
+
+#: templates/admin-mcp.php:341
+msgid "Last Used:"
+msgstr ""
+
+#: templates/admin-mcp.php:345
+msgid "Expires:"
+msgstr ""
+
+#: templates/admin-mcp.php:1128
+msgid "Saving..."
+msgstr ""
+
+#: templates/admin-mcp.php:1149 templates/admin-mcp.php:1187
+#: templates/admin-mcp.php:1367 templates/admin-mcp.php:1451
+#: templates/admin-mcp.php:1482
+msgid "Error: "
+msgstr ""
+
+#: templates/admin-mcp.php:1149
+msgid "Could not save settings."
+msgstr ""
+
+#: templates/admin-mcp.php:1155 templates/admin-mcp.php:1190
+#: templates/admin-mcp.php:1378 templates/admin-mcp.php:1456
+#: templates/admin-mcp.php:1486
+msgid "An unexpected server error occurred."
+msgstr ""
+
+#: templates/admin-mcp.php:1168
+msgid "Generating..."
+msgstr ""
+
+#: templates/admin-mcp.php:1187
+msgid "Could not generate token."
+msgstr ""
+
+#: templates/admin-mcp.php:1222
+msgid "Copied!"
+msgstr ""
+
+#: templates/admin-mcp.php:1256 templates/admin-mcp.php:1260
+msgid "Error loading tokens."
+msgstr ""
+
+#: templates/admin-mcp.php:1267 templates/admin-mcp.php:1361
+#: templates/admin-mcp.php:1445
+msgid "No tokens created yet."
+msgstr ""
+
+#: templates/admin-mcp.php:1272
+msgid "Name"
+msgstr ""
+
+#: templates/admin-mcp.php:1274
+msgid "Status"
+msgstr ""
+
+#: templates/admin-mcp.php:1275
+msgid "Created"
+msgstr ""
+
+#: templates/admin-mcp.php:1276
+msgid "Expires"
+msgstr ""
+
+#: templates/admin-mcp.php:1286 templates/admin-mcp.php:1542
+msgid "Active"
+msgstr ""
+
+#: templates/admin-mcp.php:1287 templates/admin-mcp.php:1541
+msgid "Expired"
+msgstr ""
+
+#: templates/admin-mcp.php:1288 templates/admin-mcp.php:1540
+msgid "Inactive"
+msgstr ""
+
+#: templates/admin-mcp.php:1295 templates/admin-mcp.php:1549
+#: templates/admin-mcp.php:1552
+msgid "Never"
+msgstr ""
+
+#: templates/admin-mcp.php:1300
+msgid "Revoke"
+msgstr ""
+
+#: templates/admin-mcp.php:1302
+msgid "Remove"
+msgstr ""
+
+#: templates/admin-mcp.php:1320
+msgid "Are you sure you want to revoke the token \""
+msgstr ""
+
+#: templates/admin-mcp.php:1321
+msgid "Yes, Revoke"
+msgstr ""
+
+#: templates/admin-mcp.php:1322 templates/admin-mcp.php:1410
+msgid "Cancel"
+msgstr ""
+
+#: templates/admin-mcp.php:1337
+msgid "Revoking..."
+msgstr ""
+
+#: templates/admin-mcp.php:1364
+msgid "Token revoked successfully."
+msgstr ""
+
+#: templates/admin-mcp.php:1367
+msgid "Could not revoke token."
+msgstr ""
+
+#: templates/admin-mcp.php:1408
+msgid "Are you sure you want to permanently remove the token \\\""
+msgstr ""
+
+#: templates/admin-mcp.php:1409
+msgid "Yes, Remove"
+msgstr ""
+
+#: templates/admin-mcp.php:1425
+msgid "Removing..."
+msgstr ""
+
+#: templates/admin-mcp.php:1448
+msgid "Token removed successfully."
+msgstr ""
+
+#: templates/admin-mcp.php:1451
+msgid "Could not remove token."
+msgstr ""
+
+#: templates/admin-mcp.php:1482
+msgid "Could not load token details."
+msgstr ""
+
+#: templates/admin-brand-soul.php:61
+msgid "Your Brand Core Questionnaire"
+msgstr ""
+
+#: templates/admin-brand-soul.php:62
+msgid ""
+"Answer these questions to define the core of your brand. Your answers will "
+"help shape your AI assistant's voice and knowledge."
+msgstr ""
+
+#: templates/admin-brand-soul.php:70
+msgid "Unlock Your AI Brand Core"
+msgstr ""
+
+#: templates/admin-brand-soul.php:71
+msgid ""
+"This questionnaire is a key feature for AIOHM Tribe members. Please connect "
+"your free Tribe account to begin defining your brand's soul."
+msgstr ""
+
+#: templates/admin-brand-soul.php:96
+msgid "Save & Export"
+msgstr ""
+
+#: templates/admin-brand-soul.php:134
+msgid "Previous"
+msgstr ""
+
+#: templates/admin-brand-soul.php:135
+msgid "Save Progress"
+msgstr ""
+
+#: templates/admin-brand-soul.php:136
+msgid "Next"
+msgstr ""
+
+#: templates/admin-brand-soul.php:262
+msgid "Save My Answers"
+msgstr ""
+
+#: templates/admin-brand-soul.php:263
+msgid "Add to My Knowledge Base"
+msgstr ""
+
+#: templates/admin-brand-soul.php:264
+msgid "Download PDF"
+msgstr ""
+
+#: templates/admin-settings-backup.php:16
+msgid "Configure API keys, AI assistants, and content scanning schedules."
+msgstr ""
+
+#: templates/admin-settings-backup.php:25
+msgid "🎯 Default AI Provider"
+msgstr ""
+
+#: templates/admin-settings-backup.php:31
+msgid "🆓 Free AI Services"
+msgstr ""
+
+#: templates/admin-settings-backup.php:35
+msgid "💳 Premium AI Services"
+msgstr ""
+
+#: templates/admin-settings-backup.php:42
+msgid ""
+"Choose your primary AI service. Free options include ShareAI (with free "
+"credits) and self-hosted Ollama. Premium services require paid API keys but "
+"offer advanced features."
+msgstr ""
+
+#: templates/admin-settings-backup.php:51
+msgid "🆓 Free AI Services & Connections"
+msgstr ""
+
+#: templates/admin-settings-backup.php:57
+msgid "🎁 ShareAI - Free Credits"
+msgstr ""
+
+#: templates/admin-settings-backup.php:129
+msgid "ShareAI Settings"
+msgstr ""
+
+#. translators: %s is the URL to the ShareAI API keys page
+#: templates/admin-settings-backup.php:198
+#, php-format
+msgid ""
+"Get your ShareAI API key from the <a href=\"%s\" target=\"_blank\">ShareAI "
+"Console</a>. Make sure to add credits and that your selected model is "
+"available in your account."
+msgstr ""
+
+#: templates/admin-settings-backup.php:213
+msgid "Private LLM Server URL"
+msgstr ""
+
+#: templates/admin-settings-backup.php:232
+msgid "Private LLM Model"
+msgstr ""
+
+#: templates/admin-settings-backup.php:243
+msgid "Private LLM Server"
+msgstr ""
+
+#: templates/admin-settings-backup.php:248
+msgid ""
+"Configure your private Ollama server. Available for AIOHM Private members "
+"only."
+msgstr ""
+
+#: templates/admin-settings-backup.php:258
+msgid "Save API Settings"
+msgstr ""
+
+#: templates/admin-settings-backup.php:392
+msgid "Private Brand Assistant (Admin-Only)"
+msgstr ""
+
+#: templates/partials/header.php:17 templates/admin-license.php:109
+msgid "AIOHM Logo"
+msgstr ""
+
+#: templates/admin-license.php:26
+msgid "AIOHM Membership & Features"
+msgstr ""
+
+#: templates/admin-license.php:27
+msgid ""
+"Connect your account to see the features available with your membership tier."
+msgstr ""
+
+#: templates/admin-license.php:35
+msgid "OHM Logo"
+msgstr ""
+
+#: templates/admin-license.php:41
+msgid "Welcome to the Tribe!"
+msgstr ""
+
+#: templates/admin-license.php:46
+msgid ""
+"As a Tribe member, you can now use the core features of the AIOHM Assistant, "
+"including the Brand Soul questionnaire and knowledge base management."
+msgstr ""
+
+#: templates/admin-license.php:47
+msgid "View Your Tribe Profile"
+msgstr ""
+
+#: templates/admin-license.php:49
+msgid "Free - Where brand resonance begins."
+msgstr ""
+
+#: templates/admin-license.php:59
+msgid ""
+"Access your personal Brand Soul Map through our guided questionnaire and "
+"shape your AI with the truths that matter most to you."
+msgstr ""
+
+#: templates/admin-license.php:60
+msgid "Join AIOHM Tribe"
+msgstr ""
+
+#. translators: %s is the user's email address
+#: templates/admin-license.php:70
+#, php-format
+msgid "Your site is linked via the email: %s"
+msgstr ""
+
+#: templates/admin-license.php:81
+msgid "Disconnect Account"
+msgstr ""
+
+#: templates/admin-license.php:86
+msgid ""
+"Enter your AIOHM Email below to verify your membership and connect your "
+"account."
+msgstr ""
+
+#: templates/admin-license.php:90
+msgid "Send Verification Code"
+msgstr ""
+
+#: templates/admin-license.php:96
+msgid "Verify & Connect"
+msgstr ""
+
+#: templates/admin-license.php:97
+msgid "Resend Code"
+msgstr ""
+
+#: templates/admin-license.php:115
+msgid "You have unlocked Club features!"
+msgstr ""
+
+#: templates/admin-license.php:121
+msgid "Manage Membership"
+msgstr ""
+
+#: templates/admin-license.php:123
+msgid "1€/month or 10€/year for first 1000 members."
+msgstr ""
+
+#: templates/admin-license.php:149
+msgid "AIOHM Private Logo"
+msgstr ""
+
+#: templates/admin-license.php:154
+msgid "🔒 AIOHM Private Members - Connected"
+msgstr ""
+
+#. translators: %s is the user's display name
+#: templates/admin-license.php:157
+#, php-format
+msgid ""
+"Welcome %s, you have exclusive access to premium private infrastructure."
+msgstr ""
+
+#: templates/admin-license.php:164
+msgid "Ollama Integration"
+msgstr ""
+
+#: templates/admin-license.php:165
+msgid ""
+"Full access to self-hosted Ollama models for complete privacy and control "
+"over your AI processing."
+msgstr ""
+
+#: templates/admin-license.php:170
+msgid "Private Server Access"
+msgstr ""
+
+#: templates/admin-license.php:171
+msgid ""
+"Connect to dedicated private AI servers and custom LLM endpoints with "
+"enterprise-grade security."
+msgstr ""
+
+#: templates/admin-license.php:176
+msgid "Advanced Model Selection"
+msgstr ""
+
+#: templates/admin-license.php:177
+msgid ""
+"Access to premium AI models and exclusive private infrastructure not "
+"available to public users."
+msgstr ""
+
+#: templates/admin-license.php:182
+msgid "Data Sovereignty"
+msgstr ""
+
+#: templates/admin-license.php:183
+msgid ""
+"Complete control over your AI processing with private server deployment and "
+"zero data sharing."
+msgstr ""
+
+#: templates/admin-license.php:188
+msgid "White-Glove Support"
+msgstr ""
+
+#: templates/admin-license.php:189
+msgid ""
+"Direct access to AIOHM team for personalized setup, optimization, and "
+"priority technical support."
+msgstr ""
+
+#: templates/admin-license.php:194
+msgid "Usage Analytics"
+msgstr ""
+
+#: templates/admin-license.php:195
+msgid ""
+"Detailed analytics and monitoring of your private AI infrastructure "
+"performance and usage patterns."
+msgstr ""
+
+#: templates/admin-license.php:200
+msgid "Early Access to New Features"
+msgstr ""
+
+#: templates/admin-license.php:201
+msgid ""
+"Be the first to test and access cutting-edge AI features before they're "
+"released to other membership tiers."
+msgstr ""
+
+#: templates/admin-license.php:206
+msgid "More Soon"
+msgstr ""
+
+#: templates/admin-license.php:207
+msgid ""
+"We're constantly developing new exclusive features and capabilities for our "
+"private members. Stay tuned for exciting updates!"
+msgstr ""
+
+#: templates/admin-license.php:213
+msgid "Membership Level:"
+msgstr ""
+
+#: templates/admin-license.php:214
+msgid "Valid Until:"
+msgstr ""
+
+#: templates/admin-license.php:217
+msgid "Configure Private Infrastructure"
+msgstr ""
+
+#: templates/admin-license.php:218
+msgid "Contact Private Support"
+msgstr ""
