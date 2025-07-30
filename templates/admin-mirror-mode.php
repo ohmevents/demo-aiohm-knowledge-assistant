@@ -6,6 +6,9 @@
 
 if (!defined('ABSPATH')) exit;
 
+// Check if this is demo version
+$is_demo_version = defined('AIOHM_KB_VERSION') && AIOHM_KB_VERSION === 'DEMO';
+
 // Fetch all settings and then get the specific part for Mirror Mode
 $all_settings = AIOHM_KB_Assistant::get_settings();
 $settings = $all_settings['mirror_mode'] ?? [];
@@ -180,7 +183,16 @@ $qa_system_message = !empty($saved_message) ? $saved_message : $default_prompt;
                 </div>
                 
                 <div class="form-actions">
-                    <button type="button" id="save-mirror-mode-settings" class="button button-primary"><?php esc_html_e('Save Mirror Mode Settings', 'aiohm-knowledge-assistant'); ?></button>
+                    <?php if ($is_demo_version): ?>
+                        <button type="button" class="button button-primary" data-premium-feature="mirror-mode">
+                            <?php esc_html_e('Save Mirror Mode Settings', 'aiohm-knowledge-assistant'); ?> 🔒
+                        </button>
+                        <p class="demo-notice">
+                            🎭 <strong>Demo Mode:</strong> Settings are read-only. <a href="https://aiohm.app/club" target="_blank">Upgrade to Club</a> to save changes.
+                        </p>
+                    <?php else: ?>
+                        <button type="button" id="save-mirror-mode-settings" class="button button-primary"><?php esc_html_e('Save Mirror Mode Settings', 'aiohm-knowledge-assistant'); ?></button>
+                    <?php endif; ?>
                 </div>
             </form>
         </div>

@@ -5,6 +5,9 @@
  */
 if (!defined('ABSPATH')) exit;
 
+// Load demo responses for demo version
+require_once AIOHM_KB_INCLUDES_DIR . 'demo-responses.php';
+
 class AIOHM_KB_AI_GPT_Client {
     
     private $settings;
@@ -358,6 +361,11 @@ class AIOHM_KB_AI_GPT_Client {
     }
 
     public function get_chat_completion($system_message, $user_message, $temperature = 0.7, $model = 'gpt-3.5-turbo') {
+        // Return demo responses if this is demo version
+        if (AIOHM_Demo_Responses::is_demo_version()) {
+            return $this->get_demo_chat_completion($system_message, $user_message, $model);
+        }
+        
         if (strpos($model, 'gemini') === 0) {
             return $this->get_gemini_chat_completion($system_message, $user_message, $temperature, $model);
         }
@@ -375,6 +383,23 @@ class AIOHM_KB_AI_GPT_Client {
         }
         
         return $this->get_openai_chat_completion($system_message, $user_message, $temperature, $model);
+    }
+    
+    /**
+     * Get demo chat completion response
+     */
+    private function get_demo_chat_completion($system_message, $user_message, $model) {
+        // Determine mode based on system message content
+        $mode = 'default';
+        if (strpos(strtolower($system_message), 'mirror') !== false || 
+            strpos(strtolower($system_message), 'knowledge assistant') !== false) {
+            $mode = 'mirror';
+        } elseif (strpos(strtolower($system_message), 'muse') !== false || 
+                  strpos(strtolower($system_message), 'brand assistant') !== false) {
+            $mode = 'muse';
+        }
+        
+        return AIOHM_Demo_Responses::get_demo_response($mode, $user_message);
     }
     
     private function get_gemini_chat_completion($system_message, $user_message, $temperature, $model) {

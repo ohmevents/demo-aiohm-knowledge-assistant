@@ -9,6 +9,9 @@
 
 if (!defined('ABSPATH')) exit;
 
+// Check if this is demo version
+$is_demo_version = defined('AIOHM_KB_VERSION') && AIOHM_KB_VERSION === 'DEMO';
+
 // Fetch all settings and then get the specific part for Muse Mode
 $all_settings = AIOHM_KB_Assistant::get_settings();
 $settings = $all_settings['muse_mode'] ?? [];

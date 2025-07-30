@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: AIOHM Knowledge Assistant
+ * Plugin Name: DEMO AIOHM Knowledge Assistant
  * Plugin URI:  https://aiohm.app/
- * Description: AIOHM turns WordPress into an AI hub with Muse (Private) & Mirror (Public) Modes, brand voice alignment, and MCP for connected AI workflows.
+ * Description: DEMO AIOHM turns WordPress into an AI hub with Muse (Private) & Mirror (Public) Modes, brand voice alignment, and MCP for connected AI workflows.
  * Version:     1.2.9
  * Author:      OHM Events Agency
  * Author URI:  https://ohm.events
@@ -18,7 +18,7 @@
 if (!defined('ABSPATH')) exit;
 
 // Define plugin constants
-define('AIOHM_KB_VERSION', '1.2.9');
+define('AIOHM_KB_VERSION', 'DEMO');
 define('AIOHM_KB_PLUGIN_FILE', __FILE__);
 define('AIOHM_KB_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('AIOHM_KB_INCLUDES_DIR', AIOHM_KB_PLUGIN_DIR . 'includes/');
@@ -117,6 +117,7 @@ class AIOHM_KB_Assistant {
         $this->create_mcp_tables(); // Create MCP token tables
         $this->maybe_migrate_soul_signature(); // Migrate soul signature formatting
         $this->set_default_options();
+        $this->set_demo_license(); // Auto-set demo license for playground
         flush_rewrite_rules();
         $settings = self::get_settings();
         if ($settings['scan_schedule'] !== 'none') {
@@ -549,6 +550,24 @@ class AIOHM_KB_Assistant {
                 'chunk_overlap' => 200
             ];
             add_option('aiohm_kb_settings', $basic_defaults);
+        }
+    }
+    
+    /**
+     * Auto-set demo license for playground environment
+     */
+    private function set_demo_license() {
+        if (defined('AIOHM_KB_VERSION') && AIOHM_KB_VERSION === 'DEMO') {
+            $current_settings = get_option('aiohm_kb_settings', []);
+            
+            // Auto-set demo email if not already set
+            if (empty($current_settings['aiohm_app_email'])) {
+                $current_settings['aiohm_app_email'] = 'contact@ohm.events';
+                update_option('aiohm_kb_settings', $current_settings);
+                
+                // Log demo activation
+                self::log('Demo license auto-activated for playground environment', 'info');
+            }
         }
     }
 

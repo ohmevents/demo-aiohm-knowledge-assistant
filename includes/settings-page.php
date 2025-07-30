@@ -162,6 +162,12 @@ class AIOHM_KB_Settings_Page {
         if (strpos($hook, 'aiohm-') !== false) {
             wp_enqueue_style('aiohm-admin-global-styles', AIOHM_KB_PLUGIN_URL . 'assets/css/aiohm-chat.css', array(), AIOHM_KB_VERSION);
             wp_enqueue_style('aiohm-admin-header-styles', AIOHM_KB_PLUGIN_URL . 'assets/css/aiohm-admin-header.css', array(), AIOHM_KB_VERSION);
+            
+            // Enqueue demo assets if this is demo version
+            if (defined('AIOHM_KB_VERSION') && AIOHM_KB_VERSION === 'DEMO') {
+                wp_enqueue_style('aiohm-demo-styles', AIOHM_KB_PLUGIN_URL . 'assets/css/aiohm-demo.css', array(), AIOHM_KB_VERSION);
+                wp_enqueue_script('aiohm-demo-js', AIOHM_KB_PLUGIN_URL . 'assets/js/aiohm-demo-upgrade.js', array('jquery'), AIOHM_KB_VERSION, true);
+            }
         }
         
         $mirror_mode_hook = 'aiohm_page_aiohm-mirror-mode';

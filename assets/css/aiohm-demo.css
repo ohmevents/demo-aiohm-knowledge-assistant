@@ -1,0 +1,346 @@
+/**
+ * AIOHM Demo Version Styles
+ * 
+ * Styles for demo banners, upgrade modals, and watermarks
+ */
+
+/* Demo Banner */
+.aiohm-demo-banner {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    animation: slideDown 0.3s ease-out;
+}
+
+.demo-banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.demo-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.demo-text {
+    flex-grow: 1;
+    font-size: 14px;
+}
+
+.demo-text strong {
+    color: #ffd700;
+}
+
+.demo-actions {
+    flex-shrink: 0;
+}
+
+.demo-upgrade-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.demo-upgrade-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Upgrade Modal */
+.aiohm-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.aiohm-modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.aiohm-modal-content {
+    background: white;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90%;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transform: scale(0.9) translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.aiohm-modal-overlay.show .aiohm-modal-content {
+    transform: scale(1) translateY(0);
+}
+
+.aiohm-modal-header {
+    padding: 20px 25px 15px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.aiohm-modal-header h3 {
+    margin: 0;
+    color: #333;
+    font-size: 18px;
+}
+
+.aiohm-modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #999;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.aiohm-modal-close:hover {
+    color: #666;
+}
+
+.aiohm-modal-body {
+    padding: 25px;
+}
+
+.upgrade-feature-info {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.upgrade-feature-info p {
+    margin: 0 0 15px;
+    color: #666;
+    font-size: 16px;
+}
+
+.upgrade-tier {
+    display: inline-block;
+    border: 2px solid #007cba;
+    border-radius: 8px;
+    padding: 15px 20px;
+    background: #f8f9fa;
+    position: relative;
+    min-width: 180px;
+}
+
+.tier-badge {
+    background: #007cba;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+.tier-price {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.demo-notice {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 6px;
+    padding: 15px;
+    text-align: center;
+}
+
+.demo-notice p {
+    margin: 0;
+    color: #856404;
+    font-size: 14px;
+}
+
+.demo-notice p:first-child {
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.aiohm-modal-footer {
+    padding: 20px 25px;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.upgrade-btn {
+    padding: 12px 24px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    border-radius: 6px !important;
+    transition: all 0.3s ease !important;
+}
+
+.upgrade-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 124, 186, 0.3);
+}
+
+/* Chat Watermarks */
+.aiohm-demo-watermark {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.aiohm-chat-container {
+    position: relative;
+}
+
+/* Premium Feature Overlays */
+.premium-feature-disabled {
+    position: relative;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.premium-feature-disabled::after {
+    content: "🔒 Premium Feature";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+/* Demo Response Styling */
+.demo-response {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.demo-response::before {
+    content: "🎭";
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    opacity: 0.7;
+}
+
+.demo-response strong {
+    color: #ffd700;
+}
+
+.demo-response a {
+    color: #ffd700;
+    text-decoration: underline;
+}
+
+.demo-response a:hover {
+    color: white;
+}
+
+/* Animations */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.demo-pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .demo-banner-content {
+        text-align: center;
+    }
+    
+    .demo-text {
+        order: 1;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .demo-icon {
+        order: 2;
+    }
+    
+    .demo-actions {
+        order: 3;
+    }
+    
+    .aiohm-modal-content {
+        margin: 20px;
+        width: calc(100% - 40px);
+    }
+    
+    .aiohm-modal-footer {
+        flex-direction: column;
+    }
+    
+    .upgrade-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
