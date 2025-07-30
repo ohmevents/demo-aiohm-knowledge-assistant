@@ -39,14 +39,14 @@ if ($is_user_linked && class_exists('AIOHM_KB_PMP_Integration')) {
             <h3><?php esc_html_e('AIOHM Tribe', 'aiohm-knowledge-assistant'); ?></h3>
             <?php if ($is_user_linked) : ?>
                 <?php if ($user_email === 'contact@ohm.events') : ?>
-                    <h4 class="plan-price" style="color: #ff6b35;"><?php esc_html_e('🚀 DEMO LICENSE ACTIVATED', 'aiohm-knowledge-assistant'); ?></h4>
-                    <div class="membership-info" style="background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%); color: white; padding: 15px; border-radius: 8px; margin: 10px 0;">
-                        <p><strong>Status:</strong> Full Demo Access</p>
-                        <p><strong>Email:</strong> <?php echo esc_html($user_email); ?></p>
-                        <p><strong>Features:</strong> All OHM × AIOHM features unlocked</p>
+                    <h4 class="plan-price" style="color: #1f5014; font-family: 'Montserrat Alternates', sans-serif;"><?php esc_html_e('🚀 DEMO LICENSE ACTIVATED', 'aiohm-knowledge-assistant'); ?></h4>
+                    <div class="membership-info" style="background: #cbddd1; border: 2px solid #457d58; color: #272727; padding: 20px; border-radius: 10px; margin: 10px 0; font-family: 'PT Sans', sans-serif;">
+                        <p style="margin: 5px 0;"><strong style="color: #1f5014;">Status:</strong> Full Demo Access</p>
+                        <p style="margin: 5px 0;"><strong style="color: #1f5014;">Email:</strong> <?php echo esc_html($user_email); ?></p>
+                        <p style="margin: 5px 0;"><strong style="color: #1f5014;">Features:</strong> All OHM × AIOHM features unlocked</p>
                     </div>
-                    <div class="plan-description"><p><?php esc_html_e('🎯 Demo mode gives you full access to all AIOHM features including Tribe, Club, and Private features. Experience the complete OHM × AIOHM integration!', 'aiohm-knowledge-assistant'); ?></p></div>
-                    <a href="<?php echo esc_url(admin_url('admin.php?page=aiohm-dashboard')); ?>" class="button button-primary margin-top-auto"><?php esc_html_e('→ Explore Dashboard', 'aiohm-knowledge-assistant'); ?></a>
+                    <div class="plan-description"><p style="font-family: 'PT Sans', sans-serif;"><?php esc_html_e('🎯 Demo mode gives you full access to all AIOHM features including Tribe, Club, and Private features. Experience the complete OHM × AIOHM integration!', 'aiohm-knowledge-assistant'); ?></p></div>
+                    <a href="<?php echo esc_url(admin_url('admin.php?page=aiohm-dashboard')); ?>" class="button button-primary margin-top-auto" style="background: #457d58; border-color: #457d58; font-family: 'Montserrat', sans-serif;" onmouseover="this.style.background='#1f5014'" onmouseout="this.style.background='#457d58'"><?php esc_html_e('→ Explore Dashboard', 'aiohm-knowledge-assistant'); ?></a>
                 <?php else : ?>
                     <h4 class="plan-price"><?php esc_html_e('Welcome to the Tribe!', 'aiohm-knowledge-assistant'); ?></h4>
                     <div class="membership-info">
