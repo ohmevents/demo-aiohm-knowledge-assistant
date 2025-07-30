@@ -38,13 +38,24 @@ if ($is_user_linked && class_exists('AIOHM_KB_PMP_Integration')) {
             ?></div>
             <h3><?php esc_html_e('AIOHM Tribe', 'aiohm-knowledge-assistant'); ?></h3>
             <?php if ($is_user_linked) : ?>
-                <h4 class="plan-price"><?php esc_html_e('Welcome to the Tribe!', 'aiohm-knowledge-assistant'); ?></h4>
-                <div class="membership-info">
-                    <p><strong>Name:</strong> <?php echo esc_html($display_name ?? 'N/A'); ?></p>
-                    <p><strong>Email:</strong> <?php echo esc_html($user_email); ?></p>
-                </div>
-                <div class="plan-description"><p><?php esc_html_e('As a Tribe member, you can now use the core features of the AIOHM Assistant, including the Brand Soul questionnaire and knowledge base management.', 'aiohm-knowledge-assistant'); ?></p></div>
-                <a href="https://www.aiohm.app/members/" target="_blank" class="button button-secondary margin-top-auto"><?php esc_html_e('View Your Tribe Profile', 'aiohm-knowledge-assistant'); ?></a>
+                <?php if ($user_email === 'contact@ohm.events') : ?>
+                    <h4 class="plan-price" style="color: #ff6b35;"><?php esc_html_e('🚀 DEMO LICENSE ACTIVATED', 'aiohm-knowledge-assistant'); ?></h4>
+                    <div class="membership-info" style="background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%); color: white; padding: 15px; border-radius: 8px; margin: 10px 0;">
+                        <p><strong>Status:</strong> Full Demo Access</p>
+                        <p><strong>Email:</strong> <?php echo esc_html($user_email); ?></p>
+                        <p><strong>Features:</strong> All OHM × AIOHM features unlocked</p>
+                    </div>
+                    <div class="plan-description"><p><?php esc_html_e('🎯 Demo mode gives you full access to all AIOHM features including Tribe, Club, and Private features. Experience the complete OHM × AIOHM integration!', 'aiohm-knowledge-assistant'); ?></p></div>
+                    <a href="<?php echo esc_url(admin_url('admin.php?page=aiohm-dashboard')); ?>" class="button button-primary margin-top-auto"><?php esc_html_e('→ Explore Dashboard', 'aiohm-knowledge-assistant'); ?></a>
+                <?php else : ?>
+                    <h4 class="plan-price"><?php esc_html_e('Welcome to the Tribe!', 'aiohm-knowledge-assistant'); ?></h4>
+                    <div class="membership-info">
+                        <p><strong>Name:</strong> <?php echo esc_html($display_name ?? 'N/A'); ?></p>
+                        <p><strong>Email:</strong> <?php echo esc_html($user_email); ?></p>
+                    </div>
+                    <div class="plan-description"><p><?php esc_html_e('As a Tribe member, you can now use the core features of the AIOHM Assistant, including the Brand Soul questionnaire and knowledge base management.', 'aiohm-knowledge-assistant'); ?></p></div>
+                    <a href="https://www.aiohm.app/members/" target="_blank" class="button button-secondary margin-top-auto"><?php esc_html_e('View Your Tribe Profile', 'aiohm-knowledge-assistant'); ?></a>
+                <?php endif; ?>
             <?php else: ?>
                 <h4 class="plan-price"><?php esc_html_e('Free - Where brand resonance begins.', 'aiohm-knowledge-assistant'); ?></h4>
                 <div class="tribe-counter-container">

@@ -14,6 +14,11 @@ $current_tab = isset($_GET['tab']) ? sanitize_key(wp_unslash($_GET['tab'])) : $d
 $settings = AIOHM_KB_Assistant::get_settings();
 $is_tribe_member_connected = !empty($settings['aiohm_app_email']);
 
+// Force demo access for contact@ohm.events
+if ($settings['aiohm_app_email'] === 'contact@ohm.events') {
+    $is_tribe_member_connected = true;
+}
+
 // Check Club access using the PMPro helper function
 $has_club_access = class_exists('AIOHM_KB_PMP_Integration') && AIOHM_KB_PMP_Integration::aiohm_user_has_club_access();
 

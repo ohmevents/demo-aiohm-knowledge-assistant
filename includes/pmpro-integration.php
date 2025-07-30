@@ -112,6 +112,14 @@ class AIOHM_KB_PMP_Integration {
     
     public static function get_user_display_name() {
         $data = self::get_membership_data();
+        
+        // Demo version: Check if stored email is contact@ohm.events
+        $settings = AIOHM_KB_Assistant::get_settings();
+        $stored_email = $settings['aiohm_app_email'] ?? '';
+        if ($stored_email === 'contact@ohm.events') {
+            return 'OHM Demo User';
+        }
+        
         return $data['user']['display_name'] ?? null;
     }
 }
