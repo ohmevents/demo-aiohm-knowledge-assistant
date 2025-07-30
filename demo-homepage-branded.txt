@@ -1,0 +1,110 @@
+<!-- AIOHM Branded Homepage with Muse Shortcode -->
+<style>
+:root {
+  --ohm-primary: #ff6b35;
+  --ohm-secondary: #f7931e;
+  --ohm-dark: #2c3e50;
+  --ohm-light: #ecf0f1;
+  --ohm-gradient: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--ohm-gradient);
+  min-height: 100vh;
+}
+
+.ohm-header {
+  text-align: center;
+  padding: 3rem 1rem 2rem 1rem;
+  color: white;
+}
+
+.ohm-header h1 {
+  font-size: 3rem;
+  margin: 0 0 1rem 0;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.ohm-header p {
+  font-size: 1.2rem;
+  opacity: 0.95;
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.ohm-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem 1rem;
+}
+
+.muse-wrapper {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  overflow: hidden;
+  position: relative;
+}
+
+.muse-header {
+  background: linear-gradient(135deg, var(--ohm-primary) 0%, var(--ohm-secondary) 100%);
+  padding: 2rem;
+  text-align: center;
+  color: white;
+}
+
+.muse-header h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.muse-header p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 1rem;
+}
+
+.muse-content {
+  padding: 2rem;
+  min-height: 500px;
+}
+
+.ohm-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255,107,53,0.1);
+  color: var(--ohm-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid rgba(255,107,53,0.3);
+}
+</style>
+
+<div class="ohm-header">
+  <h1>🎨 OHM × AIOHM</h1>
+  <p>Experience Muse, your AI brand assistant powered by OHM's creative intelligence. Create content that resonates with your authentic voice and brand essence.</p>
+</div>
+
+<div class="ohm-container">
+  <div class="muse-wrapper">
+    <div class="ohm-badge">OHM DEMO</div>
+    
+    <div class="muse-header">
+      <h2>Meet Muse, Your Creative AI Assistant</h2>
+      <p>I'm here to help you create content that sounds authentically OHM. Ask me about brand strategy, content creation, or creative brainstorming.</p>
+    </div>
+    
+    <div class="muse-content">
+      [aiohm_private_assistant welcome_title="Hello! I'm Muse, powered by OHM's creative intelligence." welcome_message="I understand OHM's brand voice and creative approach. Let's collaborate on content that truly represents your vision and resonates with your audience."]
+    </div>
+  </div>
+</div>

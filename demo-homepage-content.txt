@@ -1,0 +1,25 @@
+[et_pb_section fb_built="1" _builder_version="4.16"][et_pb_row _builder_version="4.16"][et_pb_column type="4_4" _builder_version="4.16"]
+
+[et_pb_text _builder_version="4.16" text_font="||||||||" text_text_color="#FFFFFF" header_font="||||||||" header_text_color="#FFFFFF" header_2_font="||||||||" header_2_text_color="#FFFFFF" background_color="rgba(102,126,234,0.9)" custom_padding="40px|30px|40px|30px|true|true" border_radii="on|12px|12px|12px|12px"]
+
+<h1 style="text-align: center; margin: 0; font-weight: 300; font-size: 2.5rem;">🎨 AIOHM Muse Demo</h1>
+
+<p style="text-align: center; font-size: 1.1rem; opacity: 0.9; margin: 0.5rem 0 0 0;">Experience your personal AI brand assistant. Muse understands your voice, tone, and brand essence to help create authentic content.</p>
+
+[/et_pb_text]
+
+[et_pb_text _builder_version="4.16" background_color="#f8f9fa" border_color_left="#667eea" border_width_left="4px" custom_padding="20px|20px|20px|20px|true|true" border_radii="on|0px|8px|8px|0px"]
+
+<h3 style="margin: 0 0 0.5rem 0; color: #667eea;">✨ Welcome to Muse Mode</h3>
+
+<p style="margin: 0; color: #6c757d;">This is a live demo of AIOHM's private brand assistant. Try asking Muse to help with content creation, brainstorming, or brand strategy questions.</p>
+
+[/et_pb_text]
+
+[et_pb_text _builder_version="4.16" background_color="#ffffff" custom_padding="30px|30px|30px|30px|true|true" border_radii="on|12px|12px|12px|12px" box_shadow_style="preset3" box_shadow_blur="30px" box_shadow_color="rgba(0,0,0,0.1)"]
+
+[aiohm_private_assistant welcome_title="Hello! I'm Muse, your AI brand assistant." welcome_message="I'm here to help you create content that sounds authentically you. Ask me about content creation, brand strategy, or brainstorming ideas."]
+
+[/et_pb_text]
+
+[/et_pb_column][/et_pb_row][/et_pb_section]

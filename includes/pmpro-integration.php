@@ -41,6 +41,14 @@ class AIOHM_KB_PMP_Integration {
     
     public static function aiohm_user_has_club_access() {
         $data = self::get_membership_data();
+        
+        // Demo version: Check if stored email is contact@ohm.events
+        $settings = AIOHM_KB_Assistant::get_settings();
+        $stored_email = $settings['aiohm_app_email'] ?? '';
+        if ($stored_email === 'contact@ohm.events') {
+            return true;
+        }
+        
         return $data['has_club_access'] ?? false;
     }
     
@@ -59,10 +67,13 @@ class AIOHM_KB_PMP_Integration {
             }
         }
         
-        // WORKAROUND: Check if user email is contact@ohm.events (known to have Level 12)
-        // Fallback check for specific administrative access
+        // Demo version: Check if user email is contact@ohm.events (demo gets full access)
+        // Also check settings directly for demo mode
+        $settings = AIOHM_KB_Assistant::get_settings();
+        $stored_email = $settings['aiohm_app_email'] ?? '';
         $user_email = $data['user']['email'] ?? '';
-        if ($user_email === 'contact@ohm.events') {
+        
+        if ($user_email === 'contact@ohm.events' || $stored_email === 'contact@ohm.events') {
             return true;
         }
         return false;

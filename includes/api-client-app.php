@@ -36,8 +36,8 @@ if (!class_exists('AIOHM_App_API_Client')) :
                         'level_name' => 'Demo Access',
                         'start_date' => date('Y-m-d'),
                         'end_date' => date('Y-m-d', strtotime('+30 days')),
-                        'has_club_access' => false,
-                        'has_private_access' => false,
+                        'has_club_access' => true,
+                        'has_private_access' => true,
                         'demo_mode' => true
                     ]
                 ];
@@ -137,6 +137,23 @@ if (!class_exists('AIOHM_App_API_Client')) :
         public function get_member_details_by_email($email) {
             if (empty($email) || !is_email($email)) {
                 return new WP_Error('invalid_email', 'A valid email is required.');
+            }
+
+            // Handle demo version
+            if ($this->is_demo_version() && $email === 'contact@ohm.events') {
+                return [
+                    'has_club_access' => true,
+                    'membership_details' => [
+                        'level_id' => 12, // Private level access
+                        'level_name' => 'AIOHM Private Demo',
+                        'start_date' => date('Y-m-d'),
+                        'end_date' => date('Y-m-d', strtotime('+30 days'))
+                    ],
+                    'user' => [
+                        'email' => 'contact@ohm.events',
+                        'display_name' => 'Demo User'
+                    ]
+                ];
             }
 
             return $this->make_request('get-member-details', ['email' => $email]);
