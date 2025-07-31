@@ -18,6 +18,11 @@ $has_private_access = class_exists('AIOHM_KB_PMP_Integration') && AIOHM_KB_PMP_I
     
     <div id="aiohm-admin-notice" class="notice is-dismissible" style="display:none; margin-top: 10px;" tabindex="-1" role="alert" aria-live="polite"></div>
 
+    <?php 
+    // Display WordPress settings notices
+    settings_errors('aiohm_kb_settings'); 
+    ?>
+
     <form method="post" action="options.php">
         <?php settings_fields('aiohm_kb_settings'); ?>
 

@@ -705,6 +705,14 @@ class AIOHM_KB_Settings_Page {
             }
         }
         
+        // Add success message for WordPress form submission
+        add_settings_error(
+            'aiohm_kb_settings',
+            'settings_updated',
+            __('Settings saved successfully!', 'aiohm-knowledge-assistant'),
+            'success'
+        );
+        
         return $sanitized;
     }
 
@@ -961,13 +969,17 @@ class AIOHM_KB_Settings_Page {
         // Update the specific setting
         $current_settings[$setting_key] = $setting_value;
         
-        // Save the updated settings
-        $result = update_option('aiohm_kb_settings', $current_settings);
-        
-        if ($result !== false) {
-            wp_send_json_success('Setting saved successfully');
-        } else {
-            wp_send_json_error('Failed to save setting');
+        try {
+            // Save the updated settings
+            $result = update_option('aiohm_kb_settings', $current_settings);
+            
+            if ($result !== false) {
+                wp_send_json_success('Setting saved successfully');
+            } else {
+                wp_send_json_error('Failed to save setting - no changes detected or database error');
+            }
+        } catch (Exception $e) {
+            wp_send_json_error('Error saving setting: ' . $e->getMessage());
         }
     }
 

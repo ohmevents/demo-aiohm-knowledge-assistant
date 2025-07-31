@@ -268,7 +268,8 @@ jQuery(document).ready(function($){
             if (response.success) {
                 showAdminNotice('Default AI provider saved successfully!', 'success');
             } else {
-                showAdminNotice('Error saving default AI provider: ' + (response.data || 'Unknown error'), 'error');
+                const errorMessage = response.data?.message || response.data || 'Unknown error';
+                showAdminNotice('Error saving default AI provider: ' + errorMessage, 'error');
             }
         })
         .fail(function() {
@@ -304,7 +305,8 @@ jQuery(document).ready(function($){
                     showAdminNotice('Privacy consent disabled - External API calls are now blocked.', 'success');
                 }
             } else {
-                showAdminNotice('Error saving privacy settings: ' + (response.data || 'Unknown error'), 'error');
+                const errorMessage = response.data?.message || response.data || 'Unknown error';
+                showAdminNotice('Error saving privacy settings: ' + errorMessage, 'error');
             }
         })
         .fail(function() {
@@ -314,5 +316,18 @@ jQuery(document).ready(function($){
             // Reset button state
             $btn.prop('disabled', false).text(originalText);
         });
+    });
+    
+    // Handle main form submission feedback
+    $('form[action="options.php"]').on('submit', function() {
+        const $submitBtn = $(this).find('input[type="submit"]');
+        const originalValue = $submitBtn.val();
+        
+        // Show loading state
+        $submitBtn.prop('disabled', true).val('Saving...');
+        
+        // The form will redirect/reload the page, so we can't show success message here
+        // But we can provide immediate feedback that the submission is being processed
+        showAdminNotice('Saving settings...', 'info', true);
     });
 });
