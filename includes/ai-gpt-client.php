@@ -1142,25 +1142,52 @@ class AIOHM_KB_AI_GPT_Client {
         if (empty($this->ollama_server_url)) {
             return ['success' => false, 'error' => 'Ollama server URL is missing.'];
         }
+        
+        // Debug: Log what model we're using
+        error_log('AIOHM Debug: Testing Ollama with model: ' . $this->ollama_model);
+        
         try {
-            // Test using Ollama's correct API endpoint
+            // First, test if the server is reachable with a simple GET request to list models
             $base_url = rtrim($this->ollama_server_url, '/');
-            $url = $base_url . '/api/generate';
+            $tags_url = $base_url . '/api/tags';
             
-            $data = [
-                'model' => $this->ollama_model,
-                'prompt' => 'Say hello',
-                'stream' => false
-            ];
+            // Use WordPress HTTP API for GET request
+            $response = wp_remote_get($tags_url, [
+                'timeout' => 10,
+                'headers' => ['Content-Type' => 'application/json']
+            ]);
             
-            $body = json_encode($data);
-            $response = $this->make_http_request($url, $body, 'ollama');
-            
-            if (isset($response['response'])) {
-                return ['success' => true, 'message' => 'Connected successfully'];
-            } else {
-                return ['success' => false, 'error' => 'No response from server'];
+            if (is_wp_error($response)) {
+                return ['success' => false, 'error' => 'Cannot connect to Ollama server: ' . $response->get_error_message()];
             }
+            
+            $response_code = wp_remote_retrieve_response_code($response);
+            if ($response_code !== 200) {
+                return ['success' => false, 'error' => 'Ollama server returned status ' . $response_code];
+            }
+            
+            $response_body = wp_remote_retrieve_body($response);
+            $decoded_response = json_decode($response_body, true);
+            
+            if ($decoded_response === null) {
+                return ['success' => false, 'error' => 'Invalid response from Ollama server'];
+            }
+            
+            // Check if any models are available
+            $models = $decoded_response['models'] ?? [];
+            if (empty($models)) {
+                return ['success' => false, 'error' => 'No models found on Ollama server. Please pull a model first (e.g., ollama pull llama3.2)'];
+            }
+            
+            // Check if the configured model exists
+            $model_names = array_column($models, 'name');
+            if (!in_array($this->ollama_model, $model_names)) {
+                $available_models = implode(', ', array_slice($model_names, 0, 3));
+                return ['success' => false, 'error' => "Model '{$this->ollama_model}' not found. Available models: {$available_models}"];
+            }
+            
+            return ['success' => true, 'message' => 'Ollama server connection successful! Model ' . $this->ollama_model . ' is available.'];
+            
         } catch (Exception $e) {
             return ['success' => false, 'error' => $e->getMessage()];
         }
