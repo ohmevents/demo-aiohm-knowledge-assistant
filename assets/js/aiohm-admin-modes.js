@@ -22,7 +22,16 @@ jQuery(document).ready(function($) {
      */
     function showAdminNotice(message, type = 'success') {
         clearTimeout(noticeTimer);
-        const $notice = $('#aiohm-admin-notice');
+        let $notice = $('#aiohm-admin-notice');
+        
+        // Create the notice element if it doesn't exist or ensure it has proper structure
+        if ($notice.length === 0) {
+            $('<div id="aiohm-admin-notice" class="notice is-dismissible" style="display:none; margin-top: 10px;" tabindex="-1" role="alert" aria-live="polite"><p></p></div>').insertAfter('h1');
+            $notice = $('#aiohm-admin-notice');
+        } else if ($notice.find('p').length === 0) {
+            $notice.html('<p></p>');
+        }
+        
         $notice.removeClass('notice-success notice-error notice-warning').addClass('notice-' + type).addClass('is-dismissible');
         $notice.find('p').html(message);
         $notice.fadeIn();

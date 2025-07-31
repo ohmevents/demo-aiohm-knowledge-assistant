@@ -1159,7 +1159,17 @@ class AIOHM_KB_AI_GPT_Client {
             
             $response_code = wp_remote_retrieve_response_code($response);
             if ($response_code !== 200) {
-                return ['success' => false, 'error' => 'Ollama server returned status ' . $response_code];
+                $response_body = wp_remote_retrieve_body($response);
+                $error_details = '';
+                if (!empty($response_body)) {
+                    $decoded = json_decode($response_body, true);
+                    if ($decoded && isset($decoded['error'])) {
+                        $error_details = ' - ' . $decoded['error'];
+                    } else {
+                        $error_details = ' - Response: ' . substr($response_body, 0, 200);
+                    }
+                }
+                return ['success' => false, 'error' => 'Ollama server returned status ' . $response_code . $error_details];
             }
             
             $response_body = wp_remote_retrieve_body($response);
