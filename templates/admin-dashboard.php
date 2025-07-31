@@ -194,9 +194,6 @@ $has_private_access = class_exists('AIOHM_KB_PMP_Integration') && AIOHM_KB_PMP_I
     <div id="aiohm-robot-guide" class="aiohm-robot-guide" style="display: none;">
         <div class="robot-container">
             <div class="robot-progress-text">0%</div>
-            <div class="robot-progress">
-                <div class="robot-progress-bar"></div>
-            </div>
             <div class="robot-body">
                 <div class="robot-head">
                     <div class="robot-eye left-eye"></div>

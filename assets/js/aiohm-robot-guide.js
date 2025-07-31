@@ -23,10 +23,10 @@
                 {
                     id: 'welcome',
                     type: 'welcome',
-                    text: "Greetings, fellow seeker of knowledge! 🧙‍♂️ I am your OHM Wise Guide. Together we'll explore every corner of AIOHM's power!",
+                    text: "Hello and welcome!<br>I'm your AIOHM guide assistant, and I'm popping up here to show you everything you need to know about AIOHM from setup to mastery. No tech overwhelm, no confusion, just clear steps to help your brand sound like you.<br>Where shall we start?",
                     points: 5,
                     action: 'click_to_continue',
-                    instruction: "Click 'Continue Journey' to begin your adventure!"
+                    instruction: "Click 'Continue Journey' to begin!"
                 },
                 {
                     id: 'dashboard_overview',
@@ -112,11 +112,15 @@
 
             this.robot = $('#aiohm-robot-guide');
             this.chatBubble = $('#robot-chat-bubble');
-            this.progressBar = this.robot.find('.robot-progress-bar');
             this.progressText = this.robot.find('.robot-progress-text');
             
             if (this.robot.length === 0) {
                 return;
+            }
+
+            // Check if robot was previously dismissed
+            if (localStorage.getItem('aiohm_robot_dismissed') === 'true') {
+                return; // Don't start if dismissed
             }
 
             // Load saved progress from localStorage
@@ -154,12 +158,8 @@
             
             this.isActive = true;
             
-            // Position robot in center initially for first time, corner for returning users
-            if (this.completedTasks.size === 0) {
-                this.robot.addClass('center').show();
-            } else {
-                this.robot.addClass('positioned').show();
-            }
+            // Position robot directly in corner
+            this.robot.addClass('positioned').show();
             
             // Materialize effect
             setTimeout(() => {
@@ -169,13 +169,6 @@
                 setTimeout(() => {
                     this.showCurrentTask();
                 }, 800);
-                
-                // Move to corner if starting in center
-                if (this.completedTasks.size === 0) {
-                    setTimeout(() => {
-                        this.moveToCorner();
-                    }, 4000);
-                }
                 
             }, 100);
         }
@@ -206,65 +199,84 @@
         displayTaskMessage(task) {
             const messageElement = $('#robot-message');
             
-            // Hide bubble first
-            this.chatBubble.removeClass('show');
+            // If bubble is already showing, just update content smoothly
+            if (this.chatBubble.hasClass('show')) {
+                // Add fade transition for smooth content change
+                messageElement.css('opacity', '0.3');
+                
+                setTimeout(() => {
+                    this.updateMessageContent(task, messageElement);
+                    
+                    // Fade content back in
+                    messageElement.css('opacity', '1');
+                }, 150);
+            } else {
+                // First time showing bubble
+                setTimeout(() => {
+                    this.updateMessageContent(task, messageElement);
+                    this.chatBubble.addClass('show');
+                    // Only add typing effect on first appearance
+                    this.addTypingEffect();
+                }, 300);
+            }
+        }
+
+        updateMessageContent(task, messageElement) {
+            let messageContent = task.text;
             
-            setTimeout(() => {
-                let messageContent = task.text;
-                
-                // Add instruction if provided
-                if (task.instruction) {
-                    messageContent += `<br><br><small style="color: var(--ohm-muted-accent, #7d9b76); font-style: italic;">💡 ${task.instruction}</small>`;
-                }
-                
-                if (task.hasLink) {
-                    messageContent += ` <br><br><a href="${task.linkUrl}" class="robot-guide-link" style="
-                        display: inline-block;
-                        background: linear-gradient(145deg, var(--ohm-primary, #457d58) 0%, var(--ohm-dark-accent, #1f5014) 100%);
-                        color: white;
-                        padding: 8px 16px;
-                        border-radius: 20px;
-                        text-decoration: none;
-                        font-weight: 600;
-                        margin-top: 5px;
-                        box-shadow: 0 4px 15px rgba(69, 125, 88, 0.4);
-                        transition: all 0.3s ease;
-                    " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(69, 125, 88, 0.5)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(69, 125, 88, 0.4)';">${task.linkText} →</a>`;
-                }
-                
-                // Add click to continue button for click_to_continue tasks
-                if (task.action === 'click_to_continue') {
-                    messageContent += ` <br><br><button class="robot-continue-btn" data-task-id="${task.id}" style="
-                        background: linear-gradient(145deg, var(--ohm-light-accent, #cbddd1) 0%, var(--ohm-primary, #457d58) 100%);
-                        color: var(--ohm-dark, #272727);
-                        border: none;
-                        padding: 8px 16px;
-                        border-radius: 20px;
-                        font-weight: 600;
-                        cursor: pointer;
-                        box-shadow: 0 4px 15px rgba(203, 221, 209, 0.4);
-                        transition: all 0.3s ease;
-                        margin-top: 8px;
-                    " onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='translateY(0)';">Continue Journey ✨</button>`;
-                }
-                
-                // Add waiting message for click_tab tasks
-                if (task.action === 'click_tab') {
-                    messageContent += `<br><br><div style="
-                        padding: 8px 12px;
-                        background: rgba(69, 125, 88, 0.1);
-                        border-left: 3px solid var(--ohm-primary, #457d58);
-                        border-radius: 4px;
-                        font-size: 13px;
-                        margin-top: 10px;
-                    ">⏳ Waiting for you to click the tab above...</div>`;
-                }
-                
-                messageElement.html(messageContent);
-                this.chatBubble.addClass('show');
-                this.addTypingEffect();
-                
-            }, 300);
+            // Add instruction only for non-tab tasks
+            if (task.instruction && task.action !== 'click_tab') {
+                messageContent += `<br><br><small style="color: var(--ohm-muted-accent, #7d9b76); font-style: italic;">💡 ${task.instruction}</small>`;
+            }
+            
+            if (task.hasLink) {
+                messageContent += ` <br><br><a href="${task.linkUrl}" class="robot-guide-link" style="
+                    display: inline-block;
+                    background: linear-gradient(145deg, var(--ohm-primary, #457d58) 0%, var(--ohm-dark-accent, #1f5014) 100%);
+                    color: white;
+                    padding: 8px 16px;
+                    border-radius: 20px;
+                    text-decoration: none;
+                    font-weight: 600;
+                    margin-top: 5px;
+                    box-shadow: 0 4px 15px rgba(69, 125, 88, 0.4);
+                    transition: all 0.3s ease;
+                " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(69, 125, 88, 0.5)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(69, 125, 88, 0.4)';">${task.linkText} →</a>`;
+            }
+            
+            // Add click to continue button for click_to_continue tasks
+            if (task.action === 'click_to_continue') {
+                messageContent += ` <br><br><button class="robot-continue-btn" data-task-id="${task.id}" style="
+                    background: linear-gradient(145deg, var(--ohm-light-accent, #cbddd1) 0%, var(--ohm-primary, #457d58) 100%);
+                    color: var(--ohm-dark, #272727);
+                    border: none;
+                    padding: 8px 16px;
+                    border-radius: 20px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    box-shadow: 0 4px 15px rgba(203, 221, 209, 0.4);
+                    transition: all 0.3s ease;
+                    margin-top: 8px;
+                " onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='translateY(0)';">Continue Journey ✨</button>`;
+            }
+            
+            // Add continue button for click_tab tasks too
+            if (task.action === 'click_tab') {
+                messageContent += ` <br><br><button class="robot-continue-btn" data-task-id="${task.id}" style="
+                    background: linear-gradient(145deg, var(--ohm-light-accent, #cbddd1) 0%, var(--ohm-primary, #457d58) 100%);
+                    color: var(--ohm-dark, #272727);
+                    border: none;
+                    padding: 8px 16px;
+                    border-radius: 20px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    box-shadow: 0 4px 15px rgba(203, 221, 209, 0.4);
+                    transition: all 0.3s ease;
+                    margin-top: 8px;
+                " onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='translateY(0)';">Next Step ✨</button>`;
+            }
+            
+            messageElement.html(messageContent);
         }
 
         highlightTargetElement(task) {
@@ -302,29 +314,27 @@
             // Show completion effect
             this.showTaskCompletionEffect(task);
             
-            // Move to next task
+            // Move to next task immediately for smoother experience
             this.currentTask++;
             setTimeout(() => {
                 this.showCurrentTask();
-            }, 2000);
+            }, 300);
         }
 
         showTaskCompletionEffect(task) {
-            // Add multiple sparkle effects
-            for (let i = 0; i < 5; i++) {
+            // Add sparkle effects but reduce them to avoid visual noise
+            for (let i = 0; i < 2; i++) {
                 setTimeout(() => {
                     this.addSparkleEffect();
                 }, i * 100);
             }
             
-            // Celebration effect on robot light
-            this.robot.find('.robot-light').css('animation', 'celebration 0.8s ease-out, heartbeat 2s infinite 0.8s');
-            
-            // Brief glow effect
-            this.robot.addClass('task-completed');
+            // Very subtle celebration effect - just a quick pulse of the robot light
+            const robotLight = this.robot.find('.robot-light');
+            robotLight.css('transform', 'translate(-50%, -50%) scale(1.3)');
             setTimeout(() => {
-                this.robot.removeClass('task-completed');
-            }, 800);
+                robotLight.css('transform', 'translate(-50%, -50%) scale(1)');
+            }, 200);
         }
 
         updateProgress() {
@@ -336,7 +346,6 @@
             
             const percentage = Math.round((earnedPoints / totalPoints) * 100);
             
-            this.progressBar.css('width', percentage + '%');
             this.progressText.text(percentage + '%');
             
             if (percentage === 100) {
@@ -353,7 +362,7 @@
                     🎊 <strong>Congratulations, Master Explorer!</strong> 🎊<br><br>
                     You've completed the AIOHM journey with 100% mastery!<br>
                     You are now ready to harness the full power of AI knowledge assistance!<br><br>
-                    <button class="robot-continue-btn" onclick="localStorage.removeItem('aiohm_guide_progress'); location.reload();" style="
+                    <button class="robot-continue-btn" onclick="localStorage.removeItem('aiohm_guide_progress'); localStorage.removeItem('aiohm_robot_dismissed'); location.reload();" style="
                         background: linear-gradient(145deg, #FFD700 0%, #FFA500 100%);
                         color: #333;
                         border: none;
@@ -381,13 +390,24 @@
             }
         }
 
+        hideRobot() {
+            this.isActive = false;
+            this.chatBubble.removeClass('show');
+            this.robot.removeClass('materialized');
+            
+            // Save dismissal state to localStorage
+            localStorage.setItem('aiohm_robot_dismissed', 'true');
+            
+            setTimeout(() => {
+                this.robot.hide();
+            }, 600);
+        }
+
         bindEvents() {
-            // Click on robot to show current task
+            // Click on robot to close it
             this.robot.find('.robot-container').on('click', (e) => {
                 e.preventDefault();
-                if (this.isActive) {
-                    this.showCurrentTask();
-                }
+                this.hideRobot();
             });
 
             // Continue button clicks
@@ -446,6 +466,7 @@
                     this.addSparkleEffect();
                 }
             });
+
 
             // Keyboard shortcuts
             $(document).on('keydown', (e) => {

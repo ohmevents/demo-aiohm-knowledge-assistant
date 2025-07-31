@@ -158,7 +158,7 @@
 }
 
 .aiohm-robot-guide.positioned {
-    bottom: 30px;
+    bottom: 60px;
     right: 30px;
 }
 
@@ -262,20 +262,6 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.robot-light {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 8px;
-    height: 8px;
-    background: radial-gradient(circle, #ff6b6b 0%, #ff4757 100%);
-    border-radius: 50%;
-    box-shadow: 
-        0 0 10px #ff6b6b,
-        inset 0 0 3px rgba(255, 255, 255, 0.3);
-    animation: heartbeat 2s infinite;
-}
 
 .robot-glow {
     position: absolute;
@@ -291,7 +277,7 @@
 
 .robot-progress {
     position: absolute;
-    top: -25px;
+    top: 85px;
     left: 50%;
     transform: translateX(-50%);
     width: 50px;
@@ -311,12 +297,27 @@
     box-shadow: 0 0 8px rgba(69, 125, 88, 0.4);
 }
 
+.robot-light {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, #ff6b6b 0%, #ff4757 100%);
+    border-radius: 50%;
+    box-shadow: 
+        0 0 10px #ff6b6b,
+        inset 0 0 3px rgba(255, 255, 255, 0.3);
+    animation: heartbeat 2s infinite;
+}
+
 .robot-progress-text {
     position: absolute;
-    top: -35px;
+    top: 75px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 10px;
+    font-size: 12px;
     font-weight: bold;
     color: var(--ohm-primary, #457d58);
     text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
@@ -326,7 +327,7 @@
     position: absolute;
     bottom: 100%;
     right: -20px;
-    margin-bottom: 15px;
+    margin-bottom: 45px;
     background: white;
     border-radius: 20px 20px 5px 20px;
     padding: 15px 20px;
@@ -353,6 +354,7 @@
     font-size: 14px;
     line-height: 1.4;
     font-weight: 500;
+    transition: opacity 0.2s ease;
 }
 
 .chat-arrow {

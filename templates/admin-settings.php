@@ -12,9 +12,13 @@ $has_private_access = class_exists('AIOHM_KB_PMP_Integration') && AIOHM_KB_PMP_I
 ?>
 
 <div class="wrap aiohm-settings-page">
-    <h1><?php esc_html_e('AIOHM Settings', 'aiohm-knowledge-assistant'); ?></h1>
-    
-    <p class="page-description"><?php esc_html_e('Manage your AI provider connections, enable Mirror Mode, Muse Mode, and now MCP (Model Context Protocol) for seamless integration with external tools.', 'aiohm-knowledge-assistant'); ?></p>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <div>
+            <h1><?php esc_html_e('AIOHM Settings', 'aiohm-knowledge-assistant'); ?></h1>
+            <p class="page-description"><?php esc_html_e('Manage your AI provider connections, enable Mirror Mode, Muse Mode, and now MCP (Model Context Protocol) for seamless integration with external tools.', 'aiohm-knowledge-assistant'); ?></p>
+        </div>
+        <button onclick="localStorage.removeItem('aiohm_guide_progress'); localStorage.removeItem('aiohm_robot_dismissed'); localStorage.removeItem('aiohm_settings_guide_progress'); localStorage.removeItem('aiohm_settings_robot_dismissed'); location.reload();" style="background: #ff4757; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 12px; height: fit-content;">🔄 Reset Robot Guide</button>
+    </div>
     
     <div id="aiohm-admin-notice" class="notice is-dismissible" style="display:none; margin-top: 10px;" tabindex="-1" role="alert" aria-live="polite"></div>
 
