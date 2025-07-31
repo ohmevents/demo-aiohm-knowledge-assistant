@@ -120,30 +120,8 @@
          * Show demo banner on admin pages
          */
         showDemoBanner: function() {
-            if ($('.aiohm-demo-banner').length > 0) return; // Already shown
-            
-            const bannerHtml = `
-                <div class="aiohm-demo-banner">
-                    <div class="demo-banner-content">
-                        <div class="demo-icon">🎭</div>
-                        <div class="demo-text">
-                            <strong>DEMO VERSION</strong> - You're experiencing AIOHM's interface with simulated responses.
-                        </div>
-                        <div class="demo-actions">
-                            <a href="https://aiohm.app/club" target="_blank" class="demo-upgrade-btn">
-                                Get Full Version →
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            `;
-            
-            // Insert after WordPress admin notices
-            if ($('.wrap h1').length > 0) {
-                $('.wrap h1').first().after(bannerHtml);
-            } else {
-                $('.wrap').prepend(bannerHtml);
-            }
+            // Banner disabled - return early
+            return;
         },
         
         /**
