@@ -24,7 +24,9 @@ switch ($default_provider) {
         $api_key_exists = !empty($settings['shareai_api_key']);
         break;
     case 'ollama':
-        $api_key_exists = !empty($settings['private_llm_server_url']);
+        // For Ollama, use default server URL if none is set
+        $ollama_url = $settings['private_llm_server_url'] ?? 'http://localhost:11434';
+        $api_key_exists = !empty($ollama_url);
         break;
     default:
         // For unknown providers, don't assume OpenAI - require proper configuration
