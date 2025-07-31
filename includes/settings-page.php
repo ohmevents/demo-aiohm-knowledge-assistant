@@ -631,7 +631,7 @@ class AIOHM_KB_Settings_Page {
             if (isset($input[$field])) {
                 $sanitized_key = sanitize_text_field(trim($input[$field]));
                 // Only encrypt if not empty and different from existing
-                if (!empty($sanitized_key) && $sanitized_key !== $old_settings[$field]) {
+                if (!empty($sanitized_key) && $sanitized_key !== ($old_settings[$field] ?? '')) {
                     $sanitized[$field] = AIOHM_KB_Assistant::encrypt_api_key($sanitized_key);
                 } elseif (empty($sanitized_key)) {
                     $sanitized[$field] = '';

@@ -459,3 +459,10 @@
             min-width: auto;
         }
     }
+
+    /* Updated dropdown visual feedback */
+    #default_ai_provider.updated-dropdown {
+        border-color: #00a32a;
+        box-shadow: 0 0 3px rgba(0, 163, 42, 0.3);
+        transition: all 0.3s ease;
+    }

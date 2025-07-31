@@ -439,6 +439,9 @@ jQuery(document).ready(function($) {
                         $btn.addClass('success');
                         showAdminNotice('ShareAI settings saved successfully!', 'success');
                         
+                        // Update the default AI provider dropdown to include ShareAI
+                        updateDefaultProviderDropdown('shareai');
+                        
                         // Now display the model information
                         updateModelInfo(selectedModel);
                         
@@ -528,6 +531,9 @@ jQuery(document).ready(function($) {
                         $btn.addClass('success');
                         showAdminNotice('Ollama settings saved successfully!', 'success');
                         
+                        // Update the default AI provider dropdown to include Ollama
+                        updateDefaultProviderDropdown('ollama');
+                        
                         // Reset button state after 2 seconds
                         setTimeout(function() {
                             $btn.removeClass('success');
@@ -612,6 +618,9 @@ jQuery(document).ready(function($) {
                 // Success state
                 $btn.addClass('success');
                 showAdminNotice(`${apiType.toUpperCase()} API key saved successfully!`, 'success');
+                
+                // Update the default AI provider dropdown to include this provider
+                updateDefaultProviderDropdown(apiType);
                 
                 // Reset button state after 2 seconds
                 setTimeout(function() {
@@ -899,5 +908,58 @@ jQuery(document).ready(function($) {
     const selectedShareAiModel = $('#shareai_model').val();
     if (selectedShareAiModel && selectedShareAiModel !== '') {
         updateModelInfo(selectedShareAiModel);
+    }
+    
+    /**
+     * Update the default AI provider dropdown to include a newly saved provider
+     * @param {string} apiType - The API type that was just saved (openai, gemini, claude, shareai)
+     */
+    function updateDefaultProviderDropdown(apiType) {
+        const $dropdown = $('#default_ai_provider');
+        if ($dropdown.length === 0) return;
+        
+        const providerNames = {
+            'openai': 'OpenAI',
+            'gemini': 'Gemini', 
+            'claude': 'Claude',
+            'shareai': 'ShareAI',
+            'ollama': 'Ollama Server'
+        };
+        
+        const providerName = providerNames[apiType];
+        if (!providerName) return;
+        
+        // Check if option already exists
+        if ($dropdown.find(`option[value="${apiType}"]`).length > 0) {
+            return; // Option already exists
+        }
+        
+        // Determine which optgroup to add to
+        let targetGroup;
+        if (apiType === 'shareai' || apiType === 'ollama') {
+            targetGroup = $dropdown.find('optgroup[label*="Free"]');
+            if (targetGroup.length === 0) {
+                // Create Free AI Services optgroup
+                $dropdown.prepend('<optgroup label="Free AI Services"></optgroup>');
+                targetGroup = $dropdown.find('optgroup[label*="Free"]');
+            }
+        } else {
+            targetGroup = $dropdown.find('optgroup[label*="Premium"]');
+            if (targetGroup.length === 0) {
+                // Create Premium AI Services optgroup
+                $dropdown.append('<optgroup label="Premium AI Services"></optgroup>');
+                targetGroup = $dropdown.find('optgroup[label*="Premium"]');
+            }
+        }
+        
+        // Add the new option
+        const newOption = `<option value="${apiType}">${providerName}</option>`;
+        targetGroup.append(newOption);
+        
+        // Show a subtle indication that new provider is available
+        $dropdown.addClass('updated-dropdown');
+        setTimeout(() => {
+            $dropdown.removeClass('updated-dropdown');
+        }, 2000);
     }
 });
