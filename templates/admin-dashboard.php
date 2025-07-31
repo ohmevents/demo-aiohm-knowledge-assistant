@@ -189,5 +189,29 @@ $has_private_access = class_exists('AIOHM_KB_PMP_Integration') && AIOHM_KB_PMP_I
             </section>
         <?php endif; ?>
     </div>
+    
+    <!-- AIOHM Robot Guide -->
+    <div id="aiohm-robot-guide" class="aiohm-robot-guide" style="display: none;">
+        <div class="robot-container">
+            <div class="robot-body">
+                <div class="robot-head">
+                    <div class="robot-eye left-eye"></div>
+                    <div class="robot-eye right-eye"></div>
+                    <div class="robot-antenna"></div>
+                </div>
+                <div class="robot-chest">
+                    <div class="robot-light"></div>
+                </div>
+            </div>
+            <div class="robot-glow"></div>
+        </div>
+        
+        <div class="chat-bubble" id="robot-chat-bubble">
+            <div class="chat-content">
+                <p id="robot-message">Hello! Welcome to AIOHM demo experience. 🤖</p>
+            </div>
+            <div class="chat-arrow"></div>
+        </div>
+    </div>
 </div>
 

@@ -4499,6 +4499,16 @@ class AIOHM_KB_Core_Init {
                     // Convert to boolean
                     $current_settings[$setting_key] = ($setting_value === '1');
                     break;
+                case 'default_ai_provider':
+                    // Validate provider value
+                    $valid_providers = ['openai', 'gemini', 'claude', 'shareai', 'ollama'];
+                    if (in_array($setting_value, $valid_providers) || empty($setting_value)) {
+                        $current_settings[$setting_key] = $setting_value;
+                    } else {
+                        wp_send_json_error(['message' => __('Invalid AI provider selected.', 'aiohm-knowledge-assistant')]);
+                        return;
+                    }
+                    break;
                 default:
                     wp_send_json_error(['message' => __('Unknown setting key.', 'aiohm-knowledge-assistant')]);
                     return;

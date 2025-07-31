@@ -62,7 +62,7 @@
     },
     {
       "step": "wp-cli",
-      "command": "wp eval 'update_option(\"aiohm_kb_settings\", array(\"aiohm_app_email\" => \"contact@ohm.events\", \"chat_enabled\" => true, \"mcp_enabled\" => true, \"default_ai_provider\" => \"demo\", \"external_api_consent\" => false, \"private_llm_server_url\" => \"http://localhost:11434\", \"private_llm_model\" => \"llama3.2\"));'"
+      "command": "wp eval 'update_option(\"aiohm_kb_settings\", array(\"aiohm_app_email\" => \"contact@ohm.events\", \"chat_enabled\" => true, \"mcp_enabled\" => true, \"default_ai_provider\" => \"demo\", \"external_api_consent\" => false, \"enable_private_assistant\" => true, \"private_llm_server_url\" => \"http://localhost:11434\", \"private_llm_model\" => \"llama3.2\"));'"
     }
   ]
 }

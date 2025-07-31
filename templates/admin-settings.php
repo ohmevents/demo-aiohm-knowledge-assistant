@@ -103,7 +103,7 @@ $has_private_access = class_exists('AIOHM_KB_PMP_Integration') && AIOHM_KB_PMP_I
                         
                         <div class="shareai-setting-row" style="margin-bottom: 15px;">
                             <label for="external_api_consent" style="display: flex; align-items: flex-start; gap: 8px;">
-                                <input type="checkbox" id="external_api_consent" name="aiohm_kb_settings[external_api_consent]" value="1" <?php checked($settings['external_api_consent'] ?? false); ?> style="margin-top: 2px;" />
+                                <input type="checkbox" id="external_api_consent" name="aiohm_kb_settings[external_api_consent]" value="1" <?php checked(isset($settings['external_api_consent']) ? $settings['external_api_consent'] : false); ?> style="margin-top: 2px;" />
                                 <span>
                                     <strong><?php esc_html_e('I consent to making external API calls to AI providers', 'aiohm-knowledge-assistant'); ?></strong>
                                 </span>
@@ -645,7 +645,7 @@ $has_private_access = class_exists('AIOHM_KB_PMP_Integration') && AIOHM_KB_PMP_I
                         <th scope="row"><?php esc_html_e('Enable Private Assistant', 'aiohm-knowledge-assistant'); ?></th>
                         <td>
                             <label>
-                                <input type="checkbox" name="aiohm_kb_settings[enable_private_assistant]" value="1" <?php checked($settings['enable_private_assistant'] ?? false); disabled(!$can_access_settings); ?> />
+                                <input type="checkbox" name="aiohm_kb_settings[enable_private_assistant]" value="1" <?php checked($settings['enable_private_assistant'] ?? true); disabled(!$can_access_settings); ?> />
                                 <?php 
                                 // translators: %s is the shortcode for the private brand assistant
                                 printf(esc_html__('Enable the %s shortcode.', 'aiohm-knowledge-assistant'), '<code>[aiohm_private_assistant]</code>'); ?>

@@ -282,6 +282,14 @@ class AIOHM_KB_Settings_Page {
                 [],
                 AIOHM_KB_VERSION
             );
+            
+            wp_enqueue_script(
+                'aiohm-robot-guide',
+                AIOHM_KB_PLUGIN_URL . 'assets/js/aiohm-robot-guide.js',
+                ['jquery'],
+                AIOHM_KB_VERSION,
+                true
+            );
         }
 
         // Enqueue help page specific styles and scripts

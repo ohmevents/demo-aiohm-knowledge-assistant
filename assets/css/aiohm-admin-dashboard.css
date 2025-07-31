@@ -141,3 +141,276 @@
 @media (max-width: 768px) {
   .aiohm-sales-page .benefits-grid { grid-template-columns: 1fr; }
 }
+
+/* AIOHM Robot Guide Styles */
+.aiohm-robot-guide {
+    position: fixed;
+    z-index: 10000;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.aiohm-robot-guide.materialized {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.aiohm-robot-guide.positioned {
+    bottom: 30px;
+    right: 30px;
+}
+
+.aiohm-robot-guide.center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+}
+
+.aiohm-robot-guide.center.materialized {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.robot-container {
+    position: relative;
+    width: 80px;
+    height: 100px;
+    cursor: pointer;
+    pointer-events: auto;
+    animation: float 3s ease-in-out infinite;
+}
+
+.robot-body {
+    position: relative;
+    width: 60px;
+    height: 80px;
+    background: linear-gradient(145deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px 20px 25px 25px;
+    margin: 0 auto;
+    box-shadow: 
+        0 10px 20px rgba(102, 126, 234, 0.3),
+        inset 0 2px 4px rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.robot-head {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 45px;
+    height: 35px;
+    background: linear-gradient(145deg, #764ba2 0%, #667eea 100%);
+    border-radius: 15px 15px 8px 8px;
+    box-shadow: 0 5px 15px rgba(118, 75, 162, 0.4);
+}
+
+.robot-eye {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #00ffff;
+    border-radius: 50%;
+    top: 12px;
+    box-shadow: 
+        0 0 10px #00ffff,
+        inset 0 0 5px rgba(255, 255, 255, 0.8);
+    animation: blink 4s infinite;
+}
+
+.left-eye {
+    left: 10px;
+}
+
+.right-eye {
+    right: 10px;
+}
+
+.robot-antenna {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 12px;
+    background: linear-gradient(to top, #764ba2, #00ffff);
+    border-radius: 1px;
+}
+
+.robot-antenna::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: #00ffff;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #00ffff;
+    animation: pulse 2s infinite;
+}
+
+.robot-chest {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25px;
+    height: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.robot-light {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background: radial-gradient(circle, #ff6b6b 0%, #ff4757 100%);
+    border-radius: 50%;
+    box-shadow: 
+        0 0 15px #ff6b6b,
+        inset 0 0 5px rgba(255, 255, 255, 0.3);
+    animation: heartbeat 2s infinite;
+}
+
+.robot-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+.chat-bubble {
+    position: absolute;
+    bottom: 100%;
+    right: -20px;
+    margin-bottom: 15px;
+    background: white;
+    border-radius: 20px 20px 5px 20px;
+    padding: 15px 20px;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(102, 126, 234, 0.1);
+    min-width: 280px;
+    max-width: 320px;
+    opacity: 0;
+    transform: translateY(10px) scale(0.9);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    pointer-events: auto;
+    border: 2px solid rgba(102, 126, 234, 0.2);
+}
+
+.chat-bubble.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.chat-content p {
+    margin: 0;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.chat-arrow {
+    position: absolute;
+    bottom: -10px;
+    right: 30px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid white;
+}
+
+.chat-arrow::before {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    right: -12px;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid rgba(102, 126, 234, 0.2);
+}
+
+/* Robot Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+@keyframes blink {
+    0%, 90%, 100% { opacity: 1; }
+    95% { opacity: 0.3; }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.1); }
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.1); }
+}
+
+@keyframes glow {
+    0% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+    100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+@keyframes typing {
+    0%, 60%, 100% { transform: translateY(0); }
+    30% { transform: translateY(-10px); }
+}
+
+/* Interactive States */
+.robot-container:hover .robot-body {
+    transform: scale(1.05);
+    box-shadow: 
+        0 15px 25px rgba(102, 126, 234, 0.4),
+        inset 0 2px 4px rgba(255, 255, 255, 0.2);
+}
+
+.robot-container:hover .robot-glow {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .aiohm-robot-guide.positioned {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .robot-container {
+        width: 70px;
+        height: 90px;
+    }
+    
+    .robot-body {
+        width: 50px;
+        height: 70px;
+    }
+    
+    .chat-bubble {
+        min-width: 240px;
+        max-width: 280px;
+        right: -40px;
+    }
+}
