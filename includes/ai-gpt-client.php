@@ -1142,10 +1142,6 @@ class AIOHM_KB_AI_GPT_Client {
         if (empty($this->ollama_server_url)) {
             return ['success' => false, 'error' => 'Ollama server URL is missing.'];
         }
-        
-        // Debug: Log what model we're using
-        error_log('AIOHM Debug: Testing Ollama with model: ' . $this->ollama_model);
-        
         try {
             // First, test if the server is reachable with a simple GET request to list models
             $base_url = rtrim($this->ollama_server_url, '/');

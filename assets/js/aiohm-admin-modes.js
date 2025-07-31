@@ -485,6 +485,87 @@ jQuery(document).ready(function($) {
             return; // Exit early for ShareAI
         }
         
+        // Special handling for Ollama - save both server URL and model
+        if (apiType === 'ollama') {
+            const serverUrl = $('#private_llm_server_url').val();
+            const model = $('#private_llm_model').val();
+            
+            if (!serverUrl.trim()) {
+                showAdminNotice('Please enter a server URL before saving.', 'warning');
+                return;
+            }
+            
+            if (!model.trim()) {
+                showAdminNotice('Please enter a model name before saving.', 'warning');
+                return;
+            }
+            
+            // Disable button and show loading state
+            $btn.prop('disabled', true).text('Saving...');
+            
+            // Save both server URL and model
+            let urlSaveCompleted = false;
+            let modelSaveCompleted = false;
+            let urlSaveSuccess = false;
+            let modelSaveSuccess = false;
+            
+            function checkBothSavesComplete() {
+                if (urlSaveCompleted && modelSaveCompleted) {
+                    // Re-enable button and restore original text
+                    $btn.prop('disabled', false).text(originalText);
+                    
+                    if (urlSaveSuccess && modelSaveSuccess) {
+                        // Success state
+                        $btn.addClass('success');
+                        showAdminNotice('Ollama settings saved successfully!', 'success');
+                        
+                        // Reset button state after 2 seconds
+                        setTimeout(function() {
+                            $btn.removeClass('success');
+                        }, 2000);
+                    } else {
+                        showAdminNotice('Error: Could not save Ollama settings.', 'error');
+                    }
+                }
+            }
+            
+            // Save server URL
+            $.post(config.ajax_url, {
+                action: 'aiohm_save_individual_api_key',
+                nonce: config.nonce || $('#aiohm_nonce').val() || $('[name*="nonce"]').val(),
+                api_type: 'ollama',
+                setting_name: 'private_llm_server_url',
+                api_value: serverUrl
+            }).done(function(response) {
+                urlSaveSuccess = response.success;
+                urlSaveCompleted = true;
+                checkBothSavesComplete();
+            }).fail(function() {
+                urlSaveSuccess = false;
+                urlSaveCompleted = true;
+                checkBothSavesComplete();
+            });
+            
+            // Save model
+            $.post(config.ajax_url, {
+                action: 'aiohm_save_individual_api_key',
+                nonce: config.nonce || $('#aiohm_nonce').val() || $('[name*="nonce"]').val(),
+                api_type: 'ollama',
+                setting_name: 'private_llm_model',
+                api_value: model
+            }).done(function(response) {
+                modelSaveSuccess = response.success;
+                modelSaveCompleted = true;
+                checkBothSavesComplete();
+            }).fail(function() {
+                modelSaveSuccess = false;
+                modelSaveCompleted = true;
+                checkBothSavesComplete();
+            });
+            
+            return; // Exit early for Ollama
+        }
+        
         // Standard handling for other API providers
         if (!apiValue.trim()) {
             showAdminNotice('Please enter an API key before saving.', 'warning');
@@ -505,9 +586,6 @@ jQuery(document).ready(function($) {
                 break;
             case 'claude':
                 settingName = 'claude_api_key';
-                break;
-            case 'ollama':
-                settingName = 'private_llm_server_url';
                 break;
             default:
                 settingName = apiType + '_api_key';
