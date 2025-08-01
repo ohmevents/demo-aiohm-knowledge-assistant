@@ -1,5 +1,4 @@
 jQuery(document).ready(function($) {
-    alert('External JavaScript is now loading!');
     const nonce = aiohm_manage_kb_ajax.nonce;
 
     // Custom bulk action handler
@@ -1323,6 +1322,7 @@ jQuery(document).ready(function($) {
                 $('#aiohm-bulk-action-btn').focus(); // Return focus to the bulk action button
             });
         });
+    });
 
     // Close modal on backdrop click or close button
     $(document).on('click', '.aiohm-modal-backdrop, .aiohm-modal-close', function() {

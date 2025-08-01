@@ -273,60 +273,7 @@ jQuery(document).ready(function($) {
         });
     });
 
-    // Add New Content button (file upload modal)
-    $('#add-content-btn').on('click', function() {
-        // Create upload modal
-        $('body').append(`
-            <div id="file-upload-modal" class="aiohm-modal" style="display: flex;">
-                <div class="aiohm-modal-backdrop"></div>
-                <div class="aiohm-modal-content">
-                    <div class="aiohm-modal-header">
-                        <h2>Upload Files to Knowledge Base</h2>
-                        <button type="button" class="aiohm-modal-close">&times;</button>
-                    </div>
-                    <div class="aiohm-modal-body">
-                        <p>Upload documents directly to your knowledge base. Supported formats: .txt, .json, .csv, .pdf, .doc, .docx, .md</p>
-                        
-                        <div style="margin-bottom: 20px;">
-                            <label for="kb-scope" style="font-weight: bold;">Knowledge Base Scope:</label>
-                            <select id="kb-scope" style="width: 100%;">
-                                <option value="public">Public (Mirror Mode - visible to all visitors)</option>
-                                <option value="private">Private (Muse Mode - visible only to you)</option>
-                            </select>
-                        </div>
-                        
-                        <input type="file" id="file-input" multiple accept=".txt,.json,.csv,.pdf,.doc,.docx,.md" style="display: none;">
-                        <div id="drop-zone" style="border: 2px dashed #ccc; padding: 40px; text-align: center; cursor: pointer;">
-                            <p><strong>Drop files here or click to browse</strong></p>
-                            <p>Maximum file size: 10MB per file</p>
-                        </div>
-                        
-                        <div style="margin-top: 20px; text-align: right;">
-                            <button type="button" class="button" onclick="$('#file-upload-modal').remove();">Cancel</button>
-                            <button type="button" id="start-upload" class="button button-primary" disabled>Upload to Knowledge Base</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `);
-
-        // Handle file selection
-        $('#drop-zone').on('click', function() {
-            $('#file-input').click();
-        });
-
-        $('#file-input').on('change', function() {
-            if (this.files.length > 0) {
-                $('#start-upload').prop('disabled', false);
-                $('#drop-zone').html('<p><strong>' + this.files.length + ' file(s) selected</strong></p>');
-            }
-        });
-
-        // Handle modal close
-        $('.aiohm-modal-close, .aiohm-modal-backdrop').on('click', function() {
-            $('#file-upload-modal').remove();
-        });
-    });
+    // Add New Content button is handled by the external JS file (aiohm-admin-manage-kb.js)
 });
 </script>
 

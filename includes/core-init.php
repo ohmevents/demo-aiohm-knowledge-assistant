@@ -4664,16 +4664,308 @@ class AIOHM_KB_Core_Init {
                 }
             }
             
-            wp_send_json_success([
-                'settings' => $sanitized_settings,
-                'database' => $database_info,
-                'errors' => $recent_errors
-            ]);
+            // Get comprehensive debug information
+            $debug_info = self::collect_comprehensive_debug_info($sanitized_settings, $database_info, $recent_errors);
+            
+            wp_send_json_success($debug_info);
             
         } catch (Exception $e) {
             AIOHM_KB_Assistant::log('Debug Info Collection Error: ' . $e->getMessage(), 'error');
             wp_send_json_error(['message' => __('Failed to collect debug information', 'aiohm-knowledge-assistant')]);
         }
+    }
+
+    /**
+     * Collect comprehensive debug information from all AIOHM features and pages
+     */
+    private static function collect_comprehensive_debug_info($sanitized_settings, $database_info, $recent_errors) {
+        global $wpdb;
+        
+        $debug_info = [
+            'timestamp' => current_time('Y-m-d H:i:s T'),
+            'plugin_version' => AIOHM_KB_VERSION,
+            'settings' => $sanitized_settings,
+            'database' => $database_info,
+            'errors' => $recent_errors
+        ];
+        
+        // === SYSTEM INFORMATION ===
+        $debug_info['system'] = [
+            'wordpress_version' => get_bloginfo('version'),
+            'php_version' => PHP_VERSION,
+            'server_software' => isset($_SERVER['SERVER_SOFTWARE']) ? sanitize_text_field(wp_unslash($_SERVER['SERVER_SOFTWARE'])) : 'Unknown',
+            'mysql_version' => $wpdb->get_var("SELECT VERSION()"),
+            'memory_limit' => ini_get('memory_limit'),
+            'max_execution_time' => ini_get('max_execution_time'),
+            'upload_max_filesize' => ini_get('upload_max_filesize'),
+            'post_max_size' => ini_get('post_max_size'),
+            'is_multisite' => is_multisite(),
+            'active_theme' => wp_get_theme()->get('Name'),
+            'debug_mode' => defined('WP_DEBUG') && WP_DEBUG,
+            'debug_log' => defined('WP_DEBUG_LOG') && WP_DEBUG_LOG
+        ];
+        
+        // === PLUGIN STATUS ===
+        $debug_info['plugin_status'] = [
+            'is_demo_version' => defined('AIOHM_KB_VERSION') && AIOHM_KB_VERSION === 'DEMO',
+            'plugin_path' => AIOHM_KB_PLUGIN_DIR,
+            'plugin_url' => AIOHM_KB_PLUGIN_URL,
+            'main_file_exists' => file_exists(AIOHM_KB_PLUGIN_DIR . 'aiohm-kb-assistant.php'),
+            'includes_dir_exists' => is_dir(AIOHM_KB_PLUGIN_DIR . 'includes/'),
+            'assets_dir_exists' => is_dir(AIOHM_KB_PLUGIN_DIR . 'assets/'),
+            'templates_dir_exists' => is_dir(AIOHM_KB_PLUGIN_DIR . 'templates/')
+        ];
+        
+        // === DASHBOARD PAGE STATUS ===
+        $debug_info['dashboard'] = [
+            'template_exists' => file_exists(AIOHM_KB_PLUGIN_DIR . 'templates/admin-dashboard.php'),
+            'robot_script_exists' => file_exists(AIOHM_KB_PLUGIN_DIR . 'assets/js/aiohm-robot-guide.js'),
+            'dashboard_css_exists' => file_exists(AIOHM_KB_PLUGIN_DIR . 'assets/css/aiohm-admin-dashboard.css')
+        ];
+        
+        // === SETTINGS PAGE STATUS ===
+        $debug_info['settings'] = [
+            'template_exists' => file_exists(AIOHM_KB_PLUGIN_DIR . 'templates/admin-settings.php'),
+            'settings_class_exists' => class_exists('AIOHM_KB_Settings_Page'),
+            'universal_robot_exists' => file_exists(AIOHM_KB_PLUGIN_DIR . 'assets/js/aiohm-universal-robot-guide.js'),
+            'configured_providers' => [
+                'openai' => !empty($sanitized_settings['openai_api_key']) && $sanitized_settings['openai_api_key'] !== '[NOT SET]',
+                'gemini' => !empty($sanitized_settings['gemini_api_key']) && $sanitized_settings['gemini_api_key'] !== '[NOT SET]',
+                'claude' => !empty($sanitized_settings['claude_api_key']) && $sanitized_settings['claude_api_key'] !== '[NOT SET]',
+                'shareai' => !empty($sanitized_settings['shareai_api_key']) && $sanitized_settings['shareai_api_key'] !== '[NOT SET]'
+            ],
+            'default_provider' => $sanitized_settings['default_ai_provider'] ?? 'not_set'
+        ];
+        
+        // === BRAND SOUL PAGE STATUS ===
+        $debug_info['brand_soul'] = [
+            'template_exists' => file_exists(AIOHM_KB_PLUGIN_DIR . 'templates/admin-brand-soul.php'),
+            'has_brand_soul_data' => !empty($sanitized_settings['brand_soul']) && is_array($sanitized_settings['brand_soul']),
+            'completed_sections' => 0
+        ];
+        if (!empty($sanitized_settings['brand_soul']) && is_array($sanitized_settings['brand_soul'])) {
+            $debug_info['brand_soul']['completed_sections'] = count(array_filter($sanitized_settings['brand_soul'], function($value) {
+                return !empty($value) && is_string($value) && strlen(trim($value)) > 10;
+            }));
+        }
+        
+        // === SCAN CONTENT PAGE STATUS ===
+        $scan_stats = self::get_content_scan_stats();
+        $debug_info['scan_content'] = [
+            'template_exists' => file_exists(AIOHM_KB_PLUGIN_DIR . 'templates/scan-website.php'),
+            'scanner_class_exists' => class_exists('AIOHM_KB_Content_Scanner'),
+            'total_posts' => $scan_stats['posts']['total'] ?? 0,
+            'indexed_posts' => $scan_stats['posts']['indexed'] ?? 0,
+            'total_pages' => $scan_stats['pages']['total'] ?? 0,
+            'indexed_pages' => $scan_stats['pages']['indexed'] ?? 0,
+            'total_media' => $scan_stats['uploads']['total_files'] ?? 0,
+            'indexed_media' => $scan_stats['uploads']['indexed_files'] ?? 0
+        ];
+        
+        // === MANAGE KB PAGE STATUS ===
+        $debug_info['manage_kb'] = [
+            'template_exists' => file_exists(AIOHM_KB_PLUGIN_DIR . 'templates/admin-manage-kb.php'),
+            'kb_manager_class_exists' => class_exists('AIOHM_KB_Manager'),
+            'total_entries' => $database_info['aiohm_vector_entries']['rows'] ?? 0,
+            'has_entries' => ($database_info['aiohm_vector_entries']['rows'] ?? 0) > 0
+        ];
+        
+        // === MIRROR MODE PAGE STATUS ===
+        $debug_info['mirror_mode'] = [
+            'template_exists' => file_exists(AIOHM_KB_PLUGIN_DIR . 'templates/admin-mirror-mode.php'),
+            'enabled' => !empty($sanitized_settings['chat_enabled']) && $sanitized_settings['chat_enabled'] == '1',
+            'floating_chat' => !empty($sanitized_settings['show_floating_chat']) && $sanitized_settings['show_floating_chat'] == '1',
+            'has_system_message' => !empty($sanitized_settings['mirror_mode']['qa_system_message']),
+            'has_business_name' => !empty($sanitized_settings['mirror_mode']['business_name']),
+            'configured_ai_model' => $sanitized_settings['mirror_mode']['ai_model'] ?? 'not_set'
+        ];
+        
+        // === MUSE MODE PAGE STATUS ===
+        $debug_info['muse_mode'] = [
+            'template_exists' => file_exists(AIOHM_KB_PLUGIN_DIR . 'templates/admin-muse-mode.php'),
+            'enabled' => !empty($sanitized_settings['enable_private_assistant']) && $sanitized_settings['enable_private_assistant'] == '1',
+            'assistant_name' => $sanitized_settings['muse_mode']['assistant_name'] ?? 'not_set',
+            'has_system_prompt' => !empty($sanitized_settings['muse_mode']['system_prompt']),
+            'brand_archetype' => $sanitized_settings['muse_mode']['brand_archetype'] ?? 'not_set',
+            'configured_ai_model' => $sanitized_settings['muse_mode']['ai_model'] ?? 'not_set',
+            'temperature' => $sanitized_settings['muse_mode']['temperature'] ?? 'not_set',
+            'fullscreen_mode' => !empty($sanitized_settings['muse_mode']['start_fullscreen'])
+        ];
+        
+        // === MCP API PAGE STATUS ===
+        $debug_info['mcp'] = [
+            'template_exists' => file_exists(AIOHM_KB_PLUGIN_DIR . 'templates/admin-mcp.php'),
+            'mcp_integration_exists' => class_exists('AIOHM_KB_MCP_Integration'),
+            'total_tokens' => $database_info['aiohm_mcp_tokens']['rows'] ?? 0,
+            'total_usage_records' => $database_info['aiohm_mcp_usage']['rows'] ?? 0,
+            'has_active_tokens' => false
+        ];
+        if ($database_info['aiohm_mcp_tokens']['rows'] > 0) {
+            // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching -- Debug check for active tokens
+            $active_tokens = $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) FROM {$wpdb->prefix}aiohm_mcp_tokens WHERE status = %s", 'active'));
+            $debug_info['mcp']['has_active_tokens'] = (int) $active_tokens > 0;
+        }
+        
+        // === LICENSE PAGE STATUS ===
+        $debug_info['license'] = [
+            'template_exists' => file_exists(AIOHM_KB_PLUGIN_DIR . 'templates/admin-license.php'),
+            'pmp_integration_exists' => class_exists('AIOHM_KB_PMP_Integration'),
+            'aiohm_email_configured' => !empty($sanitized_settings['aiohm_app_email'])
+        ];
+        
+        // === GET HELP PAGE STATUS ===
+        $debug_info['get_help'] = [
+            'template_exists' => file_exists(AIOHM_KB_PLUGIN_DIR . 'templates/admin-help.php'),
+            'debug_collection_working' => true, // If we're here, it's working
+            'support_features_available' => [
+                'debug_info_collection' => method_exists(__CLASS__, 'handle_get_debug_info_ajax'),
+                'api_connection_test' => method_exists(__CLASS__, 'handle_test_all_api_connections_ajax'),
+                'database_health_check' => method_exists(__CLASS__, 'handle_check_database_health_ajax')
+            ]
+        ];
+        
+        // === CONVERSATIONS & PROJECTS STATUS ===
+        $debug_info['conversations'] = [
+            'total_conversations' => $database_info['aiohm_conversations']['rows'] ?? 0,
+            'total_messages' => $database_info['aiohm_messages']['rows'] ?? 0,
+            'total_projects' => $database_info['aiohm_projects']['rows'] ?? 0,
+            'has_conversation_data' => ($database_info['aiohm_conversations']['rows'] ?? 0) > 0
+        ];
+        
+        // === AI PROVIDERS TEST RESULTS ===
+        $debug_info['ai_providers'] = [];
+        if (!empty($sanitized_settings['openai_api_key']) && $sanitized_settings['openai_api_key'] !== '[NOT SET]') {
+            $debug_info['ai_providers']['openai'] = ['configured' => true, 'status' => 'needs_testing'];
+        }
+        if (!empty($sanitized_settings['gemini_api_key']) && $sanitized_settings['gemini_api_key'] !== '[NOT SET]') {
+            $debug_info['ai_providers']['gemini'] = ['configured' => true, 'status' => 'needs_testing'];
+        }
+        if (!empty($sanitized_settings['claude_api_key']) && $sanitized_settings['claude_api_key'] !== '[NOT SET]') {
+            $debug_info['ai_providers']['claude'] = ['configured' => true, 'status' => 'needs_testing'];
+        }
+        if (!empty($sanitized_settings['shareai_api_key']) && $sanitized_settings['shareai_api_key'] !== '[NOT SET]') {
+            $debug_info['ai_providers']['shareai'] = ['configured' => true, 'status' => 'needs_testing'];
+        }
+        
+        // === FILE PERMISSIONS ===
+        $debug_info['file_permissions'] = [
+            'wp_content_writable' => is_writable(WP_CONTENT_DIR),
+            'uploads_dir_writable' => is_writable(wp_upload_dir()['basedir']),
+            'plugin_dir_readable' => is_readable(AIOHM_KB_PLUGIN_DIR),
+            'debug_log_writable' => is_writable(WP_CONTENT_DIR . '/debug.log') || is_writable(WP_CONTENT_DIR)
+        ];
+        
+        // === WORDPRESS CAPABILITIES ===
+        $debug_info['wordpress_features'] = [
+            'wp_filesystem_available' => class_exists('WP_Filesystem_Base'),
+            'wp_http_available' => function_exists('wp_remote_get'),
+            'json_encode_available' => function_exists('json_encode'),
+            'curl_available' => function_exists('curl_init'),
+            'openssl_available' => function_exists('openssl_encrypt'),
+            'mbstring_available' => function_exists('mb_strlen')
+        ];
+        
+        // === RECENT ACTIVITY SUMMARY ===
+        $debug_info['recent_activity'] = self::get_recent_activity_summary();
+        
+        return $debug_info;
+    }
+    
+    /**
+     * Get content scan statistics
+     */
+    private static function get_content_scan_stats() {
+        // Get posts stats
+        $posts = get_posts([
+            'post_type' => 'post',
+            'post_status' => 'publish',
+            'numberposts' => -1,
+            'fields' => 'ids'
+        ]);
+        
+        $pages = get_posts([
+            'post_type' => 'page',
+            'post_status' => 'publish',
+            'numberposts' => -1,
+            'fields' => 'ids'
+        ]);
+        
+        $indexed_posts = 0;
+        $indexed_pages = 0;
+        
+        foreach ($posts as $post_id) {
+            if (get_post_meta($post_id, '_aiohm_indexed', true)) {
+                $indexed_posts++;
+            }
+        }
+        
+        foreach ($pages as $page_id) {
+            if (get_post_meta($page_id, '_aiohm_indexed', true)) {
+                $indexed_pages++;
+            }
+        }
+        
+        // Get media stats
+        $attachments = get_posts([
+            'post_type' => 'attachment',
+            'post_status' => 'inherit',
+            'numberposts' => -1,
+            'fields' => 'ids'
+        ]);
+        
+        $indexed_media = 0;
+        foreach ($attachments as $attachment_id) {
+            if (get_post_meta($attachment_id, '_aiohm_indexed', true)) {
+                $indexed_media++;
+            }
+        }
+        
+        return [
+            'posts' => ['total' => count($posts), 'indexed' => $indexed_posts],
+            'pages' => ['total' => count($pages), 'indexed' => $indexed_pages],
+            'uploads' => ['total_files' => count($attachments), 'indexed_files' => $indexed_media]
+        ];
+    }
+    
+    /**
+     * Get recent activity summary
+     */
+    private static function get_recent_activity_summary() {
+        global $wpdb;
+        
+        $activity = [];
+        
+        // Recent conversations (last 7 days)
+        if ($wpdb->get_var("SHOW TABLES LIKE '{$wpdb->prefix}aiohm_conversations'")) {
+            // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching -- Debug query for recent activity
+            $recent_conversations = $wpdb->get_var($wpdb->prepare(
+                "SELECT COUNT(*) FROM {$wpdb->prefix}aiohm_conversations WHERE created_at >= %s",
+                date('Y-m-d H:i:s', strtotime('-7 days'))
+            ));
+            $activity['conversations_last_7_days'] = (int) $recent_conversations;
+        }
+        
+        // Recent knowledge base additions (last 7 days)
+        if ($wpdb->get_var("SHOW TABLES LIKE '{$wpdb->prefix}aiohm_vector_entries'")) {
+            // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching -- Debug query for recent entries
+            $recent_entries = $wpdb->get_var($wpdb->prepare(
+                "SELECT COUNT(*) FROM {$wpdb->prefix}aiohm_vector_entries WHERE created_at >= %s",
+                date('Y-m-d H:i:s', strtotime('-7 days'))
+            ));
+            $activity['kb_entries_last_7_days'] = (int) $recent_entries;
+        }
+        
+        // Recent MCP usage (last 7 days)
+        if ($wpdb->get_var("SHOW TABLES LIKE '{$wpdb->prefix}aiohm_mcp_usage'")) {
+            // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching -- Debug query for recent MCP usage
+            $recent_mcp_usage = $wpdb->get_var($wpdb->prepare(
+                "SELECT COUNT(*) FROM {$wpdb->prefix}aiohm_mcp_usage WHERE created_at >= %s",
+                date('Y-m-d H:i:s', strtotime('-7 days'))
+            ));
+            $activity['mcp_usage_last_7_days'] = (int) $recent_mcp_usage;
+        }
+        
+        return $activity;
     }
 
     /**

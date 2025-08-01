@@ -310,24 +310,16 @@
             const bodyClasses = document.body.className;
             let currentPageKey = null;
             
-            // Debug logging
-            console.log('Universal Robot: Body classes:', bodyClasses);
-            console.log('Universal Robot: Available page configs:', Object.keys(PAGE_CONFIGS));
-            
             for (const pageKey in PAGE_CONFIGS) {
                 if (bodyClasses.includes(pageKey)) {
                     currentPageKey = pageKey;
-                    console.log('Universal Robot: Matched page:', pageKey);
                     break;
                 }
             }
             
             if (!currentPageKey || !PAGE_CONFIGS[currentPageKey]) {
-                console.log('Universal Robot: No matching page found, exiting');
                 return; // Not a supported page
             }
-            
-            console.log('Universal Robot: Initializing for page:', currentPageKey);
             
             this.config = PAGE_CONFIGS[currentPageKey];
             
