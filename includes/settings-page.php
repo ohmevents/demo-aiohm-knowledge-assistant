@@ -163,6 +163,12 @@ class AIOHM_KB_Settings_Page {
             wp_enqueue_style('aiohm-admin-global-styles', AIOHM_KB_PLUGIN_URL . 'assets/css/aiohm-chat.css', array(), AIOHM_KB_VERSION);
             wp_enqueue_style('aiohm-admin-header-styles', AIOHM_KB_PLUGIN_URL . 'assets/css/aiohm-admin-header.css', array(), AIOHM_KB_VERSION);
             
+            // Enqueue universal robot guide on all AIOHM pages (except dashboard which has its own)
+            if ($hook !== 'toplevel_page_aiohm-dashboard' && $hook !== 'aiohm_page_aiohm-settings') {
+                wp_enqueue_style('aiohm-admin-dashboard-styles', AIOHM_KB_PLUGIN_URL . 'assets/css/aiohm-admin-dashboard.css', array(), AIOHM_KB_VERSION);
+                wp_enqueue_script('aiohm-universal-robot-guide', AIOHM_KB_PLUGIN_URL . 'assets/js/aiohm-universal-robot-guide.js', array('jquery'), AIOHM_KB_VERSION, true);
+            }
+            
             // Enqueue demo assets if this is demo version
             if (defined('AIOHM_KB_VERSION') && AIOHM_KB_VERSION === 'DEMO') {
                 wp_enqueue_style('aiohm-demo-styles', AIOHM_KB_PLUGIN_URL . 'assets/css/aiohm-demo.css', array(), AIOHM_KB_VERSION);
@@ -407,6 +413,10 @@ class AIOHM_KB_Settings_Page {
                 'saving_text' => __('Saving...', 'aiohm-knowledge-assistant'),
                 'download_pdf_url' => wp_nonce_url(admin_url('admin.php?page=aiohm-brand-soul&action=download_brand_soul_pdf'), 'download_brand_soul_pdf')
             ));
+            
+            // Enqueue universal robot guide
+            wp_enqueue_style('aiohm-admin-dashboard-styles', AIOHM_KB_PLUGIN_URL . 'assets/css/aiohm-admin-dashboard.css', array(), AIOHM_KB_VERSION);
+            wp_enqueue_script('aiohm-universal-robot-guide', AIOHM_KB_PLUGIN_URL . 'assets/js/aiohm-universal-robot-guide.js', array('jquery'), AIOHM_KB_VERSION, true);
         }
 
         // Enqueue MCP page specific styles and scripts
