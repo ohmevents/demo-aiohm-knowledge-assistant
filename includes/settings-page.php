@@ -164,7 +164,7 @@ class AIOHM_KB_Settings_Page {
             wp_enqueue_style('aiohm-admin-header-styles', AIOHM_KB_PLUGIN_URL . 'assets/css/aiohm-admin-header.css', array(), AIOHM_KB_VERSION);
             
             // Enqueue universal robot guide on all AIOHM pages (except dashboard which has its own)
-            if ($hook !== 'toplevel_page_aiohm-dashboard' && $hook !== 'aiohm_page_aiohm-settings') {
+            if ($hook !== 'toplevel_page_aiohm-dashboard') {
                 wp_enqueue_style('aiohm-admin-dashboard-styles', AIOHM_KB_PLUGIN_URL . 'assets/css/aiohm-admin-dashboard.css', array(), AIOHM_KB_VERSION);
                 wp_enqueue_script('aiohm-universal-robot-guide', AIOHM_KB_PLUGIN_URL . 'assets/js/aiohm-universal-robot-guide.js', array('jquery'), AIOHM_KB_VERSION, true);
             }
@@ -253,10 +253,6 @@ class AIOHM_KB_Settings_Page {
                 $localized_data['mode'] = 'settings';
                 $localized_data['ajax_url'] = admin_url('admin-ajax.php');
                 $localized_data['nonce'] = wp_create_nonce('aiohm_admin_nonce');
-                
-                // Enqueue settings robot guide
-                wp_enqueue_style('aiohm-admin-dashboard-styles', AIOHM_KB_PLUGIN_URL . 'assets/css/aiohm-admin-dashboard.css', array(), AIOHM_KB_VERSION);
-                wp_enqueue_script('aiohm-settings-robot-guide', AIOHM_KB_PLUGIN_URL . 'assets/js/aiohm-settings-robot-guide.js', array('jquery'), AIOHM_KB_VERSION, true);
             }
 
             wp_localize_script('aiohm-admin-modes-script', 'aiohm_admin_modes_data', $localized_data);

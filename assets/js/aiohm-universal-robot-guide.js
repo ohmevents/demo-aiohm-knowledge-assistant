@@ -231,6 +231,64 @@
                     points: 25
                 }
             ]
+        },
+
+        'aiohm_page_aiohm-settings': {
+            pageName: 'Settings',
+            storagePrefix: 'settings',
+            welcomeMessage: "Hello and welcome to Settings!<br>I'm your AIOHM guide assistant, here to walk you through all the configuration options. Each section has a specific purpose to help you get the most out of AIOHM.<br>Ready to explore?",
+            tasks: [
+                {
+                    id: 'configuration_privacy',
+                    text: "Let's start with <strong>Configuration & Privacy Settings</strong>.<br>This is where you'll set your default AI provider and manage privacy consent. Think of this as your foundation - without an AI provider configured, the other features won't work.",
+                    points: 15
+                },
+                {
+                    id: 'free_ai_services',
+                    text: "Next up: <strong>Free AI Services</strong>.<br>This section shows ShareAI - a great option to test AIOHM without any upfront costs. Perfect for trying things out before committing to a paid API.",
+                    points: 10
+                },
+                {
+                    id: 'ollama_private',
+                    text: "Here's the <strong>Ollama Server</strong> section.<br>This is for AIOHM Private members who want maximum privacy by running AI models on their own servers. If you need complete data control, this is your option.",
+                    points: 10
+                },
+                {
+                    id: 'premium_ai_services',
+                    text: "Now we're at <strong>Premium AI Services</strong>.<br>OpenAI, Gemini, and Claude APIs are here. These are paid services but offer the most advanced AI capabilities. You'll get API keys from their respective platforms.",
+                    points: 15
+                },
+                {
+                    id: 'free_features',
+                    text: "<strong>Free Features</strong> section.<br>These are tools available to everyone - no membership required. Great for basic functionality and getting started with AIOHM.",
+                    points: 10
+                },
+                {
+                    id: 'ai_usage_overview',
+                    text: "The <strong>AI Usage Overview</strong> helps you monitor your API usage.<br>Keep track of costs and performance across all your AI providers. Essential for managing your AI budget effectively.",
+                    points: 10
+                },
+                {
+                    id: 'chatbot_settings',
+                    text: "<strong>Q&A Chatbot Settings</strong> - your public-facing Mirror Mode.<br>This configures the chatbot that website visitors can interact with. It uses your public content to answer questions about your brand.",
+                    points: 10
+                },
+                {
+                    id: 'private_assistant',
+                    text: "<strong>Private Brand Assistant</strong> - your Muse Mode for members.<br>This is where authenticated users access the deeper AI features, including your Brand Soul data for content creation and strategy.",
+                    points: 10
+                },
+                {
+                    id: 'scheduled_scan',
+                    text: "<strong>Scheduled Content Scan</strong> keeps your knowledge base fresh.<br>Set this up to automatically scan and update your content regularly, so your AI always has the latest information.",
+                    points: 10
+                },
+                {
+                    id: 'data_management',
+                    text: "Finally, <strong>Plugin Data Management</strong>.<br>This controls what happens to your data if you ever uninstall the plugin. Important for data retention and cleanup preferences.",
+                    points: 10
+                }
+            ]
         }
     };
 
