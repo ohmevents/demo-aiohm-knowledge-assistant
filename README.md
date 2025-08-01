@@ -81,7 +81,6 @@ Transform your WordPress site into an intelligent AI-powered knowledge hub with 
 ### 🔗 **WordPress Integration**
 - **Shortcode Support** - `[aiohm_chat]`, `[aiohm_search]`, `[aiohm_private_assistant]`
 - **Widget Integration** - Floating chat widget with customizable positioning
-- **PMPro Integration** - Membership level access controls (Tribe, Club, Private)
 - **Multisite Compatible** - Works with WordPress multisite installations
 - **Hook System** - Developer-friendly action and filter hooks
 - **Database Tables** - Custom tables for conversations, messages, and vectors
@@ -119,19 +118,19 @@ Transform your WordPress site into an intelligent AI-powered knowledge hub with 
 
 ## 🎯 **Membership Tiers**
 
-### 🌱 **Tribe (Free)**
+### **Tribe (Free)**
 - AI Brand Core questionnaire access
 - Basic plugin functionality
 - Community support
 - Knowledge base management
 
-### ⭐ **Club (€1/month)**
+### **Club (€1/month or €10/year)**
 - Full Mirror & Muse Mode access
 - All AI provider integrations
 - Advanced customization options
 - Priority support
 
-### 🏆 **Private (Custom)**
+### **Private (€37/month or €370/year or €300/lifetime)**
 - Self-hosted infrastructure
 - Private AI server connections
 - MCP API access
