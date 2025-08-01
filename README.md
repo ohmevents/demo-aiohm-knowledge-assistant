@@ -20,7 +20,7 @@ Transform your WordPress site into an intelligent AI-powered knowledge hub with 
 - **Individual API key testing** and validation for each provider
 
 ### 🎨 **Brand Voice & Personality**
-- **AI Brand Core Questionnaire** - 5 foundation questions to define brand essence
+- **AI Brand Core Questionnaire** - 20 foundation questions to define brand essence
 - **Soul Signature System Prompts** - Custom personality definition for each AI mode
 - **Archetype Selection** - Pre-built personality templates (Sage, Creator, Explorer, etc.)
 - **Dynamic placeholders** - %site_name%, %site_tagline%, %current_date%, %day_of_week%
