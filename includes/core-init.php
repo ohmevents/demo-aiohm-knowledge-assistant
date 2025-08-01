@@ -276,7 +276,6 @@ class AIOHM_KB_Core_Init {
         add_action('user_register', array(__CLASS__, 'secure_new_user_session'));
         
         // Add demo upgrade banner to admin header
-        add_action('admin_notices', array(__CLASS__, 'add_demo_upgrade_banner'));
         
         // --- All original action hooks are preserved ---
         add_action('wp_ajax_aiohm_progressive_scan', array(__CLASS__, 'handle_progressive_scan_ajax'));
@@ -339,6 +338,9 @@ class AIOHM_KB_Core_Init {
         add_action('wp_ajax_aiohm_kb_file_upload', array(__CLASS__, 'handle_kb_file_upload_ajax'));
         add_action('wp_ajax_aiohm_update_json_content', array(__CLASS__, 'handle_update_json_content_ajax'));
         add_action('wp_ajax_aiohm_update_text_content', array(__CLASS__, 'handle_update_text_content_ajax'));
+        
+        // Demo upgrade banner
+        add_action('admin_notices', array(__CLASS__, 'add_demo_upgrade_banner'));
         
         // Help Page AJAX handlers
         add_action('wp_ajax_aiohm_get_debug_info', array(__CLASS__, 'handle_get_debug_info_ajax'));
@@ -4539,8 +4541,9 @@ class AIOHM_KB_Core_Init {
         }
     }
 
+
     /**
-     * Add demo upgrade banner to admin header
+     * Add demo upgrade banner to admin header (exclude Get Help page)
      */
     public static function add_demo_upgrade_banner() {
         // Only show on AIOHM admin pages and only for demo version
@@ -4551,6 +4554,11 @@ class AIOHM_KB_Core_Init {
         // Only show on AIOHM plugin pages
         $screen = get_current_screen();
         if (!$screen || strpos($screen->id, 'aiohm') === false) {
+            return;
+        }
+        
+        // Exclude Get Help page
+        if ($screen->id === 'aiohm_page_aiohm-get-help') {
             return;
         }
         
