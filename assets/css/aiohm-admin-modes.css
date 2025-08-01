@@ -25,6 +25,51 @@
     color: var(--ohm-dark-accent);
 }
 
+/* --- Demo Experience Section --- */
+.aiohm-demo-experience-section {
+    margin: 20px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8fbf9 0%, #f0f8f4 100%);
+    border: 2px solid var(--ohm-primary);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.aiohm-demo-btn {
+    font-size: 1.1em !important;
+    padding: 12px 20px !important;
+    height: auto !important;
+    line-height: 1.2 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    border-radius: 6px !important;
+    font-weight: bold !important;
+    transition: all 0.2s ease !important;
+    background: transparent !important;
+    border: 2px solid var(--ohm-primary) !important;
+    color: var(--ohm-dark-accent) !important;
+    text-shadow: none !important;
+    box-shadow: 0 2px 4px rgba(69, 125, 88, 0.1) !important;
+    text-decoration: none !important;
+    margin-bottom: 10px !important;
+}
+
+.aiohm-demo-btn:hover {
+    background: #f8fbf9 !important;
+    border-color: var(--ohm-dark-accent) !important;
+    color: var(--ohm-dark-accent) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 8px rgba(31, 80, 20, 0.15) !important;
+    text-decoration: none !important;
+}
+
+.aiohm-demo-experience-section .description {
+    margin: 10px 0 0 0;
+    font-size: 0.9em;
+    color: var(--ohm-dark);
+}
+
 .aiohm-page-header {
     margin-bottom: 30px;
     padding-bottom: 20px;

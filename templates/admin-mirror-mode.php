@@ -184,16 +184,7 @@ $qa_system_message = !empty($saved_message) ? $saved_message : $default_prompt;
                 </div>
                 
                 <div class="form-actions">
-                    <?php if ($is_demo_version): ?>
-                        <button type="button" class="button button-primary" data-premium-feature="mirror-mode">
-                            <?php esc_html_e('Save Mirror Mode Settings', 'aiohm-knowledge-assistant'); ?> 🔒
-                        </button>
-                        <p class="demo-notice">
-                            🎭 <strong>Demo Mode:</strong> Settings are read-only. <a href="https://aiohm.app/club" target="_blank">Upgrade to Club</a> to save changes.
-                        </p>
-                    <?php else: ?>
-                        <button type="button" id="save-mirror-mode-settings" class="button button-primary"><?php esc_html_e('Save Mirror Mode Settings', 'aiohm-knowledge-assistant'); ?></button>
-                    <?php endif; ?>
+                    <button type="button" id="save-mirror-mode-settings" class="button button-primary"><?php esc_html_e('Save Mirror Mode Settings', 'aiohm-knowledge-assistant'); ?></button>
                 </div>
             </form>
         </div>

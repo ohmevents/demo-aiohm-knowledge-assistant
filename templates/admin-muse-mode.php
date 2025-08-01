@@ -174,6 +174,14 @@ $brand_archetypes = [
                 </div>
             </div>
 
+            <div class="aiohm-demo-experience-section">
+                <a href="<?php echo esc_url(home_url('/aiohm-demo-experience/')); ?>" target="_blank" class="button aiohm-btn-secondary aiohm-demo-btn">
+                    <span class="dashicons dashicons-external"></span>
+                    <?php esc_html_e('Try Full Demo Experience', 'aiohm-knowledge-assistant'); ?>
+                </a>
+                <p class="description"><?php esc_html_e('Test your Muse Mode assistant with shortcode in a real page environment.', 'aiohm-knowledge-assistant'); ?></p>
+            </div>
+
             <div class="aiohm-muse-tools-overview">
                 <h3><?php esc_html_e('Your Private Creative Partner', 'aiohm-knowledge-assistant'); ?></h3>
                 <p class="description"><?php esc_html_e('Your private AI assistant comes with powerful creative tools designed for focus, flow, and brand alignment:', 'aiohm-knowledge-assistant'); ?></p>

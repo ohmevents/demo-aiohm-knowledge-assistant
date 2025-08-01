@@ -113,9 +113,10 @@
 /* Actions Grid */
 .actions-grid-wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 20px;
     margin-top: 20px;
+    align-items: start;
 }
 
 .action-box {
@@ -128,6 +129,7 @@
     justify-content: space-between;
     transition: all 0.3s ease;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    min-height: 200px;
 }
 
 .action-box:hover {

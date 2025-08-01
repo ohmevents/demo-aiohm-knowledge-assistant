@@ -1015,7 +1015,7 @@ class AIOHM_KB_Core_Init {
             ];
             $final_system_message = str_replace(array_keys($replacements), array_values($replacements), $system_message);
 
-            $answer = $ai_client->get_chat_completion($final_system_message, $user_message, $temperature, $model);
+            $answer = $ai_client->get_chat_completion($final_system_message, $user_message, $temperature, $model, 'frontend_chat');
 
             wp_send_json_success(['reply' => $answer]);
 

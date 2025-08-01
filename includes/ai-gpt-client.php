@@ -360,9 +360,9 @@ class AIOHM_KB_AI_GPT_Client {
         }
     }
 
-    public function get_chat_completion($system_message, $user_message, $temperature = 0.7, $model = 'gpt-3.5-turbo') {
-        // Return demo responses if this is demo version
-        if (AIOHM_Demo_Responses::is_demo_version()) {
+    public function get_chat_completion($system_message, $user_message, $temperature = 0.7, $model = 'gpt-3.5-turbo', $context = '') {
+        // Return demo responses only for frontend chat if this is demo version
+        if (AIOHM_Demo_Responses::is_demo_version() && $context === 'frontend_chat') {
             return $this->get_demo_chat_completion($system_message, $user_message, $model);
         }
         
